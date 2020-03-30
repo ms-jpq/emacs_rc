@@ -8,5 +8,6 @@
 ;;#################### Dependencies Region ####################
 ;;#################### ################### ####################
 (require 'init-elpa)
+(require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
