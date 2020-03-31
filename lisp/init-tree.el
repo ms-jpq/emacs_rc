@@ -6,7 +6,8 @@
   :ensure t)
 
 (use-package lsp-treemacs
-  :ensure t)
+  :ensure t
+  :commands lsp-treemacs-errors-list)
 
 (use-package treemacs-magit
   :ensure t)

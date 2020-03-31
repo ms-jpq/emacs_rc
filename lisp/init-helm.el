@@ -5,8 +5,10 @@
 (use-package helm
   :ensure t)
 
+
 (use-package helm-lsp
-  :ensure t)
+  :ensure t
+  :commands helm-lsp-workspace-symbol)
 
 
 ;;#################### END ####################

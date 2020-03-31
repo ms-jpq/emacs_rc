@@ -12,8 +12,8 @@
 
 ;; renew on missing elpa dir
 (let ((dir (expand-file-name "elpa" user-emacs-directory)))
-    (when (not (file-directory-p dir))
-      (package-refresh-contents)))
+  (when (not (file-directory-p dir))
+    (package-refresh-contents)))
 
 ;; require 'use-package
 ((lambda
