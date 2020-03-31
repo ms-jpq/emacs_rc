@@ -21,11 +21,7 @@
 (require 'epl)
 (epl-initialize)
 
-
-(defun require-pkg
-  (pkg)
-  (when (not (epl-package-installed-p pkg))
-    (epl-package-install pkg)))
+(defalias 'require-pkg 'epl-package-install)
 
 ;; (epl-upgrade)
 
