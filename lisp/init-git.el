@@ -5,4 +5,4 @@
 
 
 ;;#################### END ####################
-(provide 'extern-git)
+(provide 'init-git)

@@ -5,4 +5,4 @@
 
 
 ;;#################### END ####################
-(provide 'extern-scrollbar)
+(provide 'init-scrollbar)

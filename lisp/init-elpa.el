@@ -19,6 +19,15 @@
 
 (require-pkg- 'epl)
 (require 'epl)
+(epl-initialize)
+
+
+(defun require-pkg
+  (pkg)
+  (when (not (epl-package-installed-p pkg))
+    (epl-package-install pkg)))
+
+;; (epl-upgrade)
 
 
 ;;#################### END ####################
