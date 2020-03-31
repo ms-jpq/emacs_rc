@@ -21,3 +21,4 @@
 (require 'extern-helm)
 (require 'extern-tree)
 (require 'extern-tab)
+(require 'extern-scrollbar)
