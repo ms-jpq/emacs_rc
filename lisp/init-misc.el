@@ -30,7 +30,7 @@
 ;;#################### ########### ######################
 
 ;; highlight current line
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 ;; line numbers
 (global-display-line-numbers-mode)

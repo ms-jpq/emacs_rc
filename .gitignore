@@ -4,6 +4,7 @@ elpa/
 export/
 backups/
 transient/
+.cache/
 history
 custom.el
 places
