@@ -9,10 +9,16 @@
 ;;#################### ############### ####################
 ;;#################### Requires Region ####################
 ;;#################### ############### ####################
-(defun require-pkg
+
+;; internal use
+(defun require-pkg-
   (pkg)
   (when (not (package-installed-p pkg))
     (package-install pkg)))
+
+
+(require-pkg- 'epl)
+(require 'epl)
 
 
 ;;#################### END ####################

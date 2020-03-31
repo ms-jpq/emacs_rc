@@ -17,8 +17,10 @@
 ;;#################### ############### ####################
 ;;#################### External Region ####################
 ;;#################### ############### ####################
-(require 'extern-undo)
+(require 'extern-misc)
+(require 'extern-lsp)
 (require 'extern-helm)
+(require 'extern-git)
 (require 'extern-tree)
 (require 'extern-tab)
 (require 'extern-scrollbar)

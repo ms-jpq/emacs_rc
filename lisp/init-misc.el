@@ -21,9 +21,6 @@
 ;;#################### Editor Region ####################
 ;;#################### ########### ######################
 
-;; watch filesystem for changes in open files
-(global-auto-revert-mode t)
-
 ;; highlight current line
 (global-hl-line-mode 1)
 
