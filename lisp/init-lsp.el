@@ -29,5 +29,9 @@
   :commands company-lsp)
 
 
+(use-package dap-mode
+  :ensure t)
+
+
 ;;#################### END ####################
 (provide 'init-lsp)

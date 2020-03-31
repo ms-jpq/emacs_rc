@@ -11,5 +11,13 @@
   :commands helm-lsp-workspace-symbol)
 
 
+(use-package helm-mode-manager
+  :ensure t)
+
+
+(use-package helm-themes
+  :ensure t)
+
+
 ;;#################### END ####################
 (provide 'init-helm)
