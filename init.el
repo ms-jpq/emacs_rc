@@ -24,6 +24,7 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
+(require 'init-undo)
 (require 'init-git)
 (require 'init-lsp)
 (require 'init-helm)

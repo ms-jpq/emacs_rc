@@ -23,7 +23,17 @@
 ;;#################### ############# ####################
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
+(setq cua-keep-region-after-copy t)
 (cua-mode t)
+
+;; ctl-a
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
+;; ctl-f
+;; (global-set-key (kbd "C-f") ')
+
+;; ctl-s
+;; (global-set-key (kbd "C-s") ')
 
 
 ;;#################### END ####################
