@@ -7,6 +7,8 @@
 ;;#################### ############## ####################
 ;;#################### Customs Region ####################
 ;;#################### ############## ####################
+
+;; set custom el
 (let
   ((cf (expand-file-name "custom.el" user-emacs-directory)))
   (when (not (file-exists-p cf))
