@@ -5,23 +5,23 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; comment me out
-;; (package-refresh-contents)
-
 
 ;;#################### ############### ####################
 ;;#################### Requires Region ####################
 ;;#################### ############### ####################
 
-;; internal use
-(defun require-pkg-
+;; renew on missing elpa dir
+(let ((dir (expand-file-name "elpa" user-emacs-directory)))
+    (when (not (file-directory-p dir))
+      (package-refresh-contents)))
+
+;; require 'use-package
+((lambda
   (pkg)
   (when (not (package-installed-p pkg))
-    (package-install pkg)))
-
-
-(require-pkg- 'use-package)
-(require 'use-package)
+    (package-install pkg))
+    (require pkg))
+  'use-package)
 
 
 ;;#################### END ####################

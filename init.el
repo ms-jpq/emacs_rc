@@ -7,8 +7,12 @@
 ;;#################### ############## ####################
 ;;#################### Customs Region ####################
 ;;#################### ############## ####################
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(let
+  ((cf (expand-file-name "custom.el" user-emacs-directory)))
+  (when (not (file-exists-p cf))
+    (write-region "" nil cf))
+  (setq custom-file cf)
+  (load custom-file))
 
 
 ;;#################### ################### ####################
@@ -18,8 +22,9 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
+(require 'init-git)
 (require 'init-lsp)
 (require 'init-helm)
-(require 'init-git)
 (require 'init-tree)
+(require 'init-powerline)
 (require 'init-scrollbar)
