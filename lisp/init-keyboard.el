@@ -33,7 +33,7 @@
 ;; (global-set-key (kbd "C-f") ')
 
 ;; ctl-s
-;; (global-set-key (kbd "C-s") ')
+(global-set-key (kbd "C-s") 'save-buffer)
 
 
 ;;#################### END ####################
