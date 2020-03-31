@@ -10,7 +10,12 @@
   :config
   (cua-selection-mode t)
   (ergoemacs-theme-option-off '(guru))
-  (ergoemacs-mode 1))
+  (ergoemacs-mode 1)
+  (progn ;; work around
+    (global-set-key (kbd "M-<left>") (kbd "M-j"))
+    (global-set-key (kbd "M-<right>") (kbd "M-l"))
+    (global-set-key (kbd "M-<up>") (kbd "M-i"))
+    (global-set-key (kbd "M-<down>") (kbd "M-k"))))
 
 
 (use-package which-key
