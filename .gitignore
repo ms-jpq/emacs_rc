@@ -2,4 +2,8 @@
 auto-save-list/
 elpa/
 export/
+backups/
+transient/
 history
+custom.el
+places

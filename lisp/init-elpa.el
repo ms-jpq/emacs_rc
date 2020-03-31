@@ -5,6 +5,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+;; comment me out
+;; (package-refresh-contents)
+
 
 ;;#################### ############### ####################
 ;;#################### Requires Region ####################
@@ -17,13 +20,8 @@
     (package-install pkg)))
 
 
-(require-pkg- 'epl)
-(require 'epl)
-(epl-initialize)
-
-(defalias 'require-pkg 'epl-package-install)
-
-;; (epl-upgrade)
+(require-pkg- 'use-package)
+(require 'use-package)
 
 
 ;;#################### END ####################

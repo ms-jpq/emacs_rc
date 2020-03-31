@@ -2,8 +2,11 @@
 ;;#################### Tree Region ####################
 ;;#################### ########### ####################
 
-(require-pkg 'treemacs)
-(require 'treemacs)
+(use-package treemacs
+  :ensure t)
+
+(use-package lsp-treemacs
+  :ensure t)
 
 
 ;;#################### END ####################
