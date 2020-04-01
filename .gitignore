@@ -6,6 +6,7 @@ backups/
 transient/
 .cache/
 history
-custom.el
 places
 recentf
+.lsp-session-*
+custom.el
