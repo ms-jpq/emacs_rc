@@ -9,4 +9,5 @@ history
 places
 recentf
 .lsp-session-*
+projectile-*
 custom.el
