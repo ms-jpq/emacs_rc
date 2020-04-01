@@ -19,5 +19,12 @@
   (tabbar-mode t))
 
 
+;; make popup window easier to dismiss
+(use-package popwin
+  :ensure t
+  :config
+  (popwin-mode t))
+
+
 ;;#################### END ####################
 (provide 'init-wm)

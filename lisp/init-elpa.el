@@ -24,5 +24,15 @@
   'use-package)
 
 
+(use-package epl
+  :ensure t)
+
+(defun upgrade-packages
+  ()
+  (interactive)
+  (epl-upgrade)
+  (message "⭐️ - all packages upgraded - ⭐️"))
+
+
 ;;#################### END ####################
 (provide 'init-elpa)

@@ -2,7 +2,7 @@
 ;;#################### Navigation Region ####################
 ;;#################### ################ ####################
 
-;; todo
+;; TODO
 (use-package helm-swoop
   :ensure t)
 
@@ -80,6 +80,22 @@
   :ensure t
   :config
   (global-highlight-parentheses-mode t))
+
+
+(use-package indent-guide
+  :ensure t
+  :init
+  (setq indent-guide-delay 0.1)
+  (setq indent-guide-char "|")
+  :config
+  (indent-guide-global-mode))
+
+
+;; highlight todos
+(use-package hl-todo
+  :ensure t
+  :config
+  (global-hl-todo-mode t))
 
 
 ;;#################### ################# ####################

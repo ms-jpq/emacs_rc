@@ -6,7 +6,7 @@
 (use-package which-key
   :ensure t
   :init
-  (setq which-key-idle-delay 0.5)
+  (setq which-key-idle-delay 1)
   :config
   (which-key-mode))
 
