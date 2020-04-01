@@ -4,7 +4,8 @@
 
 (use-package helm
   :ensure t
-  :bind (("C-@" . helm-M-x))
+  :bind (("C-@" . helm-M-x)
+         ("C-c l" . helm-buffers-list))
   :config
   (helm-mode t)
   (define-key global-map [remap find-file] 'helm-find-files)
