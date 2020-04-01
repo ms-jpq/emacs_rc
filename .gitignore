@@ -10,4 +10,4 @@ places
 recentf
 .lsp-session-*
 projectile-*
-custom.el
+customize.el

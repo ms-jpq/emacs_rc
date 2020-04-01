@@ -11,7 +11,7 @@
 
 ;; set custom el
 (let
-  ((cf (expand-file-name "custom.el" user-emacs-directory)))
+  ((cf (expand-file-name "customize.el" user-emacs-directory)))
   (when (not (file-exists-p cf))
     (write-region "" nil cf))
   (setq custom-file cf)
