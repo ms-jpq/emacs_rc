@@ -2,6 +2,10 @@
 ;;#################### Highlight Region ####################
 ;;#################### ################ ####################
 
+(use-package helm-swoop
+  :ensure t)
+
+
 (use-package flycheck
   :ensure t)
 

@@ -17,6 +17,13 @@
   (define-key emacs-lisp-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point))
 
 
+(use-package helm-descbinds
+  :ensure t
+  :config
+  (helm-descbinds-mode)
+  (define-key global-map [remap describe-bindings] 'helm-descbinds))
+
+
 (use-package helm-mode-manager
   :ensure t)
 
