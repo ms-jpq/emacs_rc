@@ -43,10 +43,7 @@
 
 (use-package helm-company
   :ensure t
-  :bind (("C-:" . helm-company))
-  :config
-  (define-key company-mode-map (kbd "C-:") 'helm-company)
-  (define-key company-active-map (kbd "C-:") 'helm-company))
+  :bind (("C-o" . helm-company)))
 
 
 (use-package highlight-parentheses
