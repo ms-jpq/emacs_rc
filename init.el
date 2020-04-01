@@ -31,5 +31,4 @@
 (require 'init-helm)
 (require 'init-tree)
 (require 'init-powerline)
-(require 'init-highlight)
-(require 'init-scrollbar)
+(require 'init-editor)
