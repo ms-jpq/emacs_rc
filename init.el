@@ -27,7 +27,6 @@
 (require 'init-mouse)
 (require 'init-undo)
 (require 'init-git)
-(require 'init-lsp)
 (require 'init-helm)
 (require 'init-tree)
 (require 'init-powerline)

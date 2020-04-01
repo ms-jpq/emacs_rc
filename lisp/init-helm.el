@@ -17,11 +17,6 @@
   (define-key emacs-lisp-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point))
 
 
-(use-package helm-lsp
-  :ensure t
-  :commands helm-lsp-workspace-symbol)
-
-
 (use-package helm-mode-manager
   :ensure t)
 
