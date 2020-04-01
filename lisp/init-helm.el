@@ -11,7 +11,7 @@
          ([remap list-buffers] . helm-buffers-list)
          ([remap dabbrev-expand] . helm-dabbrev)
          ([remap execute-extended-command] . helm-M-x)
-         ([[remap apropos-command]] . helm-apropos)
+         ([remap apropos-command] . helm-apropos)
          :map lisp-interaction-mode-map
               ([remap completion-at-point] . helm-lisp-completion-at-point)
          :map emacs-lisp-mode-map
