@@ -11,8 +11,10 @@
 ;;#################### LSP Region ####################
 ;;#################### ########## ####################
 
+;; required for lsp
 (use-package flycheck
   :ensure t)
+
 
 (use-package lsp-mode
   :ensure t
@@ -34,10 +36,12 @@
   :commands helm-lsp-workspace-symbol)
 
 
+;; debugger
 (use-package dap-mode
   :ensure t)
 
 
+;; auto complete
 (use-package company
   :ensure t
   :commands global-company-mode
@@ -54,6 +58,7 @@
   (push 'company-lsp company-backends))
 
 
+;; helm search auto complete
 (use-package helm-company
   :ensure t
   :after (helm company)
@@ -63,6 +68,13 @@
 ;;#################### ################ ####################
 ;;#################### Highlight Region ####################
 ;;#################### ################ ####################
+
+;; only works w/ GUI
+(use-package solaire-mode
+  :ensure t
+  :config
+  (solaire-global-mode t))
+
 
 (use-package highlight-parentheses
   :ensure t
@@ -74,11 +86,13 @@
 ;;#################### Whitespace Region ####################
 ;;#################### ################# ####################
 
+;; trim trailing white spaces
 (use-package clean-aindent-mode
   :ensure t
   :bind (("RET" . newline-and-indent)))
 
 
+;; delete multi white spaces
 (use-package hungry-delete
   :ensure t
   :config

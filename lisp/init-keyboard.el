@@ -2,6 +2,7 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
+;; popup, shows hotkeys
 (use-package which-key
   :ensure t
   :init

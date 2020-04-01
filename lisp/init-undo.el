@@ -2,6 +2,7 @@
 ;;#################### Undo Region ####################
 ;;#################### ########### ####################
 
+;; normalize emac's undo - redo
 (use-package undo-tree
   :ensure t
   :config

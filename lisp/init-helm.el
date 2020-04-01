@@ -17,6 +17,7 @@
   (define-key emacs-lisp-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point))
 
 
+;; describe key-binds
 (use-package helm-descbinds
   :ensure t
   :after (helm)
