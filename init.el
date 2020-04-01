@@ -32,6 +32,8 @@
 (require 'init-proj)
 (require 'init-editor)
 (require 'init-git)
+(require 'init-themes)
+(require 'init-fun)
 
 
 ;;#################### ############ ####################

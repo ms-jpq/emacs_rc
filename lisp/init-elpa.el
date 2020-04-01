@@ -34,5 +34,11 @@
   (setq auto-package-update-delete-old-versions t))
 
 
+;; package mgr
+(use-package epl
+  :ensure t
+  :commands (epl-refresh))
+
+
 ;;#################### END ####################
 (provide 'init-elpa)
