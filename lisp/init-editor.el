@@ -62,7 +62,7 @@
 (use-package helm-company
   :ensure t
   :after (helm company)
-  :bind (("C-o" . helm-company)))
+  :bind (("C-c c" . helm-company)))
 
 
 ;;#################### ################ ####################
