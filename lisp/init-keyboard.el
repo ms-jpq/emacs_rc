@@ -35,6 +35,9 @@
 ;; ctl-s
 (global-set-key (kbd "C-s") 'save-buffer)
 
+;; ctl-q
+(global-set-key (kbd "C-q") 'save-buffers-kill-terminal)
+
 
 ;;#################### END ####################
 (provide 'init-keyboard)
