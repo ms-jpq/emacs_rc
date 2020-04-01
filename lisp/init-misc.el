@@ -52,6 +52,10 @@
 ;; tab-width
 (setq-default tab-width 2)
 
+;; idle animation
+(require 'zone)
+(zone-when-idle 60)
+
 
 ;;#################### ########### ####################
 ;;#################### Misc Region ####################

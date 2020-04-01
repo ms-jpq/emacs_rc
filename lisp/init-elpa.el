@@ -15,6 +15,7 @@
   (when (not (file-directory-p dir))
     (package-refresh-contents)))
 
+
 ;; require 'use-package
 ((lambda
   (pkg)
@@ -24,14 +25,13 @@
   'use-package)
 
 
-(use-package epl
-  :ensure t)
-
-(defun upgrade-packages
-  ()
-  (interactive)
-  (epl-upgrade)
-  (message "⭐️ - all packages upgraded - ⭐️"))
+;; auto update
+(use-package auto-package-update
+  :ensure t
+  :init
+  (setq auto-package-update-interval 14)
+  (setq auto-package-update-prompt-before-update t)
+  (setq auto-package-update-delete-old-versions t))
 
 
 ;;#################### END ####################

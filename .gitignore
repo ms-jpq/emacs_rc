@@ -9,5 +9,7 @@ history
 places
 recentf
 .lsp-session-*
+.last-package-update-*
+company-statistics-*
 projectile-*
 customize.el

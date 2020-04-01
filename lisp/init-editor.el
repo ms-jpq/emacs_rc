@@ -41,13 +41,34 @@
   :ensure t)
 
 
-;; auto complete
+;;#################### ################## ####################
+;;#################### Suggestions Region ####################
+;;#################### ################## ####################
+
+;; auto suggestions
 (use-package company
   :ensure t
   :commands global-company-mode
   :hook ((after-init . global-company-mode))
   :init (setq company-minimum-prefix-length 3
               company-idle-delay 0.0))
+
+
+;; TODO
+(use-package company-quickhelp
+  :ensure t
+  :after (company)
+  :bind (:map company-active-map
+              ("C-c h" . company-quickhelp-manual-begin))
+  :config
+  (company-quickhelp-mode))
+
+
+;; rank suggestions by freq
+(use-package company-statistics
+  :ensure t
+  :after (company)
+  :hook ((after-init . company-statistics-mode)))
 
 
 (use-package company-lsp
