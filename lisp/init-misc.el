@@ -5,6 +5,16 @@
 (use-package better-defaults
   :ensure t)
 
+;; normalize emac's undo - redo
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode)
+  (defalias 'undo 'undo-tree-undo)
+  (defalias 'redo 'undo-tree-redo)
+  (bind-key "C-z" 'undo)
+  (bind-key "C-y" 'redo))
+
 
 ;;#################### ########### ####################
 ;;#################### Lang Region ####################

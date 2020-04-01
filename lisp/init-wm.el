@@ -2,6 +2,11 @@
 ;;#################### Buffers Region ####################
 ;;#################### ############## ####################
 
+(use-package tabbar
+  :ensure t
+  :config
+  (tabbar-mode t))
+
 
 ;;#################### END ####################
-(provide 'init-buffers)
+(provide 'init-wm)

@@ -25,14 +25,13 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
-(require 'init-undo)
-(require 'init-git)
 (require 'init-helm)
-(require 'init-tree)
 (require 'init-powerline)
+(require 'init-wm)
+(require 'init-tree)
 (require 'init-proj)
-(require 'init-buffers)
 (require 'init-editor)
+(require 'init-git)
 
 
 ;;#################### ############ ####################
