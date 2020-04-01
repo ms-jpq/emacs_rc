@@ -4,6 +4,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
+
 ;;#################### ############## ####################
 ;;#################### Customs Region ####################
 ;;#################### ############## ####################

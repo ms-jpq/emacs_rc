@@ -6,7 +6,7 @@
   :ensure t
   :bind (("C-@" . helm-M-x))
   :config
-  (helm-mode 1)
+  (helm-mode t)
   (define-key global-map [remap find-file] 'helm-find-files)
   (define-key global-map [remap occur] 'helm-occur)
   (define-key global-map [remap list-buffers] 'helm-buffers-list)
