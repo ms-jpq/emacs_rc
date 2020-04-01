@@ -2,9 +2,24 @@
 ;;#################### Navigation Region ####################
 ;;#################### ################ ####################
 
-;; TODO
+;; quick navigation via search
 (use-package helm-swoop
-  :ensure t)
+  :ensure t
+  :after (helm)
+  :bind (("M-i" . helm-swoop)
+         ("M-I" . helm-swoop-back-to-last-point)
+         ("C-c M-i" . helm-multi-swoop)
+         ("C-x M-i" . helm-multi-swoop-all)
+         :map isearch-mode-map
+              ("M-i" . helm-swoop-from-isearch)
+         :map helm-swoop-map
+              ("M-i" . helm-multi-swoop-all-from-helm-swoop)
+              ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
+              ("C-r" . helm-previous-line)
+              ("C-s" . helm-next-line)
+         :map helm-multi-swoop-map
+              ("C-r" . helm-previous-line)
+              ("C-s" . helm-next-line)))
 
 
 ;;#################### ########## ####################

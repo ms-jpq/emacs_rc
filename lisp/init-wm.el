@@ -9,10 +9,10 @@
 ;; allow num key to selc window
 (use-package ace-window
   :ensure t
-  :config
-  (define-key global-map [remap other-window] 'ace-window))
+  :bind (([remap other-window] . ace-window)))
 
 
+;; TODO - replace this @ emacs 27
 (use-package tabbar
   :ensure t
   :config
