@@ -2,6 +2,7 @@
 ;;#################### Navigation Region ####################
 ;;#################### ################ ####################
 
+;; todo
 (use-package helm-swoop
   :ensure t)
 
@@ -15,6 +16,7 @@
 
 (use-package lsp-mode
   :ensure t
+  :after (flycheck)
   :commands lsp
   :hook ((prog-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration)))
@@ -22,11 +24,13 @@
 
 (use-package lsp-ui
   :ensure t
+  :after (lsp-mode)
   :commands lsp-ui-mode)
 
 
 (use-package helm-lsp
   :ensure t
+  :after (helm lsp-mode)
   :commands helm-lsp-workspace-symbol)
 
 
@@ -44,6 +48,7 @@
 
 (use-package company-lsp
   :ensure t
+  :after (company lsp-mode)
   :commands company-lsp
   :config
   (push 'company-lsp company-backends))
@@ -51,6 +56,7 @@
 
 (use-package helm-company
   :ensure t
+  :after (helm company)
   :bind (("C-o" . helm-company)))
 
 

@@ -19,16 +19,19 @@
 
 (use-package helm-descbinds
   :ensure t
+  :after (helm)
   :config
   (helm-descbinds-mode)
   (define-key global-map [remap describe-bindings] 'helm-descbinds))
 
 
 (use-package helm-mode-manager
+  :after (helm)
   :ensure t)
 
 
 (use-package helm-themes
+  :after (helm)
   :ensure t)
 
 

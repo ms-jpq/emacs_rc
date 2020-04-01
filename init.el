@@ -30,4 +30,6 @@
 (require 'init-helm)
 (require 'init-tree)
 (require 'init-powerline)
+(require 'init-proj)
+(require 'init-buffers)
 (require 'init-editor)
