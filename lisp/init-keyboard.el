@@ -2,6 +2,9 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
+(use-package bind-key
+  :ensure t)
+
 (use-package which-key
   :ensure t
   :init

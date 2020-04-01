@@ -3,9 +3,7 @@
 ;;#################### ########### ####################
 
 (use-package treemacs
-  :ensure t
-  :config
-  (setq treemacs-show-cursor t))
+  :ensure t)
 
 (use-package lsp-treemacs
   :ensure t
