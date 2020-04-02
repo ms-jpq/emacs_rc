@@ -28,13 +28,17 @@
 
 ;; required for lsp
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :config
+  (global-flycheck-mode t))
 
 
 (use-package lsp-mode
   :ensure t
   :after (flycheck)
-  :commands lsp
+  :commands (lsp)
+  :bind (:map lsp-mode-map
+              ("C-c C-f" . lsp-format-buffer))
   :hook ((prog-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration)))
 
