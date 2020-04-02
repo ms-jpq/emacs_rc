@@ -19,8 +19,10 @@
 ;; main theme
 (use-package spacemacs-theme
   :ensure t
-  :defer)
-
+  :defer
+  :custom
+  (spacemacs-theme-comment-bg nil))
+;; require manual init
 (require 'spacemacs-common)
 (load-theme 'spacemacs-light t)
 
