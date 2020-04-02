@@ -6,6 +6,10 @@
 (winner-mode t)
 (bind-key "C-c [" 'winner-undo)
 (bind-key "C-c ]" 'winner-redo)
+(bind-key "C-c <up>" . windmove-up)
+(bind-key "C-c <down>" . windmove-down)
+(bind-key "C-c <left>" . windmove-left)
+(bind-key "C-c <right>" . windmove-right)
 
 
 ;; allow C-c w <num> to selec window
@@ -29,21 +33,31 @@
   (popwin-mode t))
 
 
-;; move panes around
-(use-package buffer-move
-  :ensure t
-  :bind (("C-c <up>" . buf-move-up)
-         ("C-c <down>" . buf-move-down)
-         ("C-c <left>" . buf-move-left)
-         ("C-c <right>" . buf-move-right)))
-
-
 ;;#################### ############## ####################
 ;;#################### Buffers Region ####################
 ;;#################### ############## ####################
 
 ;; bring up ibuffer
 (bind-key "C-c u" 'ibuffer)
+
+;; ibuffer auto refresh
+(add-hook
+  'ibuffer-mode-hook
+  (lambda ()
+    (ibuffer-auto-mode t)))
+
+;; (ibuffer-switch-to-saved-filter-groups "default")
+
+;; organize ibuffer into groups
+;; (setq ibuffer-saved-filter-groups
+;;   '(("default"
+;;     ("emacs" (or (name . "^\\*scratch\\*$")
+;;                  (name . "^\\*Messages\\*$"))
+;;     ("dired" (mode . dired-mode))
+;;     ("shell" (or (mode . eshell-mode)
+;;                  (mode . shell-mode)))
+;;     ("magit" (mode . magit-mode))
+;;     ("code" (mode . prog-mode))))))
 
 
 ;;#################### END ####################
