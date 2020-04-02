@@ -8,10 +8,11 @@
 (bind-key "C-c ]" 'winner-redo)
 
 
-;; allow num key to selc window
-(use-package ace-window
+;; allow C-c w <num> to selec window
+(use-package winum
   :ensure t
-  :bind (([remap other-window] . ace-window)))
+  :config
+  (winum-mode))
 
 
 ;; TODO - replace this @ emacs 27
@@ -43,8 +44,6 @@
 
 ;; bring up ibuffer
 (bind-key "C-c u" 'ibuffer)
-
-
 
 
 ;;#################### END ####################
