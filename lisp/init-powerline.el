@@ -2,10 +2,16 @@
 ;;#################### Powerline Region ####################
 ;;#################### ################ ####################
 
-(use-package powerline
+(use-package telephone-line
   :ensure t
   :config
-  (powerline-default-theme))
+  (telephone-line-mode t))
+
+;; nyan scrollbar
+;; (use-package nyan-mode
+;;   :ensure t
+;;   :config
+;;   (nyan-mode))
 
 
 ;;#################### END ####################
