@@ -26,7 +26,6 @@
 (require 'init-keyboard)
 (require 'init-mouse)
 (require 'init-helm)
-(require 'init-powerline)
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
@@ -34,10 +33,3 @@
 (require 'init-git)
 (require 'init-themes)
 (require 'init-fun)
-
-
-;;#################### ############ ####################
-;;#################### Theme Region ####################
-;;#################### ############ ####################
-
-(load-theme 'adwaita)

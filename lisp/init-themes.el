@@ -2,32 +2,27 @@
 ;;#################### Themes Region ####################
 ;;#################### ############# ####################
 
-;; (use-package spacemacs-theme
-;;   :ensure t)
+;; nyan scrollbar
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode))
 
 
-;; (use-package material-theme
-;;   :ensure t)
+;; powerline
+(use-package spaceline
+  :ensure t
+  :config
+  (spaceline-spacemacs-theme))
 
 
-;; (use-package sublime-themes
-;;   :ensure t)
+;; main theme
+(use-package spacemacs-theme
+  :ensure t
+  :defer)
 
-
-;; (use-package base16-theme
-;;   :ensure t)
-
-
-;; (use-package nord-theme
-;;   :ensure t)
-
-
-;; (use-package color-theme-sanityinc-tomorrow
-;;   :ensure t)
-
-
-;; (use-package doom-themes
-;;   :ensure t)
+(require 'spacemacs-common)
+(load-theme 'spacemacs-light)
 
 
 ;;#################### END ####################
