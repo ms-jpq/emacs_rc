@@ -2,14 +2,13 @@
 ;;#################### Windows Region ####################
 ;;#################### ############## ####################
 
-;; allow restore windows, C-c <-, C-c ->
+;; allow restore window panes
 (winner-mode t)
 (bind-key "C-c [" 'winner-undo)
 (bind-key "C-c ]" 'winner-redo)
-(bind-key "C-c <up>" . windmove-up)
-(bind-key "C-c <down>" . windmove-down)
-(bind-key "C-c <left>" . windmove-left)
-(bind-key "C-c <right>" . windmove-right)
+
+;; move cursor around windows with ctl left right
+(windmove-default-keybindings 'control)
 
 
 ;; allow C-c w <num> to selec window
