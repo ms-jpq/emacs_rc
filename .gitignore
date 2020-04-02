@@ -12,4 +12,4 @@ recentf
 .last-package-update-*
 company-statistics-*
 projectile-*
-customize.el
+_customize.el
