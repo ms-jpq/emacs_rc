@@ -27,6 +27,7 @@
 (require 'init-mouse)
 (require 'init-helm)
 (require 'init-wm)
+(require 'init-fm)
 (require 'init-tree)
 (require 'init-proj)
 (require 'init-editor)
