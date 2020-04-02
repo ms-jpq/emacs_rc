@@ -36,28 +36,18 @@
 (setq initial-scratch-message nil)
 
 
-;;#################### ########### ######################
-;;#################### Editor Region ####################
-;;#################### ########### ######################
+;;#################### ############### ######################
+;;#################### Autosave Region ####################
+;;#################### ############### ######################
 
-;; 21st century autosave
+;; autosave to actual file
 (auto-save-visited-mode t)
 
-;; highlight current line
-(global-hl-line-mode 1)
+;; 1 second delay after typing
+(setq auto-save-timeout 1)
 
-;; line numbers
-(global-display-line-numbers-mode)
-
-;; softwrap text
-(global-visual-line-mode t)
-
-;; tab-width
-(setq-default tab-width 2)
-
-;; idle animation
-(require 'zone)
-(zone-when-idle 60)
+;; save every 100 characters typed
+(setq auto-save-interval 100)
 
 
 ;;#################### ########### ####################

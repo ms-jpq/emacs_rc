@@ -2,6 +2,23 @@
 ;;#################### Themes Region ####################
 ;;#################### ############# ####################
 
+;; highlight current line
+(global-hl-line-mode 1)
+
+;; line numbers
+(global-display-line-numbers-mode)
+
+;; softwrap text
+(global-visual-line-mode t)
+
+;; tab-width
+(setq-default tab-width 2)
+
+;; idle animation
+(require 'zone)
+(zone-when-idle 60)
+
+
 ;; nyan scrollbar
 (use-package nyan-mode
   :ensure t
