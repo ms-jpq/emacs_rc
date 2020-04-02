@@ -22,7 +22,7 @@
   :defer)
 
 (require 'spacemacs-common)
-(load-theme 'spacemacs-light)
+(load-theme 'spacemacs-light t)
 
 
 ;;#################### END ####################
