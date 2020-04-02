@@ -110,11 +110,14 @@
 ;;#################### Highlight Region ####################
 ;;#################### ################ ####################
 
-;; only works w/ GUI
-(use-package solaire-mode
+;; highlight lines changed
+(use-package diff-hl
   :ensure t
+  :hook ((magit-post-refresh . diff-hl-magit-post-refresh)
+         (prog-mode . diff-hl-margin-mode)
+         (prog-mode . diff-hl-margin-mode))
   :config
-  (solaire-global-mode t))
+  (global-diff-hl-mode))
 
 
 (use-package highlight-parentheses
@@ -123,13 +126,13 @@
   (global-highlight-parentheses-mode t))
 
 
-(use-package indent-guide
-  :ensure t
-  :custom
-  (indent-guide-delay 0.1)
-  (indent-guide-char "|")
-  :config
-  (indent-guide-global-mode))
+;; (use-package indent-guide
+;;   :ensure t
+;;   :custom
+;;   (indent-guide-delay 0.1)
+;;   (indent-guide-char "|")
+;;   :config
+;;   (indent-guide-global-mode))
 
 
 ;; highlight todos
