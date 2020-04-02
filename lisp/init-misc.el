@@ -40,6 +40,9 @@
 ;;#################### Editor Region ####################
 ;;#################### ########### ######################
 
+;; 21st century autosave
+(auto-save-visited-mode t)
+
 ;; highlight current line
 (global-hl-line-mode 1)
 
