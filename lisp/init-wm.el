@@ -4,6 +4,8 @@
 
 ;; allow restore windows, C-c <-, C-c ->
 (winner-mode t)
+(bind-key "C-c [" 'winner-undo)
+(bind-key "C-c ]" 'winner-redo)
 
 
 ;; allow num key to selc window

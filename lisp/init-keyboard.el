@@ -27,6 +27,9 @@
 (cua-mode t)
 (setq cua-keep-region-after-copy t)
 
+;; can't bind esc straight up :<
+(global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
+
 
 ;;#################### END ####################
 (provide 'init-keyboard)
