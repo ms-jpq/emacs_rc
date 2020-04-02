@@ -5,8 +5,8 @@
 ;; popup, shows hotkeys
 (use-package which-key
   :ensure t
-  :init
-  (setq which-key-idle-delay 1)
+  :custom
+  (which-key-idle-delay 1)
   :config
   (which-key-mode))
 

@@ -65,8 +65,9 @@
   :ensure t
   :commands global-company-mode
   :hook ((after-init . global-company-mode))
-  :init (setq company-minimum-prefix-length 3
-              company-idle-delay 0.0))
+  :custom
+  (company-minimum-prefix-length 3)
+  (company-idle-delay 0.0))
 
 
 ;; TODO
@@ -89,7 +90,7 @@
 (use-package company-lsp
   :ensure t
   :after (company lsp-mode)
-  :commands company-lsp
+  :commands (company-lsp)
   :config
   (push 'company-lsp company-backends))
 
@@ -120,9 +121,9 @@
 
 (use-package indent-guide
   :ensure t
-  :init
-  (setq indent-guide-delay 0.1)
-  (setq indent-guide-char "|")
+  :custom
+  (indent-guide-delay 0.1)
+  (indent-guide-char "|")
   :config
   (indent-guide-global-mode))
 

@@ -28,10 +28,10 @@
 ;; auto update
 (use-package auto-package-update
   :ensure t
-  :init
-  (setq auto-package-update-interval 14)
-  (setq auto-package-update-prompt-before-update t)
-  (setq auto-package-update-delete-old-versions t))
+  :custom
+  (auto-package-update-interval 14)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-delete-old-versions t))
 
 
 ;; package mgr

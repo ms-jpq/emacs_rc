@@ -24,9 +24,9 @@
 (use-package helm-descbinds
   :ensure t
   :after (helm)
+  :bind (([remap describe-bindings] . helm-descbinds))
   :config
-  (helm-descbinds-mode)
-  (define-key global-map [remap describe-bindings] 'helm-descbinds))
+  (helm-descbinds-mode))
 
 
 (use-package helm-mode-manager
