@@ -36,9 +36,6 @@
 ;;#################### Buffers Region ####################
 ;;#################### ############## ####################
 
-;; bring up ibuffer
-(bind-key "C-c u" 'ibuffer)
-
 ;; ibuffer sort by mode
 (setq ibuffer-default-sorting-mode 'major-mode)
 
@@ -47,6 +44,17 @@
   'ibuffer-mode-hook
   (lambda ()
     (ibuffer-auto-mode t)))
+
+
+;; bring up ibuffer
+(bind-key "C-c o" 'ibuffer)
+
+
+;; bring up ibuffer sidebar
+(use-package ibuffer-sidebar
+  :ensure t
+  :commands (ibuffer-sidebar-toggle-sidebar)
+  :bind (("C-c p" . ibuffer-sidebar-toggle-sidebar)))
 
 
 ;;#################### END ####################
