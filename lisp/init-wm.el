@@ -10,6 +10,12 @@
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)
 
+;; resize window
+(bind-key "C-c <up>" 'enlarge-window) ;; taller
+(bind-key "C-c <down>" 'shrink-window) ;; shorter
+(bind-key "C-c <right>" 'enlarge-window-horizontally) ;; wider
+(bind-key "C-c <left>" 'shrink-window-horizontally) ;; narrower
+
 
 ;; allow C-c w <num> to selec window
 (use-package winum
