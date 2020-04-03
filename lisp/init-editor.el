@@ -34,9 +34,9 @@
 
 
 ;; popup for flycheck errors -- TODO: is this useful?
-;; (use-package flycheck-pos-tip
-;;   :ensure t
-;;   :after (flycheck)
+(use-package flycheck-pos-tip
+  :ensure t
+  :after (flycheck))
 ;;   :config
 ;;   (flycheck-pos-tip-mode))
 
@@ -122,6 +122,7 @@
 (use-package diff-hl
   :ensure t
   :hook ((magit-post-refresh . diff-hl-magit-post-refresh)
+         (prog-mode . diff-hl-flydiff-mode)
          (prog-mode . diff-hl-margin-mode)
          (dired-mode . diff-hl-dir-mode))
   :config
@@ -181,3 +182,4 @@
 
 ;;#################### END ####################
 (provide 'init-editor)
+

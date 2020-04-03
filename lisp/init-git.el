@@ -4,7 +4,7 @@
 
 (use-package magit
   :ensure t
-  :bind (("C-x g" . magit)))
+  :bind (("C-x m" . magit)))
 
 
 ;;#################### END ####################
