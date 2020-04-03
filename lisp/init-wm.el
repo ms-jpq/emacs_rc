@@ -55,14 +55,7 @@
 
 
 ;; bring up ibuffer
-(bind-key "C-c o" 'ibuffer)
-
-
-;; bring up ibuffer sidebar
-(use-package ibuffer-sidebar
-  :ensure t
-  :commands (ibuffer-sidebar-toggle-sidebar)
-  :bind (("C-c p" . ibuffer-sidebar-toggle-sidebar)))
+(bind-key "C-c p" 'ibuffer)
 
 
 ;;#################### END ####################
