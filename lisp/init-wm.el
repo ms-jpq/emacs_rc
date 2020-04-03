@@ -2,13 +2,15 @@
 ;;#################### Windows Region ####################
 ;;#################### ############## ####################
 
-;; allow restore window panes
-(winner-mode t)
-(bind-key "C-c [" 'winner-undo)
-(bind-key "C-c ]" 'winner-redo)
+;; quit emacs
+(bind-key "C-q" 'save-buffers-kill-terminal)
+;; quit window
+(bind-key "C-w" 'delete-window)
+
 
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)
+
 
 ;; resize window
 (bind-key "C-c <up>" 'enlarge-window) ;; taller
@@ -17,9 +19,16 @@
 (bind-key "C-c <left>" 'shrink-window-horizontally) ;; narrower
 
 
+;; split window
+(bind-key "C-c ]" 'split-window-right)
+(bind-key "C-c [" 'split-window-below)
+
+
 ;; allow C-c w <num> to selec window
 (use-package winum
   :ensure t
+  :custom
+  (winum-auto-setup-mode-line nil)
   :config
   (winum-mode))
 
