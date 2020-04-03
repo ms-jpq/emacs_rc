@@ -26,11 +26,19 @@
 ;;#################### LSP Region ####################
 ;;#################### ########## ####################
 
-;; required for lsp
+;; required for lsp, shows errors
 (use-package flycheck
   :ensure t
   :config
   (global-flycheck-mode t))
+
+
+;; popup for flycheck errors
+(use-package flycheck-pos-tip
+  :ensure t
+  :after (flycheck)
+  :config
+  (flycheck-pos-tip-mode))
 
 
 (use-package lsp-mode
@@ -159,6 +167,16 @@
   :ensure t
   :config
   (ws-butler-mode))
+
+
+;;#################### ########### ####################
+;;#################### Misc Region ####################
+;;#################### ########### ####################
+
+;; create scratch buffer
+(use-package scratch
+  :ensure t
+  :bind (("C-c s" . 'scratch)))
 
 
 ;;#################### END ####################

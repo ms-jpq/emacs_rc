@@ -2,6 +2,13 @@
 ;;#################### Project Region ####################
 ;;#################### ############## ####################
 
+;; enforce prettier style
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode t))
+
+
 (use-package projectile
   :ensure t
   :bind-keymap
