@@ -39,8 +39,12 @@
 
 ;; kill welcome screen
 (setq inhibit-startup-screen t)
+
 ;; empty init buffer
 (setq initial-scratch-message nil)
+
+;; init buffers are plain txt mode
+(setq initial-major-mode 'fundamental-mode)
 
 
 ;;#################### ############### ######################

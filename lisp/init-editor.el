@@ -33,12 +33,12 @@
   (global-flycheck-mode t))
 
 
-;; popup for flycheck errors
-(use-package flycheck-pos-tip
-  :ensure t
-  :after (flycheck)
-  :config
-  (flycheck-pos-tip-mode))
+;; popup for flycheck errors -- TODO: is this useful?
+;; (use-package flycheck-pos-tip
+;;   :ensure t
+;;   :after (flycheck)
+;;   :config
+;;   (flycheck-pos-tip-mode))
 
 
 (use-package lsp-mode
