@@ -26,13 +26,6 @@
   (nyan-mode))
 
 
-;; powerline
-(use-package spaceline
-  :ensure t
-  :config
-  (spaceline-spacemacs-theme))
-
-
 ;; main theme
 (use-package spacemacs-theme
   :ensure t
@@ -42,6 +35,15 @@
 ;; require manual init
 (require 'spacemacs-common)
 (load-theme 'spacemacs-light t)
+
+
+;; powerline
+(use-package spaceline
+  :ensure t
+  :after (helm nyan-mode winum)
+  :config
+  (spaceline-spacemacs-theme)
+  (spaceline-helm-mode))
 
 
 ;;#################### END ####################
