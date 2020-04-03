@@ -1,6 +1,6 @@
-;;#################### ################ ####################
+;;#################### ################# ####################
 ;;#################### Navigation Region ####################
-;;#################### ################ ####################
+;;#################### ################# ####################
 
 ;; quick navigation via search
 (use-package helm-swoop
@@ -123,7 +123,7 @@
   :ensure t
   :hook ((magit-post-refresh . diff-hl-magit-post-refresh)
          (prog-mode . diff-hl-margin-mode)
-         (prog-mode . diff-hl-margin-mode))
+         (dired-mode . diff-hl-dir-mode))
   :config
   (global-diff-hl-mode))
 

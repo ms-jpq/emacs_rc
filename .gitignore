@@ -4,6 +4,7 @@ elpa/
 export/
 backups/
 transient/
+server/
 .cache/
 history
 places

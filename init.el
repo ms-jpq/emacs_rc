@@ -5,6 +5,13 @@
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
 
+(require 'server)
+(setq server-socket-dir (expand-file-name "server" user-emacs-directory))
+(setq server-use-tcp t)
+(unless (server-running-p)
+  (server-start))
+
+
 ;;#################### ############## ####################
 ;;#################### Customs Region ####################
 ;;#################### ############## ####################
@@ -40,9 +47,3 @@
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
 (require 'typescript)
-
-
-(require 'server)
-(unless (server-running-p)
-  (server-start))
-
