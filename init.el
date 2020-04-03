@@ -40,3 +40,9 @@
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
 (require 'typescript)
+
+
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
