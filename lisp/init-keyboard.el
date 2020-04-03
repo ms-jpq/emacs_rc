@@ -11,6 +11,20 @@
   (which-key-mode))
 
 
+;; bind cont key strokes
+(use-package hydra
+  :ensure t)
+
+
+;; leader key in emacs
+(use-package god-mode
+  :ensure t
+  :custom
+  (god-exempt-major-modes nil)
+  (god-exempt-predicates nil)
+  :bind (("M-a" . god-mode-all)))
+
+
 ;;#################### ############# ####################
 ;;#################### Scroll Region ####################
 ;;#################### ############# ####################
