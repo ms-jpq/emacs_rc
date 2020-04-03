@@ -26,6 +26,15 @@
   (nyan-mode))
 
 
+;; highlight search match count
+(use-package anzu
+  :ensure t
+  :custom
+  (anzu-cons-mode-line-p nil)
+  :config
+  (global-anzu-mode t))
+
+
 ;; main theme
 (use-package spacemacs-theme
   :ensure t

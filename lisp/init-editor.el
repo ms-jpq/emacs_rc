@@ -126,6 +126,14 @@
   (global-highlight-parentheses-mode t))
 
 
+;; highlight events
+(use-package volatile-highlights
+  :ensure t
+  :after (undo-tree)
+  :config
+  (volatile-highlights-mode t))
+
+
 ;; (use-package indent-guide
 ;;   :ensure t
 ;;   :custom
@@ -147,16 +155,10 @@
 ;;#################### ################# ####################
 
 ;; trim trailing white spaces
-(use-package clean-aindent-mode
-  :ensure t
-  :bind (("RET" . newline-and-indent)))
-
-
-;; delete multi white spaces
-(use-package hungry-delete
+(use-package ws-butler
   :ensure t
   :config
-  (global-hungry-delete-mode t))
+  (ws-butler-mode))
 
 
 ;;#################### END ####################

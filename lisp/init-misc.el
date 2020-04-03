@@ -17,6 +17,13 @@
   (bind-key "C-y" 'redo))
 
 
+;; normalize emacs' regexp
+(use-package pcre2el
+  :ensure t
+  :config
+  (rxt-global-mode))
+
+
 ;;#################### ########### ####################
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
