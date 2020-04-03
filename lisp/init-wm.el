@@ -24,13 +24,6 @@
   (winum-mode))
 
 
-;; TODO - replace this @ emacs 27
-(use-package tabbar
-  :ensure t
-  :config
-  (tabbar-mode t))
-
-
 ;; make popup panes easier to dismiss
 (use-package popwin
   :ensure t
