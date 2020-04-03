@@ -1,4 +1,20 @@
 ;;#################### ########### ####################
+;;#################### Help Region ####################
+;;#################### ########### ####################
+
+;; better help
+(use-package helpful
+  :ensure t
+  :bind
+  ("C-h f" . helpful-callable)
+  ("C-h v" . helpful-variable)
+  ("C-h k" . helpful-key)
+  ("C-c C-d" . helpful-at-point)
+  ("C-h F" . helpful-function)
+  ("C-h C" . helpful-command))
+
+
+;;#################### ########### ####################
 ;;#################### Helm Region ####################
 ;;#################### ########### ####################
 
@@ -16,6 +32,8 @@
               ([remap completion-at-point] . helm-lisp-completion-at-point)
          :map emacs-lisp-mode-map
               ([remap completion-at-point] . helm-lisp-completion-at-point))
+  :init
+  (global-unset-key (kbd "M-x"))
   :config
   (helm-mode t))
 
