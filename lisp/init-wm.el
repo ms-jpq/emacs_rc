@@ -39,6 +39,14 @@
   (popwin-mode t))
 
 
+;; make imenu a side pane
+(use-package imenu-list
+  :ensure t
+  :bind (("C-i" . imenu-list-smart-toggle))
+  :custom
+  (imenu-list-auto-resize nil))
+
+
 ;;#################### ############## ####################
 ;;#################### Buffers Region ####################
 ;;#################### ############## ####################
