@@ -57,9 +57,8 @@
 
 
 ;; bring up ibuffer
-(bind-key "C-c p" 'ibuffer)
+(bind-key "C-c C-b" 'ibuffer)
 
 
 ;;#################### END ####################
 (provide 'init-wm)
-

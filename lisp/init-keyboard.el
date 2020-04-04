@@ -25,7 +25,7 @@
   :bind (("C-@" . god-mode-all))
   :hook ((god-mode-enabled
           . (lambda ()
-              (message "!! GOD MODE ON !!"))
+              (message "!! GOD MODE ON !!")))
          (god-mode-disabled
           . (lambda ()
               (message "-- GOD MODE OFF --")))))
