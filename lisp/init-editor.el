@@ -15,11 +15,11 @@
          :map helm-swoop-map
               ("M-i" . helm-multi-swoop-all-from-helm-swoop)
               ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
-              ("C-r" . helm-previous-line)
-              ("C-s" . helm-next-line)
+              ("C--" . helm-previous-line)
+              ("C-=" . helm-next-line)
          :map helm-multi-swoop-map
-              ("C-r" . helm-previous-line)
-              ("C-s" . helm-next-line)))
+              ("C--" . helm-previous-line)
+              ("C-=" . helm-next-line)))
 
 
 ;;#################### ########## ####################
@@ -47,8 +47,6 @@
   :ensure t
   :after (flycheck)
   :commands (lsp)
-  :bind (:map lsp-mode-map
-              ("C-c C-f" . lsp-format-buffer))
   :hook ((prog-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration)))
 

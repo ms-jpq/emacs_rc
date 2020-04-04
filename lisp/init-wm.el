@@ -13,10 +13,11 @@
 
 
 ;; resize window
-(bind-key "C-c <up>" 'enlarge-window) ;; taller
-(bind-key "C-c <down>" 'shrink-window) ;; shorter
-(bind-key "C-c <right>" 'enlarge-window-horizontally) ;; wider
-(bind-key "C-c <left>" 'shrink-window-horizontally) ;; narrower
+(defhydra hy-resize-window (global-map "C-c")
+  ("<up>" enlarge-window "taller")
+  ("<down>" shrink-window "shorter")
+  ("<right>" enlarge-window-horizontally "wider")
+  ("<left>" shrink-window-horizontally "hydra-zoom"))
 
 
 ;; split window

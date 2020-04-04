@@ -25,6 +25,7 @@
          ([remap find-file] . helm-find-files)
          ([remap occur] . helm-occur)
          ([remap list-buffers] . helm-buffers-list)
+         ([remap switch-to-buffer] . helm-buffers-list)
          ([remap dabbrev-expand] . helm-dabbrev)
          ([remap execute-extended-command] . helm-M-x)
          ([remap apropos-command] . helm-apropos)
@@ -34,8 +35,7 @@
               ([remap completion-at-point] . helm-lisp-completion-at-point))
   :init
   (global-unset-key (kbd "M-x"))
-  :config
-  (helm-mode t))
+  :hook (emacs-startup .  (lambda () (helm-mode t))))
 
 
 ;; describe key-binds
