@@ -76,10 +76,10 @@
 (use-package company
   :ensure t
   :commands global-company-mode
-  :hook ((after-init . global-company-mode))
   :custom
   (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0))
+  (company-idle-delay 0.0)
+  :hook ((after-init . global-company-mode)))
 
 
 ;; TODO
@@ -183,4 +183,3 @@
 
 ;;#################### END ####################
 (provide 'init-editor)
-
