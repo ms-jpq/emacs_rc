@@ -44,15 +44,11 @@
 
 
 ;; powerline
-(use-package spaceline
+(use-package doom-modeline
   :ensure t
-  :after (helm winum)
-  :custom
-  (spaceline-window-numbers-unicode t)
-  (spaceline-workspace-numbers-unicode t)
-  :config
-  (spaceline-spacemacs-theme)
-  (spaceline-helm-mode))
+  :after (god-mode winum flycheck lsp-mode projectile))
+;; require manual init
+(doom-modeline-mode t)
 
 
 ;;#################### END ####################

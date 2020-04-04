@@ -11,7 +11,7 @@
 
 
 ;; resize window
-(defhydra hy-resize-window (global-map "C-d")
+(defhydra hy-resize-window (global-map "C-m")
   ("<up>" enlarge-window "taller")
   ("<down>" shrink-window "shorter")
   ("<right>" enlarge-window-horizontally "wider")
@@ -55,7 +55,7 @@
 
 
 ;; bring up ibuffer
-(bind-key "C-c C-b" 'ibuffer)
+(bind-key "C-b" 'ibuffer)
 
 
 ;;#################### END ####################
