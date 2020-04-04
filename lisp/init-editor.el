@@ -29,10 +29,10 @@
   (lsp-ui-doc-delay 0))
 
 
-(use-package helm-lsp
+(use-package lsp-ivy
   :ensure t
-  :after (helm lsp-mode)
-  :commands (helm-lsp-workspace-symbol))
+  :after (ivy lsp-mode)
+  :commands (lsp-ivy-workspace-symbol))
 
 
 ;; debugger
@@ -52,7 +52,8 @@
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0)
   (company-selection-wrap-around t)
-  :hook ((after-init . global-company-mode)))
+  :config
+  (global-company-mode))
 
 
 (use-package company-lsp
@@ -66,30 +67,32 @@
 
 
 ;; helm search auto complete
-(use-package helm-company
-  :ensure t
-  :after (helm company)
-  :bind (:map company-active-map
-              ("C-u" . helm-company)))
+;; (use-package helm-company
+;;   :ensure t
+;;   :after (helm company)
+;;   :bind (:map company-active-map
+;;               ("C-u" . helm-company)))
 
 
 ;; TODO: this doesnt work
 ;; tool-tip pos lib
-(use-package pos-tip
-  :ensure t)
-(use-package company-quickhelp
-  :ensure t
-  :after (pos-tip company)
-  :bind (:map company-active-map
-              ("C-c h" . company-quickhelp-manual-begin))
-  :hook ((after-init . company-quickhelp-mode)))
+;; (use-package pos-tip
+;;   :ensure t)
+;; (use-package company-quickhelp
+;;   :ensure t
+;;   :after (pos-tip company)
+;;   :bind (:map company-active-map
+;;               ("C-c h" . company-quickhelp-manual-begin))
+;;   :config
+;;   (company-quickhelp-mode))
 
 
 ;; rank suggestions by freq
 (use-package company-statistics
   :ensure t
   :after (company)
-  :hook ((after-init . company-statistics-mode)))
+  :config
+  (company-statistics-mode))
 
 
 ;;#################### ################ ####################
@@ -154,7 +157,7 @@
 ;; create scratch buffer
 (use-package scratch
   :ensure t
-  :bind (("C-c C-s" . scratch)))
+  :bind (("C-c C-n" . scratch)))
 
 
 ;;#################### END ####################

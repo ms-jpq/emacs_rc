@@ -1,6 +1,21 @@
+;;#################### ############# ####################
+;;#################### Search Region ####################
+;;#################### ############# ####################
+
+;; all search keys start with ctl-f
+(define-prefix-command 'search-command-map)
+(bind-key "C-f" 'search-command-map)
+
+
 ;;#################### ################## ####################
 ;;#################### File Search Region ####################
 ;;#################### ################## ####################
+
+;; rg
+(bind-key "C-r" 'counsel-rg search-command-map)
+
+;; fzf
+(bind-key "C-f" 'counsel-fzf search-command-map)
 
 
 
@@ -8,24 +23,10 @@
 ;;#################### Editor Search Region ####################
 ;;#################### #################### ####################
 
-;; quick navigation via search
-(use-package helm-swoop
+(use-package swiper
   :ensure t
-  :after (helm)
-  :bind (("C-c C-i" . helm-swoop)
-         ("C-c C-I" . helm-swoop-back-to-last-point)
-         ("C-c M-i" . helm-multi-swoop)
-         ("C-x M-i" . helm-multi-swoop-all)
-         :map isearch-mode-map
-              ("C-c C-i" . helm-swoop-from-isearch)
-         :map helm-swoop-map
-              ("M-i" . helm-multi-swoop-all-from-helm-swoop)
-              ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
-              ("C--" . helm-previous-line)
-              ("C-=" . helm-next-line)
-         :map helm-multi-swoop-map
-              ("C--" . helm-previous-line)
-              ("C-=" . helm-next-line)))
+  :bind (:map search-command-map
+              ("C-s" . swiper)))
 
 
 ;;#################### END ####################

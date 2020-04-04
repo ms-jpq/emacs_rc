@@ -6,6 +6,16 @@
   :ensure t)
 
 
+;; better help
+(use-package helpful
+  :ensure t
+  :bind (([remap describe-key] . helpful-key)
+         ("C-h F" . helpful-function)
+         ("C-h C" . helpful-command)
+         :map lisp-mode-map
+         ("C-c C-d" . helpful-at-point)))
+
+
 ;; normalize emac's undo - redo
 (use-package undo-tree
   :ensure t
@@ -22,15 +32,6 @@
   :ensure t
   :config
   (rxt-global-mode))
-
-
-;;#################### ########### ####################
-;;#################### Lang Region ####################
-;;#################### ########### ####################
-
-;; utf-8
-(set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8-unix)
 
 
 ;;#################### ############## ####################

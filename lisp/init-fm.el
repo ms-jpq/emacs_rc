@@ -7,8 +7,9 @@
 ;; dired do not open a million buffers
 (require 'dired)
 (put 'dired-find-alternate-file 'disabled nil)
-(define-key dired-mode-map
-  [remap dired-find-file] 'dired-find-alternate-file)
+(bind-key
+  [remap dired-find-file] 'dired-find-alternate-file
+  dired-mode-map)
 
 
 ;; dired ignore current directory

@@ -22,11 +22,11 @@
   :after (treemacs projectile))
 
 
-(use-package helm-projectile
-  :ensure t
-  :after (helm projectile)
-  :config
-  (helm-projectile-on))
+;; (use-package helm-projectile
+;;   :ensure t
+;;   :after (helm projectile)
+;;   :config
+;;   (helm-projectile-on))
 
 
 ;;#################### END ####################
