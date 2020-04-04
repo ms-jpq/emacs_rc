@@ -34,13 +34,13 @@
 (require 'init-keyboard)
 (require 'init-mouse)
 (require 'init-helm)
+(require 'init-git)
 (require 'init-wm)
 (require 'init-fm)
 (require 'init-tree)
 (require 'init-proj)
 (require 'init-search)
 (require 'init-editor)
-(require 'init-git)
 (require 'init-themes)
 (require 'init-fun)
 
@@ -49,4 +49,7 @@
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
 (require 'lang-elisp)
+(require 'lang-json)
+(require 'lang-markdown)
 (require 'lang-typescript)
+(require 'lang-yaml)
