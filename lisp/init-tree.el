@@ -20,7 +20,7 @@
 (use-package lsp-treemacs
   :ensure t
   :after (lsp-mode treemacs)
-  :commands lsp-treemacs-errors-list)
+  :commands (lsp-treemacs-errors-list))
 
 
 (use-package treemacs-magit
@@ -30,4 +30,3 @@
 
 ;;#################### END ####################
 (provide 'init-tree)
-
