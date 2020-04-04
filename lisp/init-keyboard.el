@@ -22,13 +22,7 @@
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
-  :bind (("C-@" . god-mode-all))
-  :hook ((god-mode-enabled
-          . (lambda ()
-              (message "!! GOD MODE ON !!")))
-         (god-mode-disabled
-          . (lambda ()
-              (message "-- GOD MODE OFF --")))))
+  :bind (("C-@" . god-mode-all)))
 
 
 ;;#################### ############# ####################
@@ -43,12 +37,18 @@
 ;;#################### Hotkey Region ####################
 ;;#################### ############# ####################
 
+;; easier quit
+(bind-key "C-q" (kbd "C-g"))
+
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (cua-mode t)
 (setq cua-keep-region-after-copy t)
 
 ;; can't bind esc straight up :<
 (global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
+
+;; comment line
+(bind-key "C-]" 'comment-line)
 
 
 ;;#################### END ####################

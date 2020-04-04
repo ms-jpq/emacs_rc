@@ -2,8 +2,6 @@
 ;;#################### Windows Region ####################
 ;;#################### ############## ####################
 
-;; quit emacs
-(bind-key "C-q" "C-g")
 ;; quit window
 (bind-key "C-w" 'delete-window)
 

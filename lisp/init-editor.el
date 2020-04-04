@@ -6,12 +6,12 @@
 (use-package helm-swoop
   :ensure t
   :after (helm)
-  :bind (("M-i" . helm-swoop)
-         ("M-I" . helm-swoop-back-to-last-point)
+  :bind (("C-c C-i" . helm-swoop)
+         ("C-c C-I" . helm-swoop-back-to-last-point)
          ("C-c M-i" . helm-multi-swoop)
          ("C-x M-i" . helm-multi-swoop-all)
          :map isearch-mode-map
-              ("M-i" . helm-swoop-from-isearch)
+              ("C-c C-i" . helm-swoop-from-isearch)
          :map helm-swoop-map
               ("M-i" . helm-multi-swoop-all-from-helm-swoop)
               ("M-m" . helm-multi-swoop-current-mode-from-helm-swoop)
@@ -78,7 +78,7 @@
   :commands global-company-mode
   :hook ((after-init . global-company-mode))
   :custom
-  (company-minimum-prefix-length 3)
+  (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
 
 
@@ -111,7 +111,8 @@
 (use-package helm-company
   :ensure t
   :after (helm company)
-  :bind (("C-c c" . helm-company)))
+  :bind (:map company-active-map
+              ("C-u" . helm-company)))
 
 
 ;;#################### ################ ####################
@@ -177,7 +178,7 @@
 ;; create scratch buffer
 (use-package scratch
   :ensure t
-  :bind (("C-c s" . 'scratch)))
+  :bind (("C-c C-s" . scratch)))
 
 
 ;;#################### END ####################
