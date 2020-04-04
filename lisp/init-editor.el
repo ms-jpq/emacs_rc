@@ -2,14 +2,29 @@
 ;;#################### LSP Region ####################
 ;;#################### ########## ####################
 
+;; required for lsp, shows errors
+(use-package flycheck
+  :ensure t
+  :custom
+  (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  :hook ((after-init . global-flycheck-mode)))
+
+
+;; ;; popup for flycheck errors -- TODO: is this useful?
+;; (use-package flycheck-pos-tip
+;;   :ensure t
+;;   :after (flycheck)
+;;   :hook ((global-flycheck-mode . flycheck-pos-tip-mode)))
+
+
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :ensure t
   :commands (lsp)
-  :hook ((prog-mode . lsp)
-        (lsp-mode . lsp-enable-which-key-integration))
   :custom
-  (lsp-keep-workspace-alive nil))
+  (lsp-keep-workspace-alive nil)
+  :hook ((prog-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration)))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-ui for updates
@@ -74,7 +89,7 @@
               ("C-u" . helm-company)))
 
 
-;; TODO: this doesnt work
+;; ;; TODO: this doesnt work
 ;; tool-tip pos lib
 ;; (use-package pos-tip
 ;;   :ensure t)
