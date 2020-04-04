@@ -9,28 +9,21 @@
   (ivy-use-virtual-buffers t)
   (ivy-wrap t)
   :config
-  (ivy-mode 1))
+  (ivy-mode t))
 
 
 ;; replace default searches
 (use-package counsel
   :ensure t
   :after (ivy helpful)
-  :custom
-  (counsel-describe-function-function 'helpful-callable)
-  (counsel-describe-variable-function 'helpful-variable)
-  :bind (("C-p" . counsel-M-x)
-         ("C-o" . ivy-switch-buffer)
-         ([remap describe-function] . counsel-describe-function)
-         ([remap describe-variable] . counsel-describe-variable)
-         ([remap describe-bindings] . counsel-descbinds)
-         ([remap execute-extended-command] . counsel-M-x)
-         ([remap list-buffers] . ivy-switch-buffer)
-         ([remap switch-to-buffer] . ivy-switch-buffer)
-         ([remap find-file] . counsel-find-file)
-         ([remap occur] . ivy-occur))
+  :demand t
   :config
   (counsel-mode))
+
+;; why they dont register in :bind ??
+(bind-key "C-p" 'counsel-M-x)
+(bind-key "C-o" 'ivy-switch-buffer)
+(bind-key "C-d" 'counsel-dired)
 
 
 ;;#################### END ####################

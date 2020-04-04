@@ -2,8 +2,6 @@
 ;;#################### Intrinsic Region ####################
 ;;#################### ################ ####################
 
-(bind-key "C-d" 'dired)
-
 ;; dired do not open a million buffers
 (require 'dired)
 (put 'dired-find-alternate-file 'disabled nil)

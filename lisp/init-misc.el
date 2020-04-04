@@ -10,6 +10,8 @@
 (use-package helpful
   :ensure t
   :bind (([remap describe-key] . helpful-key)
+         ([remap describe-function] . helpful-callable)
+         ([remap describe-variable] . helpful-variable)
          ("C-h F" . helpful-function)
          ("C-h C" . helpful-command)
          :map lisp-mode-map

@@ -4,13 +4,7 @@
 
 (use-package helm
   :ensure t
-  :demand
-  :bind (([remap dabbrev-expand] . helm-dabbrev)
-         ([remap apropos-command] . helm-apropos)
-         :map lisp-interaction-mode-map
-              ([remap completion-at-point] . helm-lisp-completion-at-point)
-         :map emacs-lisp-mode-map
-              ([remap completion-at-point] . helm-lisp-completion-at-point))
+  :demand t
   :config
   (helm-mode t))
 

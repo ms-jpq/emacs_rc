@@ -14,9 +14,8 @@
 ;; rg
 (bind-key "C-r" 'counsel-rg search-command-map)
 
-;; fzf
-(bind-key "C-f" 'counsel-fzf search-command-map)
-
+;; git
+(bind-key "C-g" 'counsel-git search-command-map)
 
 
 ;;#################### #################### ####################
@@ -25,7 +24,8 @@
 
 (use-package swiper
   :ensure t
-  :bind (:map search-command-map
+  :bind (("C-s" . swiper-isearch)
+         :map search-command-map
               ("C-s" . swiper)))
 
 
