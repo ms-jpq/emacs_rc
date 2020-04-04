@@ -4,9 +4,8 @@
 
 (use-package treemacs
   :ensure t
-  :init
-  (define-prefix-command 'treemacs-command-map)
-  :bind (("C-t" . treemacs-command-map)
+  :bind (:prefix-map treemacs-command-map
+         :prefix "C-t"
          :map treemacs-command-map
          ("C-t" . treemacs)
          ("C-s" . treemacs-switch-workspace)

@@ -3,19 +3,19 @@
 ;;#################### ############# ####################
 
 ;; all search keys start with ctl-f
-(define-prefix-command 'search-command-map)
-(bind-key "C-f" 'search-command-map)
+(bind-keys
+  :prefix-map search-command-map
+  :prefix "C-f")
 
 
 ;;#################### ################## ####################
 ;;#################### File Search Region ####################
 ;;#################### ################## ####################
 
-;; rg
-(bind-key "C-r" 'counsel-rg search-command-map)
-
-;; git
-(bind-key "C-g" 'counsel-git search-command-map)
+(bind-keys
+  :map search-command-map
+  ("C-r" . counsel-rg)
+  ("C-g" . counsel-git))
 
 
 ;;#################### #################### ####################

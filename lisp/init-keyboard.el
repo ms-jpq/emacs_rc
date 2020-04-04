@@ -39,7 +39,8 @@
 ;;#################### ############# ####################
 
 ;; easier quit
-(bind-key "C-q" 'keyboard-quit)
+(bind-keys
+  ("C-q" . keyboard-escape-quit))
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (cua-mode t)
@@ -49,7 +50,8 @@
 (global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
 
 ;; comment line
-(bind-key "C-]" 'comment-line)
+(bind-keys
+  ("C-c C-c" . comment-line))
 
 
 ;;#################### END ####################

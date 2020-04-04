@@ -14,19 +14,18 @@
          ([remap describe-variable] . helpful-variable)
          ("C-h F" . helpful-function)
          ("C-h C" . helpful-command)
-         :map lisp-mode-map
+         :map emacs-lisp-mode-map
          ("C-c C-d" . helpful-at-point)))
 
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
   :ensure t
+  :demand t
+  :bind (("C-z" . undo-tree-undo)
+         ("C-y" . undo-tree-redo))
   :config
-  (global-undo-tree-mode)
-  (defalias 'undo 'undo-tree-undo)
-  (defalias 'redo 'undo-tree-redo)
-  (bind-key "C-z" 'undo)
-  (bind-key "C-y" 'redo))
+  (global-undo-tree-mode))
 
 
 ;; normalize emacs' regexp

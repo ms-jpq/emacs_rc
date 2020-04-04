@@ -31,9 +31,10 @@
   :config
   (counsel-mode))
 ;; why they dont register in :bind ??
-(bind-key "C-p" 'counsel-M-x)
-(bind-key "C-o" 'counsel-switch-buffer)
-(bind-key "C-d" 'counsel-dired)
+(bind-keys
+  ("C-p" . counsel-M-x)
+  ("C-o" . counsel-switch-buffer)
+  ("C-d" . counsel-dired))
 
 
 ;;#################### END ####################

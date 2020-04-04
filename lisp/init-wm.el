@@ -2,25 +2,22 @@
 ;;#################### Windows Region ####################
 ;;#################### ############## ####################
 
-;; quit window
-(bind-key "C-w" 'delete-window)
-
-
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)
 
 
-;; resize window
-(defhydra hy-resize-window (global-map "C-x")
-  ("<up>" enlarge-window "taller")
-  ("<down>" shrink-window "shorter")
-  ("<right>" enlarge-window-horizontally "wider")
-  ("<left>" shrink-window-horizontally "hydra-zoom"))
-
-
-;; split window
-(bind-key "C-c ]" 'split-window-right)
-(bind-key "C-c [" 'split-window-below)
+;; window management hydra
+(defhydra hy-window-man (global-map "C-]")
+  ("w" delete-window)
+  ("k" kill-current-buffer)
+  ("-" previous-buffer)
+  ("=" next-buffer)
+  ("]" split-window-right)
+  ("[" split-window-below)
+  ("<up>" windmove-up)
+  ("<down>" windmove-down)
+  ("<left>" windmove-left)
+  ("<right>" windmove-right))
 
 
 ;; allow C-c w <num> to selec window
@@ -46,7 +43,8 @@
   :custom
   (imenu-list-auto-resize nil))
 ;; restore tab key
-(bind-key "TAB" 'indent-for-tab-command)
+(bind-keys
+  ("TAB" . indent-for-tab-command))
 
 
 ;;#################### ############## ####################
@@ -65,7 +63,8 @@
 
 
 ;; bring up ibuffer
-(bind-key "C-b" 'ibuffer)
+(bind-keys
+  ("C-b" . ibuffer))
 
 
 ;;#################### END ####################

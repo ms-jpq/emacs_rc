@@ -2,8 +2,9 @@
 ;;#################### Elisp Region ####################
 ;;#################### ############ ####################
 
-
-(bind-key (kbd "C-x C-e") 'eval-region lisp-mode-map)
+(bind-keys
+  :map emacs-lisp-mode-map
+  ("C-c C-e" . eval-region))
 
 
 ;;#################### END ####################
