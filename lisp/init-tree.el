@@ -10,7 +10,10 @@
          :map treemacs-command-map
          ("C-t" . treemacs)
          ("C-s" . treemacs-switch-workspace)
-         ("C-a" . treemacs-add-project-to-workspace)))
+         ("C-a" . treemacs-add-project-to-workspace)
+         ("C-r" . treemacs-rename-workspace))
+  :config
+  (treemacs-follow-mode))
 
 
 (use-package lsp-treemacs
@@ -26,3 +29,4 @@
 
 ;;#################### END ####################
 (provide 'init-tree)
+
