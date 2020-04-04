@@ -39,7 +39,7 @@
 ;;#################### ############# ####################
 
 ;; easier quit
-(bind-key "C-q" 'keyboard-escape-quit)
+(bind-key "C-q" 'keyboard-quit)
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (cua-mode t)

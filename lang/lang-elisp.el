@@ -3,7 +3,7 @@
 ;;#################### ############ ####################
 
 
-(define-key lisp-mode-map (kbd "C-x C-e") 'eval-region)
+(bind-key (kbd "C-x C-e") 'eval-region lisp-mode-map)
 
 
 ;;#################### END ####################
