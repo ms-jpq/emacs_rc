@@ -1,3 +1,20 @@
+;;#################### ################ ####################
+;;#################### Intrinsic Region ####################
+;;#################### ################ ####################
+
+;; dired do not open a million buffers
+(require 'dired)
+(put 'dired-find-alternate-file 'disabled nil)
+(define-key dired-mode-map
+  [remap dired-find-file] 'dired-find-alternate-file)
+
+
+;; dired ignore current directory
+(require 'dired-x)
+(setq dired-omit-files (rx (or (seq bol "." eol))))
+(add-hook 'dired-mode-hook 'dired-omit-mode)
+
+
 ;;#################### ################### ####################
 ;;#################### File Manager Region ####################
 ;;#################### ################### ####################

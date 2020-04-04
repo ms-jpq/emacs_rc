@@ -45,6 +45,7 @@
 ;;#################### ############## ####################
 
 ;; ibuffer sort by mode
+(require 'ibuffer)
 (setq ibuffer-default-sorting-mode 'major-mode)
 
 ;; ibuffer auto refresh
@@ -60,3 +61,4 @@
 
 ;;#################### END ####################
 (provide 'init-wm)
+
