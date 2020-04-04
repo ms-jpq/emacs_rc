@@ -20,8 +20,8 @@
 
 (use-package helm
   :ensure t
-  :bind (("C-@" . helm-M-x)
-         ("C-p" . helm-buffers-list)
+  :bind (("C-p" . helm-M-x)
+         ("C-o" . helm-buffers-list)
          ([remap find-file] . helm-find-files)
          ([remap occur] . helm-occur)
          ([remap list-buffers] . helm-buffers-list)

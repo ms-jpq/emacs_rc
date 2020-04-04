@@ -23,13 +23,6 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
-;; nyan scrollbar
-(use-package nyan-mode
-  :ensure t
-  :config
-  (nyan-mode))
-
-
 ;; highlight search match count
 (use-package anzu
   :ensure t
@@ -53,7 +46,10 @@
 ;; powerline
 (use-package spaceline
   :ensure t
-  :after (helm nyan-mode winum)
+  :after (helm winum)
+  :custom
+  (spaceline-window-numbers-unicode t)
+  (spaceline-workspace-numbers-unicode t)
   :config
   (spaceline-spacemacs-theme)
   (spaceline-helm-mode))

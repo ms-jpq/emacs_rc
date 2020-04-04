@@ -22,7 +22,13 @@
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
-  :bind (("M-a" . god-mode-all)))
+  :bind (("C-@" . god-mode-all))
+  :hook ((god-mode-enabled
+          . (lambda ()
+              (message "!! GOD MODE ON !!"))
+         (god-mode-disabled
+          . (lambda ()
+              (message "-- GOD MODE OFF --")))))
 
 
 ;;#################### ############# ####################
