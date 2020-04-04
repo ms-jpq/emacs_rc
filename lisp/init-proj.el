@@ -11,8 +11,8 @@
 
 (use-package projectile
   :ensure t
-  :bind-keymap
-  ("C-c u" . projectile-command-map)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map))
   :config
   (projectile-mode t))
 
@@ -22,11 +22,10 @@
   :after (treemacs projectile))
 
 
-;; (use-package helm-projectile
-;;   :ensure t
-;;   :after (helm projectile)
-;;   :config
-;;   (helm-projectile-on))
+(use-package counsel-projectile
+  :ensure t
+  :after (counsel projectile)
+  :hook ((projectile-mode .counsel-projectile-mode)))
 
 
 ;;#################### END ####################
