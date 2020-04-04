@@ -51,17 +51,20 @@
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0)
+  (company-selection-wrap-around t)
   :hook ((after-init . global-company-mode)))
 
 
-;; TODO
+;; TODO: this doesnt work
+;; tool-tip pos lib
+(use-package pos-tip
+  :ensure t)
 (use-package company-quickhelp
   :ensure t
-  :after (company)
+  :after (pos-tip company)
   :bind (:map company-active-map
               ("C-c h" . company-quickhelp-manual-begin))
-  :config
-  (company-quickhelp-mode))
+  :hook ((after-init . company-quickhelp-mode)))
 
 
 ;; rank suggestions by freq
