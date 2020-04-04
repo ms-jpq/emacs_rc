@@ -8,8 +8,9 @@
   (define-prefix-command 'treemacs-command-map)
   :bind (("C-t" . treemacs-command-map)
          :map treemacs-command-map
-         ("t" . treemacs)
-         ("s" . treemacs-switch-workspace)))
+         ("C-t" . treemacs)
+         ("C-s" . treemacs-switch-workspace)
+         ("C-a" . treemacs-add-project-to-workspace)))
 
 
 (use-package lsp-treemacs
