@@ -10,6 +10,7 @@
          :map treemacs-command-map
          ("C-t" . treemacs)
          ("C-s" . treemacs-switch-workspace)
+         ("C-n" . treemacs-create-workspace)
          ("C-a" . treemacs-add-project-to-workspace)
          ("C-r" . treemacs-rename-workspace))
   :config

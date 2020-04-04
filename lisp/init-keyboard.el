@@ -22,7 +22,8 @@
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
-  :bind (("C-@" . god-mode-all)))
+  :bind (("C-@" . god-mode-all)
+         ("<escape>" . god-mode-all)))
 
 
 ;;#################### ############# ####################

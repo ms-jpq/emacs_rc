@@ -19,6 +19,7 @@
 ;;   (flycheck-pos-tip-mode))
 
 
+;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :ensure t
   :after (flycheck)
@@ -27,16 +28,33 @@
         (lsp-mode . lsp-enable-which-key-integration)))
 
 
+;; TODO: check https://github.com/emacs-lsp/lsp-ui for updates
 (use-package lsp-ui
   :ensure t
   :after (lsp-mode)
-  :commands lsp-ui-mode)
+  :commands (lsp-ui-mode)
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references))
+  :custom
+  ;; lsp-ui-sideline
+  (lsp-ui-sideline-show-code-actions t)
+  (lsp-ui-sideline-delay 0)
+  ;; lsp-ui-peek
+  (lsp-ui-peek-enable t)
+  (lsp-ui-peek-show-directory t)
+  ;; lsp-ui-doc
+  (lsp-ui-doc-enable t)
+  (lsp-ui-doc-position 'bottom)
+  (lsp-ui-doc-delay 0)
+  ;; lsp-ui-imenu
+  )
 
 
 (use-package helm-lsp
   :ensure t
   :after (helm lsp-mode)
-  :commands helm-lsp-workspace-symbol)
+  :commands (helm-lsp-workspace-symbol))
 
 
 ;; debugger
