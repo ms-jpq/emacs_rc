@@ -34,7 +34,7 @@
               ([remap completion-at-point] . helm-lisp-completion-at-point)
          :map emacs-lisp-mode-map
               ([remap completion-at-point] . helm-lisp-completion-at-point))
-  :hook (emacs-startup .  (lambda () (helm-mode t))))
+  :hook (after-init . (lambda () (helm-mode t))))
 
 
 ;; describe key-binds

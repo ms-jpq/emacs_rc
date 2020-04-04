@@ -37,10 +37,11 @@
   :ensure t
   :defer
   :custom
-  (spacemacs-theme-comment-bg nil))
-;; require manual init
-(require 'spacemacs-common)
-(load-theme 'spacemacs-light t)
+  (spacemacs-theme-comment-bg nil)
+  :hook (after-init .
+    (lambda ()
+      (require 'spacemacs-common)
+      (load-theme 'spacemacs-light t))))
 
 
 ;; powerline

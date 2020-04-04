@@ -22,17 +22,11 @@
               ([remap xref-find-references] . lsp-ui-peek-find-references))
   :custom
   ;; lsp-ui-sideline
-  (lsp-ui-sideline-show-code-actions t)
-  (lsp-ui-sideline-delay 0)
-  ;; lsp-ui-peek
-  (lsp-ui-peek-enable t)
-  (lsp-ui-peek-show-directory t)
+  (sideline-show-hover t)
+  (lsp-ui-sideline-delay 0.1)
   ;; lsp-ui-doc
-  (lsp-ui-doc-enable t)
   (lsp-ui-doc-position 'bottom)
-  (lsp-ui-doc-delay 0)
-  ;; lsp-ui-imenu
-  )
+  (lsp-ui-doc-delay 0.1))
 
 
 (use-package helm-lsp
