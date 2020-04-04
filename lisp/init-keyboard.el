@@ -5,8 +5,12 @@
 ;; popup, shows hotkeys
 (use-package which-key
   :ensure t
+  :demand t
   :custom
   (which-key-idle-delay 1)
+  ;; :bind (:map which-key-C-h-map
+  ;;             ("<left>" . which-key-show-previous-page-cycle)
+  ;;             ("<right>" . which-key-show-next-page-cycle))
   :config
   (which-key-mode))
 
