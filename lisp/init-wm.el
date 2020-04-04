@@ -45,6 +45,8 @@
   :bind (("C-i" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))
+;; restore tab key
+(bind-key "TAB" 'indent-for-tab-command)
 
 
 ;;#################### ############## ####################

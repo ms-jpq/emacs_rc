@@ -5,6 +5,17 @@
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
 
+;;#################### ################## ####################
+;;#################### Performance Region ####################
+;;#################### ################## ####################
+
+;; gc tweak
+(setq gc-cons-threshold (* 100 1000 1000))
+
+;; process comm tweak
+(setq read-process-output-max (* 1000 1000))
+
+;; start tcp server
 (require 'server)
 (setq server-socket-dir (expand-file-name "server" user-emacs-directory))
 (setq server-use-tcp t)

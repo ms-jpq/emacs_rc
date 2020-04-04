@@ -47,7 +47,7 @@
 (setq initial-scratch-message nil)
 
 ;; init buffers are plain txt mode
-(setq initial-major-mode 'fundamental-mode)
+(setq initial-major-mode 'text-mode)
 
 
 ;;#################### ############### ######################
