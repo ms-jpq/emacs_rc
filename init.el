@@ -1,10 +1,3 @@
-;;#################### ########### ####################
-;;#################### Init Region ####################
-;;#################### ########### ####################
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
-
-
 ;;#################### ################## ####################
 ;;#################### Performance Region ####################
 ;;#################### ################## ####################
@@ -15,17 +8,11 @@
 ;; process comm tweak
 (setq read-process-output-max (* 1000 1000))
 
-;; start tcp server
-(require 'server)
-(setq server-socket-dir (expand-file-name "server" user-emacs-directory))
-(setq server-use-tcp t)
-(unless (server-running-p)
-  (server-start))
-
-
-;;#################### ############## ####################
-;;#################### Customs Region ####################
-;;#################### ############## ####################
+;;#################### ########### ####################
+;;#################### Init Region ####################
+;;#################### ########### ####################
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
 ;; set custom el
 (let
@@ -65,3 +52,15 @@
 (require 'lang-markdown)
 (require 'lang-typescript)
 (require 'lang-yaml)
+
+
+;;#################### ############# ####################
+;;#################### Server Region ####################
+;;#################### ############# ####################
+
+;; start tcp server
+(require 'server)
+(setq server-socket-dir (expand-file-name "server" user-emacs-directory))
+(setq server-use-tcp t)
+(unless (server-running-p)
+  (server-start))
