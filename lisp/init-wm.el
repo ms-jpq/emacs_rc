@@ -4,8 +4,7 @@
 
 ;; quit window
 (bind-key "C-w" 'delete-window)
-;; quit
-(bind-key "C-k" 'kill-buffer)
+
 
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)

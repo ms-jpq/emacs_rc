@@ -38,6 +38,7 @@
 (require 'init-fm)
 (require 'init-tree)
 (require 'init-proj)
+(require 'init-search)
 (require 'init-editor)
 (require 'init-git)
 (require 'init-themes)
