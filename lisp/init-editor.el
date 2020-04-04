@@ -29,6 +29,8 @@
 ;; required for lsp, shows errors
 (use-package flycheck
   :ensure t
+  :custom
+  (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   :config
   (global-flycheck-mode t))
 

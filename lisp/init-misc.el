@@ -54,11 +54,10 @@
 ;; autosave to actual file
 (auto-save-visited-mode t)
 
-;; 1 second delay after typing
+;; less delay after typing
 (setq auto-save-timeout 1)
-
-;; save every 100 characters typed
-(setq auto-save-interval 100)
+(setq auto-save-visited-interval 1)
+(setq auto-save-interval 1)
 
 
 ;;#################### ########### ####################

@@ -4,7 +4,9 @@
 
 (use-package magit
   :ensure t
-  :bind (("C-x m" . magit)))
+  :bind (("C-x m" . magit))
+  :config
+  (global-auto-revert-mode t))
 
 
 ;;#################### END ####################
