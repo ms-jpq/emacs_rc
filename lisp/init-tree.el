@@ -4,7 +4,7 @@
 
 (use-package treemacs
   :ensure t
-  :bind (("C-c t" . treemacs)))
+  :bind (("C-c C-t" . treemacs)))
 
 
 (use-package lsp-treemacs

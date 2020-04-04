@@ -12,4 +12,4 @@
 
 
 ;;#################### END ####################
-(provide 'typescript)
+(provide 'lang-typescript)

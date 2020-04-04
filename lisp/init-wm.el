@@ -3,7 +3,7 @@
 ;;#################### ############## ####################
 
 ;; quit emacs
-(bind-key "C-q" 'save-buffers-kill-terminal)
+(bind-key "C-q" "C-g")
 ;; quit window
 (bind-key "C-w" 'delete-window)
 
@@ -13,7 +13,7 @@
 
 
 ;; resize window
-(defhydra hy-resize-window (global-map "C-c")
+(defhydra hy-resize-window (global-map "C-d")
   ("<up>" enlarge-window "taller")
   ("<down>" shrink-window "shorter")
   ("<right>" enlarge-window-horizontally "wider")

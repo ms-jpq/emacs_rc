@@ -48,8 +48,9 @@
 
 
 (use-package helm-mode-manager
+  :ensure t
   :after (helm)
-  :ensure t)
+  :bind ("C-l" . helm-switch-major-mode))
 
 
 (use-package helm-themes
