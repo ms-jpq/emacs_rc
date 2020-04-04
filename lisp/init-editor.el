@@ -2,27 +2,9 @@
 ;;#################### LSP Region ####################
 ;;#################### ########## ####################
 
-;; required for lsp, shows errors
-(use-package flycheck
-  :ensure t
-  :custom
-  (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  :config
-  (global-flycheck-mode t))
-
-
-;; popup for flycheck errors -- TODO: is this useful?
-(use-package flycheck-pos-tip
-  :ensure t
-  :after (flycheck))
-;;   :config
-;;   (flycheck-pos-tip-mode))
-
-
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :ensure t
-  :after (flycheck)
   :commands (lsp)
   :hook ((prog-mode . lsp)
         (lsp-mode . lsp-enable-which-key-integration)))
@@ -97,6 +79,8 @@
   :ensure t
   :after (company lsp-mode)
   :commands (company-lsp)
+  :custom
+  (company-lsp-async t)
   :config
   (push 'company-lsp company-backends))
 

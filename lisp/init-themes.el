@@ -46,11 +46,10 @@
 ;; powerline
 (use-package doom-modeline
   :ensure t
-  :after (god-mode winum flycheck lsp-mode projectile))
+  :after (god-mode winum lsp-mode projectile))
 ;; require manual init
 (doom-modeline-mode t)
 
 
 ;;#################### END ####################
 (provide 'init-themes)
-
