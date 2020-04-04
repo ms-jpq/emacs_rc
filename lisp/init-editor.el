@@ -7,9 +7,9 @@
   :ensure t
   :commands (lsp)
   :hook ((prog-mode . lsp)
-        (lsp-mode . lsp-enable-which-key-integration)
+        (lsp-mode . lsp-enable-which-key-integration))
   :custom
-  (lsp-keep-workspace-alive nil)))
+  (lsp-keep-workspace-alive nil))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-ui for updates
