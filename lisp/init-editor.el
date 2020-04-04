@@ -55,6 +55,24 @@
   :hook ((after-init . global-company-mode)))
 
 
+(use-package company-lsp
+  :ensure t
+  :after (company lsp-mode)
+  :commands (company-lsp)
+  :custom
+  (company-lsp-async t)
+  :config
+  (push 'company-lsp company-backends))
+
+
+;; helm search auto complete
+(use-package helm-company
+  :ensure t
+  :after (helm company)
+  :bind (:map company-active-map
+              ("C-u" . helm-company)))
+
+
 ;; TODO: this doesnt work
 ;; tool-tip pos lib
 (use-package pos-tip
@@ -72,24 +90,6 @@
   :ensure t
   :after (company)
   :hook ((after-init . company-statistics-mode)))
-
-
-(use-package company-lsp
-  :ensure t
-  :after (company lsp-mode)
-  :commands (company-lsp)
-  :custom
-  (company-lsp-async t)
-  :config
-  (push 'company-lsp company-backends))
-
-
-;; helm search auto complete
-(use-package helm-company
-  :ensure t
-  :after (helm company)
-  :bind (:map company-active-map
-              ("C-u" . helm-company)))
 
 
 ;;#################### ################ ####################
@@ -121,13 +121,12 @@
   (volatile-highlights-mode t))
 
 
-;; (use-package indent-guide
-;;   :ensure t
-;;   :custom
-;;   (indent-guide-delay 0.1)
-;;   (indent-guide-char "|")
-;;   :config
-;;   (indent-guide-global-mode))
+;; indent guide -- not enabled by default --
+(use-package indent-guide
+  :ensure t
+  :custom
+  (indent-guide-delay 0.1)
+  (indent-guide-char "|"))
 
 
 ;; highlight todos
