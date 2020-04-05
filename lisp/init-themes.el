@@ -11,9 +11,6 @@
 ;; softwrap text
 (global-visual-line-mode t)
 
-;; tab-width
-(setq-default tab-width 2)
-
 ;; idle animation
 (require 'zone)
 (zone-when-idle 60)
