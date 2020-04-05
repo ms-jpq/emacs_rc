@@ -60,12 +60,5 @@
 
 ;; start tcp server
 (require 'server)
-(setq server-socket-dir (expand-file-name "server" user-emacs-directory))
-(setq server-use-tcp t)
-(setq server-port
-  (let ((port (getenv "EMACS_PORT")))
-    (if port
-      (string-to-number port)
-      6666)))
 (unless (server-running-p)
   (server-start))
