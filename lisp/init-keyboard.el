@@ -74,7 +74,7 @@
 ;; additional cua keys
 (bind-keys
   ("C-s" . save-buffer)
-  ("C-c C-c" . comment-line))
+  ("M-/" . comment-line))
 
 
 ;;#################### END ####################
