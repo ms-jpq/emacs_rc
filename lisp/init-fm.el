@@ -10,9 +10,17 @@
   dired-mode-map)
 
 
+;; dired use bat
+;; (setq ls-lisp-use-insert-directory-program t)
+;; (setq insert-directory-program "gls")
+;; (setq dired-listing-switches "--group-directories-first -1ahF")
+
+
 ;; dired ignore current directory
 (require 'dired-x)
-(setq dired-omit-files (rx (or (seq bol "." eol))))
+(setq dired-omit-files (rx (or
+  (seq bol "." eol)
+  (seq bol ".." eol))))
 (add-hook 'dired-mode-hook 'dired-omit-mode)
 
 
@@ -20,12 +28,30 @@
 ;;#################### File Manager Region ####################
 ;;#################### ################### ####################
 
+;; better tree structure
+(use-package dired-subtree
+  :ensure t
+  :bind (:map dired-mode-map
+              ("TAB" . 'dired-subtree-toggle)))
+
+
 ;; search w/ predicates
 (use-package dired-narrow
+  :ensure t
+  :bind (:map dired-mode-map
+              ("f" . dired-narrow)))
+
+
+;;#################### ############## ####################
+;;#################### Display Region ####################
+;;#################### ############## ####################
+
+;; collapse single nexted folders
+(use-package dired-collapse
   :ensure t)
 
 
-;; coloured coded files
+;; coloured coded files TODO: ls colours?
 (use-package dired-rainbow
   :ensure t
   :config
@@ -49,16 +75,6 @@
   (dired-rainbow-define partition "#e3342f" ("dmg" "iso" "bin" "nrg" "qcow" "toast" "vcd" "vmdk" "bak"))
   (dired-rainbow-define vc "#0074d9" ("git" "gitignore" "gitattributes" "gitmodules"))
   (dired-rainbow-define-chmod executable-unix "#38c172" "-.*x.*"))
-
-
-;; better tree structure
-(use-package dired-subtree
-  :ensure t)
-
-
-;; collapse single nexted folders
-(use-package dired-collapse
-  :ensure t)
 
 
 ;;#################### END ####################

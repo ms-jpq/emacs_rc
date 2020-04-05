@@ -18,14 +18,9 @@
 (use-package counsel
   :ensure t
   :after (ivy)
-  :bind (("C-p" . counsel-M-x)
-         ("C-o" . counsel-switch-buffer)
-         ("C-d" . counsel-dired))
+  :bind (("C-p" . counsel-M-x))
   :config
   (counsel-mode))
-;; why they dont register in :bind ??
-(bind-keys
-  )
 
 
 ;; prettier ivy

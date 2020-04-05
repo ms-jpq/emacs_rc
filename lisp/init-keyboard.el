@@ -47,6 +47,7 @@
   ("C-q" . keyboard-escape-quit))
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
+(require 'cua-base)
 (cua-mode t)
 (setq cua-keep-region-after-copy t)
 

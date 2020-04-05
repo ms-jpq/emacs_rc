@@ -1,4 +1,23 @@
 ;;#################### ############## ####################
+;;#################### Buffers Region ####################
+;;#################### ############## ####################
+
+;; buffers are a leaky abstraction
+;; simply clear out stale ones automatically
+
+(require 'midnight)
+
+;; special buffers have life time of <x> seconds
+(setq clean-buffer-list-delay-special (* 10 60))
+
+;; normal buffers have life time of <x> seconds (originally days)
+(setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
+
+;; repetitively remove stale buffers every <x> seconds
+(run-at-time "10 sec" (* 1 60) 'clean-buffer-list)
+
+
+;;#################### ############## ####################
 ;;#################### Windows Region ####################
 ;;#################### ############## ####################
 
@@ -45,26 +64,6 @@
 ;; restore tab key
 (bind-keys
   ("TAB" . indent-for-tab-command))
-
-
-;;#################### ############## ####################
-;;#################### Buffers Region ####################
-;;#################### ############## ####################
-
-;; ibuffer sort by mode
-(require 'ibuffer)
-(setq ibuffer-default-sorting-mode 'major-mode)
-
-;; ibuffer auto refresh
-(add-hook
-  'ibuffer-mode-hook
-  (lambda ()
-    (ibuffer-auto-mode t)))
-
-
-;; bring up ibuffer
-(bind-keys
-  ("C-b" . ibuffer))
 
 
 ;;#################### END ####################
