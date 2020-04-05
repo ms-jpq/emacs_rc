@@ -13,7 +13,7 @@
 
 ;; idle animation
 (require 'zone)
-(zone-when-idle 60)
+(zone-when-idle (* 10 60))
 
 
 ;;#################### ############## ####################
