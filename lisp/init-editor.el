@@ -77,6 +77,7 @@
   (company-idle-delay 0 "company asks backend")
   (company-tooltip-idle-delay 0.5 "tooltip shows (frontend)")
   :bind (:map company-active-map
+              ("C-q" . company-abort)
               ("TAB" . company-select-next-if-tooltip-visible-or-complete-selection))
   :config
   (global-company-mode))
