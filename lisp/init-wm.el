@@ -33,7 +33,7 @@
 
 ;; close window
 (bind-keys
-  ("w" delete-window))
+  ("C-w" delete-window))
 
 ;; window management hydra
 (defhydra hy-window-man (global-map "C-]")
