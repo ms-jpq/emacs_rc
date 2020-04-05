@@ -31,19 +31,17 @@
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)
 
+;; close window
+(bind-keys
+  ("w" delete-window))
 
 ;; window management hydra
 (defhydra hy-window-man (global-map "C-]")
-  ("w" delete-window)
   ("k" kill-current-buffer)
   ("-" previous-buffer)
   ("=" next-buffer)
   ("]" split-window-right)
-  ("[" split-window-below)
-  ("<up>" windmove-up)
-  ("<down>" windmove-down)
-  ("<left>" windmove-left)
-  ("<right>" windmove-right))
+  ("[" split-window-below))
 
 
 ;; allow C-c w <num> to selec window
@@ -65,7 +63,7 @@
 ;; make imenu a side pane
 (use-package imenu-list
   :ensure t
-  :bind (("C-i" . imenu-list-smart-toggle))
+  :bind (("C-u" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))
 ;; restore tab key

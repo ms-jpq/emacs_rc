@@ -1,21 +1,6 @@
-;;#################### ############# ####################
-;;#################### Search Region ####################
-;;#################### ############# ####################
-
-;; all search keys start with ctl-f
-(bind-keys
-  :prefix-map search-command-map
-  :prefix "C-f")
-
-
 ;;#################### ################## ####################
 ;;#################### File Search Region ####################
 ;;#################### ################## ####################
-
-(bind-keys
-  :map search-command-map
-  ("C-r" . counsel-rg)
-  ("C-g" . counsel-git))
 
 
 ;;#################### #################### ####################
@@ -24,9 +9,8 @@
 
 (use-package swiper
   :ensure t
-  :bind (("C-s" . swiper-isearch)
-         :map search-command-map
-              ("C-s" . swiper)))
+  :bind (:map search-command-map
+              ("C-f" . swiper)))
 
 
 ;;#################### END ####################

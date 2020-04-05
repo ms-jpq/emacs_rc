@@ -18,7 +18,8 @@
 (use-package counsel
   :ensure t
   :after (ivy)
-  :bind (("C-p" . counsel-M-x))
+  :bind (("C-p" . counsel-M-x)
+         ("C-o" . counsel-find-file))
   :config
   (counsel-mode))
 

@@ -38,24 +38,40 @@
 (setq scroll-step 1)
 
 
-;;#################### ############# ####################
-;;#################### Hotkey Region ####################
-;;#################### ############# ####################
+;;#################### ########## ####################
+;;#################### ESC Region ####################
+;;#################### ########## ####################
+
+;; can't bind esc straight up :<
+(global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
 
 ;; easier quit
 (bind-keys
   ("C-q" . keyboard-escape-quit))
+
+
+;;#################### ########## ####################
+;;#################### CUA Region ####################
+;;#################### ########## ####################
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (require 'cua-base)
 (cua-mode t)
 (setq cua-keep-region-after-copy t)
 
-;; can't bind esc straight up :<
-(global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
-
-;; comment line
+;; search keymap
 (bind-keys
+  :prefix-map search-command-map
+  :prefix "C-f")
+
+;; dir keymap
+(bind-keys
+  :prefix-map dir-command-map
+  :prefix "C-d")
+
+;; additional cua keys
+(bind-keys
+  ("C-s" . save-buffer)
   ("C-c C-c" . comment-line))
 
 
