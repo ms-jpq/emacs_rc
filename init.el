@@ -11,6 +11,8 @@
 ;;#################### ########### ####################
 ;;#################### Init Region ####################
 ;;#################### ########### ####################
+
+;; lisp path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
@@ -46,7 +48,6 @@
 ;;#################### ########### ####################
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
-(require 'lang-elisp)
 (require 'lang-json)
 (require 'lang-markdown)
 (require 'lang-typescript)

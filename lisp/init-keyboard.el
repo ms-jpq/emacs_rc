@@ -22,14 +22,21 @@
   :ensure t)
 
 
-;; leader key in emacs
+;; basically turns on capslock, except it's CTL
 (use-package god-mode
   :ensure t
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
   :bind (("C-@" . god-mode-all)
-         ("<escape>" . god-mode-all)))
+         ("<escape>" . god-mode-all))
+  :hook ((god-mode-enabled
+          . (lambda ()
+            (setq-default header-line-format
+              (make-list 100 " >uwu< "))))
+         (god-mode-disabled
+          . (lambda ()
+            (setq-default header-line-format nil)))))
 
 
 ;; unbind IME
@@ -66,15 +73,18 @@
 (cua-mode t)
 (setq cua-keep-region-after-copy t)
 
+
 ;; search keymap
 (bind-keys
   :prefix-map search-command-map
   :prefix "C-f")
 
+
 ;; dir keymap
 (bind-keys
   :prefix-map dir-command-map
   :prefix "C-d")
+
 
 ;; additional cua keys
 (bind-keys

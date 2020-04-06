@@ -31,17 +31,18 @@
 ;; move cursor around windows with ctl left right
 (windmove-default-keybindings 'control)
 
+
 ;; close window
 (bind-keys
-  ("C-w" . delete-window))
+  ("C-w" . delete-window)
+  ("M-=" . split-window-right)
+  ("M--" . split-window-below))
+
 
 ;; window management hydra
 (defhydra hy-window-man (global-map "C-]")
-  ("k" kill-current-buffer)
   ("-" previous-buffer)
-  ("=" next-buffer)
-  ("]" split-window-right)
-  ("[" split-window-below))
+  ("=" next-buffer))
 
 
 ;; allow C-c w <num> to selec window
