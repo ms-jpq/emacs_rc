@@ -5,6 +5,7 @@
 ;; search agent
 (use-package ivy
   :ensure t
+  :demand t
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-wrap t)
@@ -21,11 +22,12 @@
 ;; replace default searches
 (use-package counsel
   :ensure t
+  :demand t
   :after (ivy)
-  :bind (("C-o" . counsel-recentf)
+  :bind (("C-o" . counsel-fzf)
          :map search-command-map
               ("C-r" . counsel-rg)
-              ("C-g" . counsel-git))
+              ("C-c" . counsel-recentf))
   :config
   (counsel-mode))
 
@@ -42,6 +44,7 @@
 ;; search in buffer
 (use-package swiper
   :ensure t
+  :after (ivy)
   :bind (:map search-command-map
               ("C-f" . swiper)))
 

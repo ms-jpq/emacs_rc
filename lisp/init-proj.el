@@ -11,6 +11,7 @@
 
 (use-package projectile
   :ensure t
+  :demand t
   :custom
   (projectile-completion-system 'ivy)
   :bind (:map projectile-mode-map
@@ -26,6 +27,7 @@
 
 (use-package counsel-projectile
   :ensure t
+  :demand t
   :after (counsel projectile)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file))

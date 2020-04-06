@@ -68,7 +68,7 @@
 
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 1000)
-(run-at-time nil (* 1 60) 'recentf-save-list)
+(run-background-task 'recentf-save-list (* 1 60))
 
 
 ;;#################### ########### ####################
