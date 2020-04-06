@@ -12,5 +12,5 @@ recentf
 .lsp-session-*
 .last-package-update-*
 company-statistics-*
-projectile-*
+projectile*
 _customize.el
