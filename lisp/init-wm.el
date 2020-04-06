@@ -40,9 +40,9 @@
 
 
 ;; window management hydra
-(defhydra hy-window-man (global-map "C-]")
-  ("-" previous-buffer)
-  ("=" next-buffer))
+(bind-keys
+  ("M-o" . previous-buffer)
+  ("M-p" . next-buffer))
 
 
 ;; allow C-c w <num> to selec window
