@@ -5,7 +5,7 @@
 ;;#################### ########### ####################
 
 
-(defun run-background-task
+(defun schedule-background-task
   (func repeat)
   (add-hook 'emacs-startup-hook
     (lambda ()

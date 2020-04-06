@@ -14,7 +14,7 @@
 (setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
 
 ;; repetitively remove stale buffers every <x> seconds
-(run-background-task 'clean-buffer-list (* 1 60))
+(schedule-background-task 'clean-buffer-list (* 1 60))
 
 
 ;;#################### ############ ####################

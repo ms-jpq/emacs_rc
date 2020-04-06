@@ -68,7 +68,7 @@
 
 (setq recentf-max-saved-items 100)
 (setq recentf-max-menu-items recentf-max-saved-items)
-(run-background-task 'recentf-save-list (* 1 60))
+(schedule-background-task 'recentf-save-list (* 1 60))
 
 
 ;; save minibuffer history
