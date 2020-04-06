@@ -47,6 +47,7 @@
 ;;#################### ########### ####################
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
+(require 'lang-fsharp)
 (require 'lang-json)
 (require 'lang-markdown)
 (require 'lang-typescript)
