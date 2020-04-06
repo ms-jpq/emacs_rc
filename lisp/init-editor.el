@@ -113,11 +113,11 @@
 
 
 ;; rank suggestions by freq
-(use-package company-statistics
+(use-package company-prescient
   :ensure t
-  :after (company)
+  :after (prescient company)
   :config
-  (company-statistics-mode))
+  (company-prescient-mode))
 
 
 ;;#################### ################ ####################

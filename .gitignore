@@ -5,6 +5,7 @@ export/
 backups/
 transient/
 server/
+var/
 .cache/
 history
 places

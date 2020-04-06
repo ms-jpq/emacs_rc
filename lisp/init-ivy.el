@@ -24,13 +24,31 @@
   :ensure t
   :demand t
   :after (ivy)
-  :bind (:map search-command-map
-              ("C-c" . counsel-recentf)
-              ("C-d" . counsel-dired-jump)
-              ("C-f" . counsel-fzf)
-              ("C-r" . counsel-rg))
+  :bind (("C-p" . counsel-M-x)
+         ("C-l" . counsel-major)
+         :map search-command-map
+           ("C-c" . counsel-recentf)
+           ("C-d" . counsel-cd)
+           ("C-f" . counsel-fzf)
+           ("C-r" . counsel-rg))
   :config
   (counsel-mode))
+
+
+;; sorting backend for company, ivy. etc
+(use-package prescient
+  :ensure t
+  :custom
+  (prescient-history-length 10 "hist items displayed")
+  :config
+  (prescient-persist-mode))
+
+
+(use-package ivy-prescient
+  :ensure t
+  :after (prescient ivy counsel)
+  :config
+  (ivy-prescient-mode))
 
 
 ;; prettier ivy
