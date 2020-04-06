@@ -10,6 +10,10 @@
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
   (ivy-height 15)
+  (ivy-count-format "(%d/%d) ")
+  :bind (:map ivy-minibuffer-map
+              ("TAB" . ivy-partial)
+              ("M-RET" . ivy-alt-done))
   :config
   (ivy-mode t))
 
@@ -18,10 +22,10 @@
 (use-package counsel
   :ensure t
   :after (ivy)
-  :bind (("C-p" . counsel-M-x)
-         ("C-o" . counsel-find-file)
+  :bind (("C-o" . counsel-recentf)
          :map search-command-map
-              ("C-r" . counsel-rg))
+              ("C-r" . counsel-rg)
+              ("C-g" . counsel-git))
   :config
   (counsel-mode))
 

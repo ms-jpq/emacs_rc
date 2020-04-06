@@ -14,7 +14,7 @@
 (setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
 
 ;; repetitively remove stale buffers every <x> seconds
-(run-at-time "1 sec" (* 1 60)
+(run-at-time nil (* 1 60)
   (lambda ()
     (let ((msg (current-message))
           (prev inhibit-message))

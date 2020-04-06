@@ -50,16 +50,20 @@
 
 
 ;;#################### ############### ######################
-;;#################### Autosave Region ####################
+;;#################### Autosave Region ######################
 ;;#################### ############### ######################
 
 ;; autosave to actual file
 (auto-save-visited-mode t)
-
-;; less delay after typing
-(setq auto-save-timeout 1)
 (setq auto-save-visited-interval 1)
-(setq auto-save-interval 1)
+
+
+;; save recently accessed files
+(recentf-mode t)
+
+(setq recentf-max-menu-items 25)
+(setq recentf-max-saved-items 1000)
+(run-at-time nil (* 1 60) 'recentf-save-list)
 
 
 ;;#################### ########### ####################

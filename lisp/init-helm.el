@@ -12,7 +12,8 @@
 (use-package helm-mode-manager
   :ensure t
   :after (helm)
-  :bind ("C-l" . helm-switch-major-mode))
+  :bind (("C-p" . helm-M-x)
+         ("C-l" . helm-switch-major-mode)))
 
 
 ;;#################### END ####################
