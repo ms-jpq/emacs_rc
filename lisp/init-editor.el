@@ -29,8 +29,6 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp)
-  :custom
-  (lsp-keep-workspace-alive nil)
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration)))
 
