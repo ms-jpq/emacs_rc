@@ -66,16 +66,9 @@
 ;; save recently accessed files
 (recentf-mode t)
 
-(setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 100)
-(run-at-time nil (* 1 60)
-  (lambda ()
-    (let ((msg (current-message))
-          (prev inhibit-message))
-      (setq inhibit-message t)
-      (recentf-save-list)
-      (setq inhibit-message prev)
-      (when msg (message msg)))))
+(setq recentf-max-menu-items recentf-max-saved-items)
+(run-background-task 'recentf-save-list (* 1 60))
 
 
 ;; save minibuffer history

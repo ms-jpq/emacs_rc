@@ -14,38 +14,31 @@
 (setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
 
 ;; repetitively remove stale buffers every <x> seconds
-(run-at-time nil (* 1 60)
-  (lambda ()
-    (let ((msg (current-message))
-          (prev inhibit-message))
-      (setq inhibit-message t)
-      (clean-buffer-list)
-      (setq inhibit-message prev)
-      (when msg (message msg)))))
+(run-background-task 'clean-buffer-list (* 1 60))
 
 
-;;#################### ############## ####################
-;;#################### Windows Region ####################
-;;#################### ############## ####################
+;;#################### ############ ####################
+;;#################### Panes Region ####################
+;;#################### ############ ####################
 
-;; move cursor around windows with ctl left right
+;; move cursor around panes with ctl left right
 (windmove-default-keybindings 'control)
 
 
-;; close window
+;; manage pane
 (bind-keys
   ("C-w" . delete-window)
   ("M-=" . split-window-right)
   ("M--" . split-window-below))
 
 
-;; window management hydra
+;; buffer management hydra
 (bind-keys
   ("M-o" . previous-buffer)
   ("M-p" . next-buffer))
 
 
-;; allow C-c w <num> to selec window
+;; allow C-c w <num> to selec pane
 (use-package winum
   :ensure t
   :custom
@@ -70,6 +63,15 @@
 ;; restore tab key
 (bind-keys
   ("TAB" . indent-for-tab-command))
+
+
+;; dimm background panes
+(use-package dimmer
+  :ensure t
+  :after (which-key hydra)
+  (dimmer-mode t)
+  (dimmer-configure-which-key)
+  (dimmer-configure-hydra))
 
 
 ;;#################### END ####################
