@@ -33,7 +33,6 @@
 (require 'init-mouse)
 (require 'init-helm)
 (require 'init-ivy)
-(require 'init-search)
 (require 'init-git)
 (require 'init-wm)
 (require 'init-fm)

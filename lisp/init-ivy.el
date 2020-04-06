@@ -19,7 +19,9 @@
   :ensure t
   :after (ivy)
   :bind (("C-p" . counsel-M-x)
-         ("C-o" . counsel-find-file))
+         ("C-o" . counsel-find-file)
+         :map search-command-map
+              ("C-r" . counsel-rg))
   :config
   (counsel-mode))
 
@@ -31,6 +33,13 @@
   :config
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
   (ivy-rich-mode t))
+
+
+;; search in buffer
+(use-package swiper
+  :ensure t
+  :bind (:map search-command-map
+              ("C-f" . swiper)))
 
 
 ;;#################### END ####################
