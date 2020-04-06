@@ -18,13 +18,6 @@
   :hook ((after-init . global-flycheck-mode)))
 
 
-;; ;; popup for flycheck errors -- TODO: is this useful?
-;; (use-package flycheck-pos-tip
-;;   :ensure t
-;;   :after (flycheck)
-;;   :hook ((global-flycheck-mode . flycheck-pos-tip-mode)))
-
-
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :ensure t
@@ -38,7 +31,9 @@
   :ensure t
   :after (lsp-mode)
   :commands (lsp-ui-mode)
-  :bind (:map lsp-ui-mode-map
+  :bind (("M-d" . xref-find-definitions)
+         ("M-r" . xref-find-references)
+         :map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references))
   :custom
@@ -68,7 +63,7 @@
 ;; auto suggestions
 (use-package company
   :ensure t
-  :commands global-company-mode
+  :demand t
   :custom
   (company-selection-wrap-around t)
   (company-minimum-prefix-length 1)
@@ -87,19 +82,6 @@
   :after (prescient company)
   :config
   (company-prescient-mode))
-
-
-;; ;; TODO: this doesnt work
-;; tool-tip pos lib
-;; (use-package pos-tip
-;;   :ensure t)
-;; (use-package company-quickhelp
-;;   :ensure t
-;;   :after (pos-tip company)
-;;   :bind (:map company-active-map
-;;               ("C-c h" . company-quickhelp-manual-begin))
-;;   :config
-;;   (company-quickhelp-mode))
 
 
 (use-package company-lsp
