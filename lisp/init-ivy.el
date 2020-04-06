@@ -26,6 +26,7 @@
   :after (ivy)
   :bind (:map search-command-map
               ("C-c" . counsel-recentf)
+              ("C-d" . counsel-dired-jump)
               ("C-f" . counsel-fzf)
               ("C-r" . counsel-rg))
   :config
