@@ -2,10 +2,11 @@
 ;;#################### Yaml Region ####################
 ;;#################### ########### ####################
 
-(define-derived-mode yaml-mode prog-mode "Yaml"
-  "Major mode for editing yaml."
-  :group 'yaml
-  nil)
+
+(use-package yaml-mode
+  :ensure t
+  :after (lsp-mode)
+  :hook ((yaml-mode . lsp)))
 
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))

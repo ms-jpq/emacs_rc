@@ -167,11 +167,24 @@
   (ws-butler-mode))
 
 
-;;#################### ############# ####################
-;;#################### Parens Region ####################
-;;#################### ############# ####################
+;;#################### ############## ####################
+;;#################### Cursors Region ####################
+;;#################### ############## ####################
 
 (use-package smartparens
+  :ensure t)
+
+;; multiple cursors
+(use-package multiple-cursors
+  :ensure t)
+
+
+;; hotkeys for text selection
+(use-package expand-region
+  :ensure t)
+
+;; move selected text around
+(use-package drag-stuff
   :ensure t)
 
 
@@ -183,11 +196,6 @@
 (use-package scratch
   :ensure t
   :bind (("C-c C-n" . scratch)))
-
-
-;; multiple cursors
-(use-package multiple-cursors
-  :ensure t)
 
 
 ;;#################### END ####################
