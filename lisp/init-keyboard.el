@@ -80,12 +80,6 @@
   :prefix "C-f")
 
 
-;; dir keymap
-(bind-keys
-  :prefix-map dir-command-map
-  :prefix "C-d")
-
-
 ;; additional cua keys
 (bind-keys
   ("C-s" . save-buffer)

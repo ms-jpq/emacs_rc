@@ -33,7 +33,6 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
-(require 'init-helm)
 (require 'init-ivy)
 (require 'init-git)
 (require 'init-wm)

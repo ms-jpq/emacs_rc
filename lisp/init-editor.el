@@ -91,14 +91,6 @@
   (push 'company-lsp company-backends))
 
 
-;; helm search auto complete
-(use-package helm-company
-  :ensure t
-  :after (helm company)
-  :bind (:map company-active-map
-              ("C-u" . helm-company)))
-
-
 ;; ;; TODO: this doesnt work
 ;; tool-tip pos lib
 ;; (use-package pos-tip

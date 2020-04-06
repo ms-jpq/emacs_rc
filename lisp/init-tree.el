@@ -4,8 +4,9 @@
 
 (use-package treemacs
   :ensure t
-  :bind (:map dir-command-map
-         ("C-t" . treemacs)
+  :bind (:prefix-map tree-command-map
+         :prefix "C-d"
+         ("C-d" . treemacs)
          ("C-s" . treemacs-switch-workspace)
          ("C-n" . treemacs-create-workspace)
          ("C-a" . treemacs-add-project-to-workspace)
@@ -27,4 +28,3 @@
 
 ;;#################### END ####################
 (provide 'init-tree)
-
