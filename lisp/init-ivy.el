@@ -14,7 +14,8 @@
   (ivy-count-format "(%d/%d) ")
   :bind (:map ivy-minibuffer-map
               ("TAB" . ivy-partial)
-              ("M-RET" . ivy-alt-done))
+              ("RET" . ivy-alt-done)
+              ("M-RET" . ivy-done))
   :config
   (ivy-mode t))
 

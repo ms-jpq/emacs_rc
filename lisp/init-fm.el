@@ -10,30 +10,21 @@
   dired-mode-map)
 
 
-;; dired use bat
-;; (setq ls-lisp-use-insert-directory-program t)
-;; (setq insert-directory-program "gls")
-;; (setq dired-listing-switches "--group-directories-first -1ahF")
+;; dired use dir first
+(setq dired-listing-switches "--group-directories-first -lahF")
 
 
 ;; dired ignore current directory
 (require 'dired-x)
 (setq dired-omit-files (rx (or
-  (seq bol "." eol)
-  (seq bol ".." eol))))
+;;  (seq bol ".." eol)
+  (seq bol "." eol))))
 (add-hook 'dired-mode-hook 'dired-omit-mode)
 
 
 ;;#################### ################### ####################
 ;;#################### File Manager Region ####################
 ;;#################### ################### ####################
-
-;; better tree structure
-(use-package dired-subtree
-  :ensure t
-  :bind (:map dired-mode-map
-              ("TAB" . 'dired-subtree-toggle)))
-
 
 ;; search w/ predicates
 (use-package dired-narrow
@@ -45,6 +36,14 @@
 ;;#################### ############## ####################
 ;;#################### Display Region ####################
 ;;#################### ############## ####################
+
+
+;; better tree structure
+(use-package dired-subtree
+  :ensure t
+  :bind (:map dired-mode-map
+              ("TAB" . 'dired-subtree-toggle)))
+
 
 ;; collapse single nexted folders
 (use-package dired-collapse
