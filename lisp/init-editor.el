@@ -81,14 +81,12 @@
   (global-company-mode))
 
 
-(use-package company-lsp
+;; rank suggestions by freq
+(use-package company-prescient
   :ensure t
-  :after (company lsp-mode)
-  :commands (company-lsp)
-  :custom
-  (company-lsp-async t)
+  :after (prescient company)
   :config
-  (push 'company-lsp company-backends))
+  (company-prescient-mode))
 
 
 ;; ;; TODO: this doesnt work
@@ -104,12 +102,14 @@
 ;;   (company-quickhelp-mode))
 
 
-;; rank suggestions by freq
-(use-package company-prescient
+(use-package company-lsp
   :ensure t
-  :after (prescient company)
+  :after (company lsp-mode)
+  :commands (company-lsp)
+  :custom
+  (company-lsp-async t)
   :config
-  (company-prescient-mode))
+  (push 'company-lsp company-backends))
 
 
 ;;#################### ################ ####################
@@ -183,6 +183,11 @@
 (use-package scratch
   :ensure t
   :bind (("C-c C-n" . scratch)))
+
+
+;; multiple cursors
+(use-package multiple-cursors
+  :ensure t)
 
 
 ;;#################### END ####################

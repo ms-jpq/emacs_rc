@@ -70,6 +70,7 @@
   :ensure t
   :custom
   (dimmer-adjustment-mode :both)
+  (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
   (dimmer-fraction 0.15)
   :after (which-key hydra)
   :config
