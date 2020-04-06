@@ -31,12 +31,12 @@
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
            ("C-c" . counsel-recentf)
-           ("C-d" . counsel-cd)
            ("C-f" . counsel-fzf)
            ("C-r" . counsel-rg)
          :map counsel-command-map
-           ("o" . counsel-minor)
-           ("p" . counsel-major))
+           ("C-d" . counsel-cd)
+           ("C-o" . counsel-minor)
+           ("C-p" . counsel-major))
   :config
   (counsel-mode))
 
