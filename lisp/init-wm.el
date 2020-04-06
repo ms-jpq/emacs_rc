@@ -68,7 +68,11 @@
 ;; dimm background panes
 (use-package dimmer
   :ensure t
+  :custom
+  (dimmer-adjustment-mode :both)
+  (dimmer-fraction 0.15)
   :after (which-key hydra)
+  :config
   (dimmer-mode t)
   (dimmer-configure-which-key)
   (dimmer-configure-hydra))

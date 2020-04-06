@@ -13,7 +13,7 @@
         (lambda ()
           (let ((msg (current-message))
                 (prev inhibit-message))
-            (setq inhibit-message nil)
+            (setq inhibit-message t)
             (funcall func)
             (setq inhibit-message prev)
             (when msg (message msg))))))))
