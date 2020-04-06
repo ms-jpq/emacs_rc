@@ -14,10 +14,11 @@
   :demand t
   :custom
   (projectile-completion-system 'ivy)
-  :bind (:map projectile-mode-map
-              ("C-i" . projectile-command-map))
+  :bind-keymap
+  ("C-c C-p" . projectile-command-map)
   :config
-  (projectile-mode t))
+  (projectile-mode t)
+  (setq projectile-mode-map (make-sparse-keymap)))
 
 
 (use-package treemacs-projectile
