@@ -34,7 +34,7 @@
            ("C-f" . counsel-fzf)
            ("C-r" . counsel-rg)
          :map counsel-command-map
-           ("C-d" . counsel-cd)
+           ("C-d" . counsel-find-file)
            ("C-o" . counsel-minor)
            ("C-p" . counsel-major))
   :config
