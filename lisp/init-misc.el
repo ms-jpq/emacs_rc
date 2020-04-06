@@ -28,6 +28,16 @@
   (global-undo-tree-mode))
 
 
+;; better auto save
+(use-package super-save
+  :ensure t
+  :custom
+  (super-save-auto-save-when-idle t)
+  :config
+  (super-save-mode t))
+(setq auto-save-default nil)
+
+
 ;; normalize emacs' regexp
 (use-package pcre2el
   :ensure t
@@ -50,13 +60,8 @@
 
 
 ;;#################### ############### ######################
-;;#################### Autosave Region ######################
+;;#################### Filehist Region ######################
 ;;#################### ############### ######################
-
-;; autosave to actual file
-(auto-save-visited-mode t)
-(setq auto-save-visited-interval 1)
-
 
 ;; save recently accessed files
 (recentf-mode t)
