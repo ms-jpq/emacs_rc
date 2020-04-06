@@ -2,13 +2,11 @@
 ;;#################### Typescript Region ####################
 ;;#################### ################# ####################
 
-(define-derived-mode typescript-mode prog-mode "Typescript"
-  "Major mode for editing typescript."
-  :group 'ts
-  nil)
-
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+(use-package web-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
 
 
 ;;#################### END ####################
