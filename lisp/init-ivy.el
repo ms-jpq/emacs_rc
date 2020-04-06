@@ -10,7 +10,7 @@
   (ivy-use-virtual-buffers t)
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
-  (ivy-height 15)
+  (ivy-height 20)
   (ivy-count-format "(%d/%d) ")
   :bind (:map ivy-minibuffer-map
               ("TAB" . ivy-partial)
@@ -24,10 +24,10 @@
   :ensure t
   :demand t
   :after (ivy)
-  :bind (("C-o" . counsel-fzf)
-         :map search-command-map
-              ("C-r" . counsel-rg)
-              ("C-c" . counsel-recentf))
+  :bind (:map search-command-map
+              ("C-c" . counsel-recentf)
+              ("C-f" . counsel-fzf)
+              ("C-r" . counsel-rg))
   :config
   (counsel-mode))
 
@@ -46,7 +46,7 @@
   :ensure t
   :after (ivy)
   :bind (:map search-command-map
-              ("C-f" . swiper)))
+              ("C-s" . swiper)))
 
 
 ;;#################### END ####################
