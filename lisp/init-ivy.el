@@ -78,6 +78,7 @@
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
   :ensure t
+  :after (ivy)
   :init
   ;; xref initialization is different in Emacs 27 - there are two different
   ;; variables which can be set rather than just one
