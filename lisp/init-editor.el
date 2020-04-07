@@ -157,6 +157,13 @@
 ;;#################### Cursors Region ####################
 ;;#################### ############## ####################
 
+;; goto last edited place
+(use-package goto-chg
+  :ensure t
+  :bind (("M-," . goto-last-change)
+         ("M-." . goto-last-change-reverse)))
+
+
 (use-package smartparens
   :ensure t)
 
