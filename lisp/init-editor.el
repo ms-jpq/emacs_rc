@@ -23,16 +23,18 @@
   :ensure t
   :commands (lsp)
   :hook ((prog-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration)))
+         (lsp-mode . lsp-enable-which-key-integration))
+  :bind (:map lsp-mode-map
+              ("M-r" . lsp-rename)
+              ("M-c" . lsp-describe-thing-at-point)))
 
 
-;; TODO: check https://github.com/emacs-lsp/lsp-ui for updates
 (use-package lsp-ui
   :ensure t
   :after (lsp-mode)
   :commands (lsp-ui-mode)
   :bind (("M-d" . xref-find-definitions)
-         ("M-r" . xref-find-references)
+         ("M-e" . xref-find-references)
          :map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references))
@@ -41,6 +43,7 @@
   ;; (lsp-ui-sideline-show-hover t)
   (lsp-ui-sideline-delay 0)
   ;; lsp-ui-doc
+  (lsp-ui-doc-enable nil "seems to only work under GUI")
   (lsp-ui-doc-position 'bottom)
   (lsp-ui-doc-delay 0))
 
