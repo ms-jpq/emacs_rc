@@ -69,9 +69,9 @@
   :ensure t
   :custom
   (zoom-size (lambda ()
-    '(0.618 . 0.618))
-    "custom func to return ratio")
-  (zoom-mode t))
+    '(0.618 . 0.618)))
+  :init
+  (setq zoom-mode t))
 
 
 ;; dimm background panes
