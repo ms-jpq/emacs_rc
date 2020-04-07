@@ -25,17 +25,16 @@
 (windmove-default-keybindings 'control)
 
 
-;; manage pane
+;; restore pane layouts
+(winner-mode t)
 (bind-keys
   ("C-w" . delete-window)
   ("M-=" . split-window-right)
-  ("M--" . split-window-below))
-
-
-;; buffer management hydra
-(bind-keys
-  ("M-o" . previous-buffer)
-  ("M-p" . next-buffer))
+  ("M--" . split-window-below)
+  ("M-p" . delete-window)
+  ("M-o" . delete-other-windows)
+  ("M-j" . winner-undo)
+  ("M-k" . winner-redo))
 
 
 ;; allow C-c w <num> to selec pane
