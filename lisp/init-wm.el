@@ -78,6 +78,7 @@
 (use-package dimmer
   :ensure t
   :custom
+  (dimmer-use-colorspace :rgb)
   (dimmer-adjustment-mode :both)
   (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
   (dimmer-fraction 0.15)
