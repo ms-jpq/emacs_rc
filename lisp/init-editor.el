@@ -104,9 +104,10 @@
 ;; highlight lines changed
 (use-package diff-hl
   :ensure t
+  :demand t
   :hook ((magit-post-refresh . diff-hl-magit-post-refresh)
-         (prog-mode . diff-hl-flydiff-mode)
-         (prog-mode . diff-hl-margin-mode)
+         (diff-hl-mode . diff-hl-flydiff-mode)
+         (diff-hl-mode . diff-hl-margin-mode)
          (dired-mode . diff-hl-dir-mode))
   :config
   (global-diff-hl-mode))

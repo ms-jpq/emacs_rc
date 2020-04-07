@@ -28,6 +28,13 @@
   (global-undo-tree-mode))
 
 
+;; share clipboard
+(use-package xclip
+  :ensure t
+  :config
+  (xclip-mode t))
+
+
 ;; better auto save
 (use-package super-save
   :ensure t
@@ -64,6 +71,7 @@
 ;;#################### ########### ######################
 
 ;; save recently accessed files
+(require 'recentf)
 (recentf-mode t)
 
 (setq recentf-max-saved-items 100)

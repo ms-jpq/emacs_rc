@@ -37,13 +37,13 @@
   ("M-k" . winner-redo))
 
 
-;; allow C-c w <num> to selec pane
-(use-package winum
+;; move buffers around
+(use-package buffer-move
   :ensure t
-  :custom
-  (winum-auto-setup-mode-line nil)
-  :config
-  (winum-mode))
+  :bind (("C-c <left>" . buf-move-left)
+         ("C-c <right>" . buf-move-right)
+         ("C-c <up>" . buf-move-up)
+         ("C-c <down>" . buf-move-down)))
 
 
 ;; make popup panes easier to dismiss

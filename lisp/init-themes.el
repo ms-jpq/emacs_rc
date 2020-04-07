@@ -43,8 +43,7 @@
 
 ;; powerline
 (use-package doom-modeline
-  :ensure t
-  :after (god-mode winum lsp-mode projectile))
+  :ensure t)
 ;; require manual init
 (doom-modeline-mode t)
 
