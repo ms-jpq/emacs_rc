@@ -2,9 +2,16 @@
 ;;#################### Git Region ####################
 ;;#################### ########## ####################
 
+(bind-keys
+  :prefix-map git-command-map
+  :prefix "C-b")
+
+
+;; git porcelain
 (use-package magit
   :ensure t
-  :bind (("C-c C-m" . magit)
+  :bind (:map git-command-map
+              ("C-m" . magit)
          :map magit-mode-map
               ("C-q" . magit-mode-bury-buffer))
   :config
@@ -18,6 +25,21 @@
   :commands (magit-todos-list ivy-magit-todos)
   :config
   (magit-todos-mode))
+
+
+;; vscode like git in side line
+(use-package git-gutter
+  :ensure t
+  :demand t
+  :config
+  (defhydra hy-git-gutter (global-map "C-m")
+    ("[" git-gutter:previous-hunk)
+    ("]" git-gutter:next-hunk)
+    ("s" git-gutter:stage-hunk)
+    ("v" git-gutter:revert-hunk)
+    ("m" git-gutter:mark-hunk)
+    ("p" git-gutter:popup-hunk))
+  (global-git-gutter-mode t))
 
 
 ;; shows file history

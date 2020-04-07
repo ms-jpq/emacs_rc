@@ -15,7 +15,8 @@
   :ensure t
   :custom
   (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  :hook ((after-init . global-flycheck-mode)))
+  :config
+  (global-flycheck-mode))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
@@ -101,18 +102,6 @@
 ;;#################### Highlight Region ####################
 ;;#################### ################ ####################
 
-;; highlight lines changed
-(use-package diff-hl
-  :ensure t
-  :demand t
-  :hook ((magit-post-refresh . diff-hl-magit-post-refresh)
-         (diff-hl-mode . diff-hl-flydiff-mode)
-         (diff-hl-mode . diff-hl-margin-mode)
-         (dired-mode . diff-hl-dir-mode))
-  :config
-  (global-diff-hl-mode))
-
-
 (use-package highlight-parentheses
   :ensure t
   :config
@@ -164,8 +153,14 @@
          ("M-." . goto-last-change-reverse)))
 
 
+;; algo
 (use-package smartparens
   :ensure t)
+
+;; lisps
+(use-package paredit
+  :ensure t)
+
 
 ;; multiple cursors
 (use-package multiple-cursors
