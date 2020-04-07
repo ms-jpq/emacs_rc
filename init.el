@@ -62,3 +62,14 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+
+;;#################### ################ ####################
+;;#################### Benchmark Region ####################
+;;#################### ################ ####################
+
+(add-hook
+  'emacs-startup-hook
+    (lambda ()
+      (when (getenv "EMACS_BENCHMARK")
+        (kill-emacs))))
