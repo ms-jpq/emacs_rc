@@ -64,6 +64,16 @@
   ("TAB" . indent-for-tab-command))
 
 
+;; tiling pane manager
+(use-package zoom
+  :ensure t
+  :custom
+  (zoom-size (lambda ()
+    '(0.618 . 0.618))
+    "custom func to return ratio")
+  (zoom-mode t))
+
+
 ;; dimm background panes
 (use-package dimmer
   :ensure t
