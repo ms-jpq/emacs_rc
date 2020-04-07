@@ -67,14 +67,6 @@
   (ivy-rich-mode t))
 
 
-;; search in buffer
-(use-package swiper
-  :ensure t
-  :after (ivy)
-  :bind (:map search-command-map
-              ("C-s" . swiper)))
-
-
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
   :ensure t
@@ -88,6 +80,20 @@
   ;; commands other than xref-find-definitions (e.g. project-find-regexp)
   ;; as well
   (setq xref-show-xrefs-function #'ivy-xref-show-xrefs))
+
+
+;; search in buffer
+(use-package swiper
+  :ensure t
+  :after (ivy)
+  :bind (:map search-command-map
+              ("C-s" . swiper)))
+
+
+;; writable ivy occur buffer
+(use-package wgrep
+  :ensure t
+  :after (ivy))
 
 
 ;;#################### END ####################
