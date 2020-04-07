@@ -136,10 +136,10 @@
 ;;#################### ################# ####################
 
 ;; trim trailing white spaces
-(use-package ws-butler
+(use-package whitespace-cleanup-mode
   :ensure t
   :config
-  (ws-butler-mode))
+  (global-whitespace-cleanup-mode))
 
 
 ;;#################### ############## ####################

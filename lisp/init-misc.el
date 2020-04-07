@@ -40,6 +40,7 @@
   :ensure t
   :custom
   (super-save-auto-save-when-idle t)
+  (super-save-idle-duration 1)
   :config
   (super-save-mode t))
 (setq auto-save-default nil)
