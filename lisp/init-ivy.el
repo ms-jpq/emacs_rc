@@ -15,7 +15,8 @@
   :bind (:map ivy-minibuffer-map
               ("TAB" . ivy-partial)
               ("RET" . ivy-alt-done)
-              ("M-RET" . ivy-done))
+              ("M-RET" . ivy-done)
+              ("C-o" . ivy-occur))
   :config
   (ivy-mode t))
 

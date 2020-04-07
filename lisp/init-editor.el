@@ -108,14 +108,6 @@
   (global-highlight-parentheses-mode t))
 
 
-;; highlight events
-(use-package volatile-highlights
-  :ensure t
-  :after (undo-tree)
-  :config
-  (volatile-highlights-mode t))
-
-
 ;; indent guide -- not enabled by default --
 (use-package indent-guide
   :ensure t
@@ -145,6 +137,12 @@
 ;;#################### ############## ####################
 ;;#################### Cursors Region ####################
 ;;#################### ############## ####################
+
+;; edit multi selection
+(use-package iedit
+  :ensure t
+  :bind (("M-i" . iedit-mode)))
+
 
 ;; goto last edited place
 (use-package goto-chg
