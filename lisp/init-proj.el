@@ -16,6 +16,8 @@
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
+  :bind (:map dir-command-map
+              ("C-p" . projectile-switch-project))
   :config
   (projectile-mode t)
   (setq projectile-mode-map (make-sparse-keymap)))

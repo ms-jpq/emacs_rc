@@ -2,16 +2,10 @@
 ;;#################### Git Region ####################
 ;;#################### ########## ####################
 
-(bind-keys
-  :prefix-map git-command-map
-  :prefix "C-b")
-
-
 ;; git porcelain
 (use-package magit
   :ensure t
-  :bind (:map git-command-map
-              ("C-m" . magit)
+  :bind (("C-c C-m" . magit)
          :map magit-mode-map
               ("C-q" . magit-mode-bury-buffer))
   :config
@@ -32,7 +26,7 @@
   :ensure t
   :demand t
   :config
-  (defhydra hy-git-gutter (global-map "C-m")
+  (defhydra hy-git-gutter (global-map "C-k")
     ("[" git-gutter:previous-hunk)
     ("]" git-gutter:next-hunk)
     ("s" git-gutter:stage-hunk)
