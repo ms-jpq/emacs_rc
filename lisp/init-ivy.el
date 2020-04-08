@@ -15,7 +15,9 @@
               ("TAB" . ivy-partial)
               ("RET" . ivy-alt-done)
               ("M-RET" . ivy-done)
-              ("C-o" . ivy-occur))
+              ("C-o" . ivy-occur)
+         :map ivy-occur-mode-map
+              ("SPC" . ivy-occur-press))
   :config
   (ivy-mode t))
 
