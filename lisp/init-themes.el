@@ -35,7 +35,7 @@
   :defer
   :custom
   (spacemacs-theme-comment-bg nil)
-  :hook (after-init .
+  :hook (emacs-startup .
     (lambda ()
       (require 'spacemacs-common)
       (load-theme 'spacemacs-light t))))

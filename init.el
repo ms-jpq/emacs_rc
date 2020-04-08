@@ -49,6 +49,7 @@
 (require 'lang-fsharp)
 (require 'lang-json)
 (require 'lang-markdown)
+(require 'lang-python)
 (require 'lang-typescript)
 (require 'lang-yaml)
 
