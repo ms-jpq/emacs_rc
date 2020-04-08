@@ -88,6 +88,9 @@
 ;; default indent by 2
 (setq-default tab-width 2)
 
+;; require final new line
+(setq-default require-final-newline t)
+
 
 ;;#################### ############## ####################
 ;;#################### Keymap Region ####################

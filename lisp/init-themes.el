@@ -30,19 +30,20 @@
 
 ;; main theme
 (use-package spacemacs-theme
-  :defer
+  :defer t
   :custom
   (spacemacs-theme-comment-bg nil)
+  :init
+  (require 'spacemacs-common)
   :hook (emacs-startup .
     (lambda ()
-      (require 'spacemacs-common)
       (load-theme 'spacemacs-light t))))
 
 
 ;; powerline
-(use-package doom-modeline)
-;; require manual init
-(doom-modeline-mode t)
+(use-package doom-modeline
+  :config
+  (doom-modeline-mode t))
 
 
 ;;#################### END ####################

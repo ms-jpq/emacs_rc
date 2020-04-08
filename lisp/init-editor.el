@@ -66,10 +66,10 @@
 
 
 ;; rank suggestions by freq
-(use-package company-prescient
-  :after (prescient company)
-  :config
-  (company-prescient-mode))
+;; (use-package company-prescient
+;;   :after (prescient company)
+;;   :config
+;;   (company-prescient-mode))
 
 
 (use-package company-lsp
@@ -79,6 +79,15 @@
   (company-lsp-async t)
   :config
   (push 'company-lsp company-backends))
+
+
+;; auto complete on drugs
+(use-package company-tabnine
+  :after (company)
+  :custom
+  (company-tabnine-binaries-folder (expand-file-name "tabnine" user-emacs-directory))
+  :config
+  (add-to-list 'company-backends 'company-tabnine))
 
 
 ;;#################### ################ ####################
