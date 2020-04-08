@@ -91,11 +91,13 @@
 ;; yes/no -> y/n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; default indent by 2
+(setq-default tab-width 2)
+
 
 ;;#################### ############## ####################
 ;;#################### Keymap Region ####################
 ;;#################### ############# ####################
-
 
 (bind-keys
   :prefix-map dir-command-map
