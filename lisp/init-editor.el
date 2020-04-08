@@ -22,7 +22,6 @@
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :ensure t
-  :commands (lsp)
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :bind (:map lsp-mode-map
@@ -33,7 +32,6 @@
 (use-package lsp-ui
   :ensure t
   :after (lsp-mode)
-  :commands (lsp-ui-mode)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references)
          :map lsp-ui-mode-map
@@ -52,7 +50,8 @@
 (use-package lsp-ivy
   :ensure t
   :after (ivy lsp-mode)
-  :commands (lsp-ivy-workspace-symbol))
+  :bind (:map lsp-mode-map
+              ("M-x" . lsp-ivy-workspace-symbol)))
 
 
 ;; debugger
