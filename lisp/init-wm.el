@@ -4,17 +4,14 @@
 
 ;; buffers are a leaky abstraction
 ;; simply clear out stale ones automatically
-
-(require 'midnight)
-
-;; special buffers have life time of <x> seconds
-(setq clean-buffer-list-delay-special (* 10 60))
-
-;; normal buffers have life time of <x> seconds (originally days)
-(setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
-
-;; repetitively remove stale buffers every <x> seconds
-(schedule-background-task 'clean-buffer-list (* 1 60))
+((lambda ()
+  (require 'midnight)
+  ;; special buffers have life time of <x> seconds
+  (setq clean-buffer-list-delay-special (* 10 60))
+  ;; normal buffers have life time of <x> seconds (originally days)
+  (setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
+  ;; repetitively remove stale buffers every <x> seconds
+  (schedule-background-task 'clean-buffer-list (* 1 60))))
 
 
 ;;#################### ############ ####################
@@ -26,15 +23,16 @@
 
 
 ;; restore pane layouts
-(winner-mode t)
-(bind-keys
-  ("C-w" . delete-window)
-  ("M-=" . split-window-right)
-  ("M--" . split-window-below)
-  ("M-p" . delete-window)
-  ("M-o" . delete-other-windows)
-  ("M-j" . winner-undo)
-  ("M-k" . winner-redo))
+((lambda ()
+  (winner-mode t)
+  (bind-keys
+    ("C-w" . delete-window)
+    ("M-=" . split-window-right)
+    ("M--" . split-window-below)
+    ("M-p" . delete-window)
+    ("M-o" . delete-other-windows)
+    ("M-j" . winner-undo)
+    ("M-k" . winner-redo))))
 
 
 ;; move buffers around
@@ -82,6 +80,15 @@
   (dimmer-mode t)
   (dimmer-configure-which-key)
   (dimmer-configure-hydra))
+
+
+;;#################### ########### ####################
+;;#################### Misc Region ####################
+;;#################### ########### ####################
+
+;; create scratch buffer
+(use-package scratch
+  :bind (("C-c C-n" . scratch)))
 
 
 ;;#################### END ####################

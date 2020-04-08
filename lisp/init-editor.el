@@ -44,32 +44,6 @@
 (use-package dap-mode)
 
 
-;;#################### ################## ####################
-;;#################### Suggestions Region ####################
-;;#################### ################## ####################
-
-;; auto suggestions
-(use-package company
-  :demand t
-  :custom
-  (company-selection-wrap-around t)
-  (company-minimum-prefix-length 1)
-  (company-idle-delay 0 "company asks backend")
-  (company-tooltip-idle-delay 0.5 "tooltip shows (frontend)")
-  :bind (:map company-active-map
-              ("C-q" . company-abort)
-              ("TAB" . company-select-next-if-tooltip-visible-or-complete-selection))
-  :config
-  (global-company-mode))
-
-
-;; rank suggestions by freq
-;; (use-package company-prescient
-;;   :after (prescient company)
-;;   :config
-;;   (company-prescient-mode))
-
-
 (use-package company-lsp
   :after (company lsp-mode)
   :commands (company-lsp)
@@ -78,46 +52,6 @@
   :config
   (push 'company-lsp company-backends))
 
-
-;; auto complete on drugs
-(use-package company-tabnine
-  :after (company)
-  :custom
-  (company-tabnine-binaries-folder (expand-file-name "tabnine" user-emacs-directory))
-  :config
-  (add-to-list 'company-backends 'company-tabnine))
-
-
-;;#################### ################ ####################
-;;#################### Highlight Region ####################
-;;#################### ################ ####################
-
-(use-package highlight-parentheses
-  :config
-  (global-highlight-parentheses-mode t))
-
-
-;; indent guide -- not enabled by default --
-(use-package indent-guide
-  :custom
-  (indent-guide-delay 0.1)
-  (indent-guide-char "|"))
-
-
-;; highlight todos
-(use-package hl-todo
-  :config
-  (global-hl-todo-mode t))
-
-
-;;#################### ################# ####################
-;;#################### Whitespace Region ####################
-;;#################### ################# ####################
-
-;; trim trailing white spaces
-(use-package whitespace-cleanup-mode
-  :config
-  (global-whitespace-cleanup-mode))
 
 
 ;;#################### ############## ####################
@@ -152,15 +86,6 @@
 
 ;; move selected text around
 (use-package drag-stuff)
-
-
-;;#################### ########### ####################
-;;#################### Misc Region ####################
-;;#################### ########### ####################
-
-;; create scratch buffer
-(use-package scratch
-  :bind (("C-c C-n" . scratch)))
 
 
 ;;#################### END ####################

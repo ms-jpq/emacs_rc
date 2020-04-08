@@ -78,18 +78,29 @@
 (savehist-mode 1)
 
 
-;;#################### ########### ####################
-;;#################### Misc Region ####################
-;;#################### ########### ####################
-
-;; yes/no -> y/n
-(defalias 'yes-or-no-p 'y-or-n-p)
+;;#################### ################# ####################
+;;#################### Whitespace Region ####################
+;;#################### ################# ####################
 
 ;; default indent by 2
 (setq-default tab-width 2)
 
 ;; require final new line
 (setq-default require-final-newline t)
+
+
+;; trim trailing white spaces
+(use-package whitespace-cleanup-mode
+  :config
+  (global-whitespace-cleanup-mode))
+
+
+;;#################### ########### ####################
+;;#################### Misc Region ####################
+;;#################### ########### ####################
+
+;; yes/no -> y/n
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 
 ;;#################### END ####################

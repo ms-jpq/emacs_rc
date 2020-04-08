@@ -14,6 +14,8 @@
 
 ;; lisp path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "workspace" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "editor" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
 ;; set custom el
@@ -33,11 +35,14 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
-(require 'init-search)
+(require 'init-ivy)
 (require 'init-git)
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
+(require 'init-search)
+(require 'init-highlight)
+(require 'init-suggestions)
 (require 'init-editor)
 (require 'init-themes)
 
