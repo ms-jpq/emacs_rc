@@ -82,10 +82,6 @@
   (dimmer-configure-hydra))
 
 
-;;#################### ########### ####################
-;;#################### Misc Region ####################
-;;#################### ########### ####################
-
 ;; create scratch buffer
 (use-package scratch
   :bind (("C-c C-n" . scratch)))

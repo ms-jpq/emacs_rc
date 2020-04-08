@@ -2,23 +2,38 @@
 ;;#################### Performance Region ####################
 ;;#################### ################## ####################
 
-;; gc tweak
-(setq gc-cons-threshold (* 100 1000 1000))
+((lambda ()
+  ;; gc tweak
+  (setq gc-cons-threshold (* 100 1000 1000))
+  ;; process comm tweak
+  (setq read-process-output-max (* 1000 1000))))
 
-;; process comm tweak
-(setq read-process-output-max (* 1000 1000))
 
 ;;#################### ########### ####################
 ;;#################### Init Region ####################
 ;;#################### ########### ####################
 
-;; lisp path
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "workspace" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "editor" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
+;; archives
+((lambda ()
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+  (package-initialize)
+  (let ((dir (expand-file-name "elpa" user-emacs-directory)))
+  (unless (file-directory-p dir)
+    (package-refresh-contents)))))
 
-;; set custom el
+
+;; libs path
+((lambda ()
+  (let ((libs-path (expand-file-name "lisp" user-emacs-directory)))
+    (add-to-list 'load-path (expand-file-name "lib" libs-path))
+    (add-to-list 'load-path (expand-file-name "workspace" libs-path))
+    (add-to-list 'load-path (expand-file-name "editor" libs-path))
+    (add-to-list 'load-path (expand-file-name "lang" libs-path)))))
+
+
+;; set customizations path
 (let
   ((cf (expand-file-name "_customize.el" user-emacs-directory)))
   (when (not (file-exists-p cf))
@@ -30,8 +45,14 @@
 ;;#################### ################### ####################
 ;;#################### Dependencies Region ####################
 ;;#################### ################### ####################
+
 (require 'init-lib)
-(require 'init-elpa)
+
+
+;;#################### ################### ####################
+;;#################### Dependencies Region ####################
+;;#################### ################### ####################
+
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
@@ -40,16 +61,24 @@
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
+(require 'init-themes)
+
+
+;;#################### ################### ####################
+;;#################### Dependencies Region ####################
+;;#################### ################### ####################
+
 (require 'init-search)
+(require 'init-cursor)
 (require 'init-highlight)
 (require 'init-suggestions)
-(require 'init-editor)
-(require 'init-themes)
+(require 'init-lsp)
 
 
 ;;#################### ########### ####################
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
+
 (require 'lang-fsharp)
 (require 'lang-json)
 (require 'lang-markdown)

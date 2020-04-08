@@ -4,6 +4,15 @@
 ;;#################### Libs Region ####################
 ;;#################### ########### ####################
 
+;; require 'use-package
+((lambda
+  (pkg)
+  (unless (package-installed-p pkg)
+    (package-install pkg))
+  (require pkg)
+  (setq use-package-always-ensure t))
+  'use-package)
+
 
 (defun schedule-background-task
   (func repeat)

@@ -88,7 +88,6 @@
 ;; require final new line
 (setq-default require-final-newline t)
 
-
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
   :config
@@ -101,6 +100,15 @@
 
 ;; yes/no -> y/n
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+
+;; auto update
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 14)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-delete-old-versions t)
+  :hook ((emacs-startup . auto-package-update-maybe)))
 
 
 ;;#################### END ####################
