@@ -17,6 +17,8 @@
               ("M-RET" . ivy-done)
               ("C-o" . ivy-occur)
          :map ivy-occur-mode-map
+              ("SPC" . ivy-occur-press)
+         :map ivy-occur-grep-mode-map
               ("SPC" . ivy-occur-press))
   :config
   (ivy-mode t))
@@ -88,7 +90,15 @@
 
 ;; writable ivy occur buffer
 (use-package wgrep
-  :after (ivy))
+  :after (ivy)
+  :custom
+  (wgrep-auto-save-buffer t)
+  :bind (:map ivy-occur-grep-mode-map
+         ("w" . nil)
+         ("C-o" . ivy-wgrep-change-to-wgrep-mode)
+         :map wgrep-mode-map
+         ("C-s" . wgrep-finish-edit)
+         ("C-k" . wgrep-abort-changes)))
 
 
 ;;#################### END ####################
