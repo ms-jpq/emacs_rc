@@ -3,8 +3,7 @@
 ;;#################### ############# ####################
 
 ;; better python server
-(use-package lsp-python-ms
-  :ensure t)
+(use-package lsp-python-ms)
 
 
 ;;#################### END ####################

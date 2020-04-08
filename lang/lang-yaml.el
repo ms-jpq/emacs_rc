@@ -3,7 +3,6 @@
 ;;#################### ########### ####################
 
 (use-package yaml-mode
-  :ensure t
   :after (lsp-mode)
   :hook ((yaml-mode . lsp))
   :init

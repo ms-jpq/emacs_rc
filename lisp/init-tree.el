@@ -3,7 +3,6 @@
 ;;#################### ########### ####################
 
 (use-package treemacs
-  :ensure t
   :custom
   (treemacs-follow-after-init t)
   (treemacs-project-follow-cleanup t)
@@ -17,13 +16,11 @@
 
 
 (use-package lsp-treemacs
-  :ensure t
   :after (lsp-mode treemacs)
   :commands (lsp-treemacs-errors-list))
 
 
 (use-package treemacs-magit
-  :ensure t
   :after (treemacs magit))
 
 

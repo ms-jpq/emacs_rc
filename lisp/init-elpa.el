@@ -24,20 +24,20 @@
     (package-install pkg))
     (require pkg))
   'use-package)
+(setq use-package-always-ensure t)
 
 
 ;; auto update
 (use-package auto-package-update
-  :ensure t
   :custom
   (auto-package-update-interval 14)
   (auto-package-update-prompt-before-update t)
-  (auto-package-update-delete-old-versions t))
+  (auto-package-update-delete-old-versions t)
+  :hook ((emacs-startup . auto-package-update-maybe)))
 
 
 ;; package mgr
 (use-package epl
-  :ensure t
   :commands (epl-refresh))
 
 

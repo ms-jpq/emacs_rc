@@ -4,7 +4,6 @@
 
 ;; search agent
 (use-package ivy
-  :ensure t
   :demand t
   :custom
   (ivy-use-virtual-buffers t)
@@ -23,7 +22,6 @@
 
 ;; replace default searches
 (use-package counsel
-  :ensure t
   :demand t
   :after (ivy)
   :init
@@ -45,7 +43,6 @@
 
 ;; sorting backend for company, ivy. etc
 (use-package prescient
-  :ensure t
   :custom
   (prescient-history-length 10 "hist items displayed")
   :config
@@ -53,7 +50,6 @@
 
 
 (use-package ivy-prescient
-  :ensure t
   :after (prescient ivy counsel)
   :config
   (ivy-prescient-mode))
@@ -61,7 +57,6 @@
 
 ;; prettier ivy
 (use-package ivy-rich
-  :ensure t
   :after (ivy counsel)
   :config
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
@@ -70,7 +65,6 @@
 
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
-  :ensure t
   :after (ivy)
   :init
   ;; xref initialization is different in Emacs 27 - there are two different
@@ -85,7 +79,6 @@
 
 ;; search in buffer
 (use-package swiper
-  :ensure t
   :after (ivy)
   :bind (:map search-command-map
               ("C-s" . swiper)))
@@ -93,7 +86,6 @@
 
 ;; writable ivy occur buffer
 (use-package wgrep
-  :ensure t
   :after (ivy))
 
 

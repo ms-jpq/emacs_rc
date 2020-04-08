@@ -4,7 +4,6 @@
 
 ;; popup, shows hotkeys
 (use-package which-key
-  :ensure t
   :demand t
   :custom
   (which-key-idle-delay 1)
@@ -18,13 +17,11 @@
 
 
 ;; bind cont key strokes
-(use-package hydra
-  :ensure t)
+(use-package hydra)
 
 
 ;; basically turns on capslock, except it's CTL
 (use-package god-mode
-  :ensure t
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)

@@ -39,7 +39,6 @@
 
 ;; move buffers around
 (use-package buffer-move
-  :ensure t
   :bind (("C-c <left>" . buf-move-left)
          ("C-c <right>" . buf-move-right)
          ("C-c <up>" . buf-move-up)
@@ -48,14 +47,12 @@
 
 ;; make popup panes easier to dismiss
 (use-package popwin
-  :ensure t
   :config
   (popwin-mode t))
 
 
 ;; make imenu a side pane
 (use-package imenu-list
-  :ensure t
   :bind (("C-u" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))
@@ -66,7 +63,6 @@
 
 ;; tiling pane manager
 (use-package zoom
-  :ensure t
   :custom
   (zoom-size (lambda ()
     '(0.618 . 0.618)))
@@ -76,7 +72,6 @@
 
 ;; dimm background panes
 (use-package dimmer
-  :ensure t
   :custom
   (dimmer-use-colorspace :rgb)
   (dimmer-adjustment-mode :both)

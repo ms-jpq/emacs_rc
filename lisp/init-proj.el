@@ -4,13 +4,11 @@
 
 ;; enforce prettier style
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode t))
 
 
 (use-package projectile
-  :ensure t
   :demand t
   :custom
   (projectile-completion-system 'ivy)
@@ -24,12 +22,10 @@
 
 
 (use-package treemacs-projectile
-  :ensure t
   :after (treemacs projectile))
 
 
 (use-package counsel-projectile
-  :ensure t
   :demand t
   :after (counsel projectile)
   :bind (:map search-command-map

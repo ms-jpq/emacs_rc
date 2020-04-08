@@ -4,7 +4,6 @@
 
 ;; required for lsp, shows errors
 (use-package flycheck
-  :ensure t
   :custom
   (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   :config
@@ -13,7 +12,6 @@
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
-  :ensure t
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :bind (:map lsp-mode-map
@@ -22,7 +20,6 @@
 
 
 (use-package lsp-ui
-  :ensure t
   :after (lsp-mode)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references)
@@ -40,15 +37,13 @@
 
 
 (use-package lsp-ivy
-  :ensure t
   :after (ivy lsp-mode)
   :bind (:map lsp-mode-map
               ("M-x" . lsp-ivy-workspace-symbol)))
 
 
 ;; debugger
-(use-package dap-mode
-  :ensure t)
+(use-package dap-mode)
 
 
 ;;#################### ################## ####################
@@ -57,7 +52,6 @@
 
 ;; auto suggestions
 (use-package company
-  :ensure t
   :demand t
   :custom
   (company-selection-wrap-around t)
@@ -73,14 +67,12 @@
 
 ;; rank suggestions by freq
 (use-package company-prescient
-  :ensure t
   :after (prescient company)
   :config
   (company-prescient-mode))
 
 
 (use-package company-lsp
-  :ensure t
   :after (company lsp-mode)
   :commands (company-lsp)
   :custom
@@ -94,14 +86,12 @@
 ;;#################### ################ ####################
 
 (use-package highlight-parentheses
-  :ensure t
   :config
   (global-highlight-parentheses-mode t))
 
 
 ;; indent guide -- not enabled by default --
 (use-package indent-guide
-  :ensure t
   :custom
   (indent-guide-delay 0.1)
   (indent-guide-char "|"))
@@ -109,7 +99,6 @@
 
 ;; highlight todos
 (use-package hl-todo
-  :ensure t
   :config
   (global-hl-todo-mode t))
 
@@ -120,7 +109,6 @@
 
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
-  :ensure t
   :config
   (global-whitespace-cleanup-mode))
 
@@ -131,38 +119,31 @@
 
 ;; edit multi selection
 (use-package iedit
-  :ensure t
   :bind (("C-r" . iedit-mode)))
 
 
 ;; goto last edited place
 (use-package goto-chg
-  :ensure t
   :bind (("M-," . goto-last-change)
          ("M-." . goto-last-change-reverse)))
 
 
 ;; algo
-(use-package smartparens
-  :ensure t)
+(use-package smartparens)
 
 ;; lisps
-(use-package paredit
-  :ensure t)
+(use-package paredit)
 
 
 ;; multiple cursors
-(use-package multiple-cursors
-  :ensure t)
+(use-package multiple-cursors)
 
 
 ;; hotkeys for text selection
-(use-package expand-region
-  :ensure t)
+(use-package expand-region)
 
 ;; move selected text around
-(use-package drag-stuff
-  :ensure t)
+(use-package drag-stuff)
 
 
 ;;#################### ########### ####################
@@ -171,7 +152,6 @@
 
 ;; create scratch buffer
 (use-package scratch
-  :ensure t
   :bind (("C-c C-n" . scratch)))
 
 

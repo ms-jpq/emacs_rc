@@ -2,13 +2,11 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
-(use-package better-defaults
-  :ensure t)
+(use-package better-defaults)
 
 
 ;; better help
 (use-package helpful
-  :ensure t
   :bind (([remap describe-key] . helpful-key)
          ([remap describe-function] . helpful-callable)
          ([remap describe-variable] . helpful-variable)
@@ -20,7 +18,6 @@
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
-  :ensure t
   :demand t
   :bind (("C-z" . undo-tree-undo)
          ("C-y" . undo-tree-redo))
@@ -30,14 +27,12 @@
 
 ;; share clipboard
 (use-package xclip
-  :ensure t
   :config
   (xclip-mode t))
 
 
 ;; better auto save
 (use-package super-save
-  :ensure t
   :custom
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
@@ -48,7 +43,6 @@
 
 ;; normalize emacs' regexp
 (use-package pcre2el
-  :ensure t
   :config
   (rxt-global-mode))
 

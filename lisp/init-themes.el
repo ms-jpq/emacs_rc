@@ -22,7 +22,6 @@
 
 ;; highlight search match count
 (use-package anzu
-  :ensure t
   :custom
   (anzu-cons-mode-line-p nil)
   :config
@@ -31,7 +30,6 @@
 
 ;; main theme
 (use-package spacemacs-theme
-  :ensure t
   :defer
   :custom
   (spacemacs-theme-comment-bg nil)
@@ -42,8 +40,7 @@
 
 
 ;; powerline
-(use-package doom-modeline
-  :ensure t)
+(use-package doom-modeline)
 ;; require manual init
 (doom-modeline-mode t)
 
