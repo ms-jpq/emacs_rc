@@ -22,8 +22,11 @@
 
 ;; highlight search match count
 (use-package anzu
-  :custom
-  (anzu-cons-mode-line-p nil)
+  :bind (([remap query-replace] . anzu-query-replace)
+         ([remap query-replace-regexp] . anzu-query-replace-regexp)
+         :map isearch-mode-map
+         ([remap isearch-query-replace] . anzu-isearch-query-replace)
+         ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp))
   :config
   (global-anzu-mode t))
 
