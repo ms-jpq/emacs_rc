@@ -26,8 +26,8 @@
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :bind (:map lsp-mode-map
-              ("M-r" . lsp-rename)
-              ("M-c" . lsp-describe-thing-at-point)))
+              ("M-s" . lsp-rename)
+              ("M-w" . lsp-describe-thing-at-point)))
 
 
 (use-package lsp-ui
@@ -141,7 +141,7 @@
 ;; edit multi selection
 (use-package iedit
   :ensure t
-  :bind (("M-i" . iedit-mode)))
+  :bind (("M-r" . iedit-mode)))
 
 
 ;; goto last edited place
