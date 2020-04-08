@@ -66,12 +66,12 @@
 ;;#################### ########### ######################
 
 ;; save recently accessed files
-(require 'recentf)
-(recentf-mode t)
-
-(setq recentf-max-saved-items 100)
-(setq recentf-max-menu-items recentf-max-saved-items)
-(schedule-background-task 'recentf-save-list (* 1 60))
+((lambda ()
+  (require 'recentf)
+  (setq recentf-max-saved-items 100)
+  (setq recentf-max-menu-items recentf-max-saved-items)
+  (schedule-background-task 'recentf-save-list (* 1 60))
+  (recentf-mode t)))
 
 
 ;; save minibuffer history
@@ -90,15 +90,6 @@
 
 ;; require final new line
 (setq-default require-final-newline t)
-
-
-;;#################### ############## ####################
-;;#################### Keymap Region ####################
-;;#################### ############# ####################
-
-(bind-keys
-  :prefix-map dir-command-map
-  :prefix "C-d")
 
 
 ;;#################### END ####################

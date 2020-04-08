@@ -31,10 +31,7 @@
   ;; lsp-ui-sideline
   ;; (lsp-ui-sideline-show-hover t)
   (lsp-ui-sideline-delay 0)
-  ;; lsp-ui-doc
-  (lsp-ui-doc-enable nil "seems to only work under GUI")
-  (lsp-ui-doc-position 'bottom)
-  (lsp-ui-doc-delay 0))
+  (lsp-ui-doc-enable nil "only works under GUI"))
 
 
 (use-package lsp-ivy

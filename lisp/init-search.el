@@ -101,5 +101,23 @@
          ("C-k" . wgrep-abort-changes)))
 
 
+;;#################### ########### ####################
+;;#################### Anzu Region ####################
+;;#################### ########### ####################
+
+;; improve search / replace
+(use-package anzu
+  :bind (([remap query-replace] . anzu-query-replace)
+         ([remap query-replace-regexp] . anzu-query-replace-regexp)
+         :map replace-command-map
+         ("C-s" . anzu-query-replace)
+         ("C-r" . anzu-query-replace-regexp)
+         :map isearch-mode-map
+         ([remap isearch-query-replace] . anzu-isearch-query-replace)
+         ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp))
+  :config
+  (global-anzu-mode t))
+
+
 ;;#################### END ####################
 (provide 'init-ivy)

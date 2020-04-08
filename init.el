@@ -33,14 +33,13 @@
 (require 'init-misc)
 (require 'init-keyboard)
 (require 'init-mouse)
-(require 'init-ivy)
+(require 'init-search)
 (require 'init-git)
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
 (require 'init-editor)
 (require 'init-themes)
-(require 'init-fun)
 
 
 ;;#################### ########### ####################

@@ -66,9 +66,10 @@
 ;;#################### ########## ####################
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
-(require 'cua-base)
-(cua-mode t)
-(setq cua-keep-region-after-copy t)
+((lambda ()
+  (require 'cua-base)
+  (cua-mode t)
+  (setq cua-keep-region-after-copy t)))
 
 
 ;; additional cua keys
@@ -90,6 +91,11 @@
 (bind-keys
   :prefix-map replace-command-map
   :prefix "C-r")
+
+;; dir keymap
+(bind-keys
+  :prefix-map dir-command-map
+  :prefix "C-d")
 
 
 ;;#################### END ####################

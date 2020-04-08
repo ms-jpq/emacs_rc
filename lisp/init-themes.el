@@ -12,27 +12,14 @@
 (global-visual-line-mode t)
 
 ;; idle animation
-(require 'zone)
-(zone-when-idle (* 10 60))
+((lambda ()
+  (require 'zone)
+  (zone-when-idle (* 10 60))))
 
 
 ;;#################### ############## ####################
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
-
-;; highlight search match count
-(use-package anzu
-  :bind (([remap query-replace] . anzu-query-replace)
-         ([remap query-replace-regexp] . anzu-query-replace-regexp)
-         :map replace-command-map
-         ("C-s" . anzu-query-replace)
-         ("C-r" . anzu-query-replace-regexp)
-         :map isearch-mode-map
-         ([remap isearch-query-replace] . anzu-isearch-query-replace)
-         ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp))
-  :config
-  (global-anzu-mode t))
-
 
 ;; main theme
 (use-package spacemacs-theme
