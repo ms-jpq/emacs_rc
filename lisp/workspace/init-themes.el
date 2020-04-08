@@ -5,9 +5,6 @@
 ;; highlight current line
 (global-hl-line-mode 1)
 
-;; line numbers
-(global-display-line-numbers-mode)
-
 ;; softwrap text
 (global-visual-line-mode t)
 

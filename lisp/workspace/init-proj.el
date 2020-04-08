@@ -2,7 +2,7 @@
 ;;#################### Project Region ####################
 ;;#################### ############## ####################
 
-;; enforce prettier style
+;; enforce project style
 (use-package editorconfig
   :config
   (editorconfig-mode t))

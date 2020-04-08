@@ -1,20 +1,6 @@
-;;#################### ############## ####################
-;;#################### Externs Region ####################
-;;#################### ############## ####################
-
-;; popup, shows hotkeys
-(use-package which-key
-  :demand t
-  :custom
-  (which-key-idle-delay 1)
-  :bind (("C-h K" . which-key-show-full-keymap)
-        ;;  :map which-key-C-h-map
-        ;;       ("<left>" . which-key-show-previous-page-cycle)
-        ;;       ("<right>" . which-key-show-next-page-cycle)
-              )
-  :config
-  (which-key-mode))
-
+;;#################### ############### ####################
+;;#################### Bindings Region ####################
+;;#################### ############### ####################
 
 ;; bind cont key strokes
 (use-package hydra)
@@ -34,19 +20,6 @@
          (god-mode-disabled
           . (lambda ()
             (setq-default header-line-format nil)))))
-
-
-;; unbind IME
-(bind-keys
-  ("C-\\" . nil))
-
-
-;;#################### ############# ####################
-;;#################### Scroll Region ####################
-;;#################### ############# ####################
-
-;; keyboard scroll one line at a time
-(setq scroll-step 1)
 
 
 ;;#################### ########## ####################
@@ -78,24 +51,9 @@
   ("M-/" . comment-line))
 
 
-;;#################### ############## ####################
-;;#################### Keymaps Region ####################
-;;#################### ############## ####################
-
-;; search keymap
+;; unbind IME
 (bind-keys
-  :prefix-map search-command-map
-  :prefix "C-f")
-
-;; replace keymap
-(bind-keys
-  :prefix-map replace-command-map
-  :prefix "C-r")
-
-;; dir keymap
-(bind-keys
-  :prefix-map dir-command-map
-  :prefix "C-d")
+  ("C-\\" . nil))
 
 
 ;;#################### END ####################

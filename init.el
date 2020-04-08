@@ -47,6 +47,7 @@
 ;;#################### ########### ####################
 
 (require 'init-lib)
+(require 'init-keymaps)
 
 
 ;;#################### ################ ####################
@@ -56,11 +57,12 @@
 (require 'init-misc)
 (require 'init-mouse)
 (require 'init-keyboard)
+(require 'init-help)
 (require 'init-navigation)
-(require 'init-git)
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
+(require 'init-git)
 (require 'init-themes)
 
 
