@@ -71,16 +71,25 @@
 (setq cua-keep-region-after-copy t)
 
 
+;; additional cua keys
+(bind-keys
+  ("C-s" . save-buffer)
+  ("M-/" . comment-line))
+
+
+;;#################### ############## ####################
+;;#################### Keymaps Region ####################
+;;#################### ############## ####################
+
 ;; search keymap
 (bind-keys
   :prefix-map search-command-map
   :prefix "C-f")
 
-
-;; additional cua keys
+;; replace keymap
 (bind-keys
-  ("C-s" . save-buffer)
-  ("M-/" . comment-line))
+  :prefix-map replace-command-map
+  :prefix "C-r")
 
 
 ;;#################### END ####################

@@ -14,8 +14,9 @@
 (use-package lsp-mode
   :hook ((prog-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
-  :bind (:map lsp-mode-map
-              ("M-r" . lsp-rename)
+  :bind (:map replace-command-map
+              ("C-l" . lsp-rename)
+         :map lsp-mode-map
               ("M-w" . lsp-describe-thing-at-point)))
 
 
@@ -128,7 +129,8 @@
 
 ;; edit multi selection
 (use-package iedit
-  :bind (("C-r" . iedit-mode)))
+  :bind (:map replace-command-map
+              ("C-e" . iedit-mode)))
 
 
 ;; goto last edited place
