@@ -20,7 +20,11 @@
 
 
 ;; move selected text around
-(use-package drag-stuff)
+(use-package drag-stuff
+  :bind (("M-<up>" . drag-stuff-up)
+         ("M-<down>" . drag-stuff-down))
+  :config
+  (drag-stuff-global-mode t))
 
 
 ;; algo
