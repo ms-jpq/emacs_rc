@@ -21,6 +21,7 @@
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
+  :commands (lsp)
   :hook
   (prog-mode . lsp)
   (lsp-mode . lsp-diagnostics-modeline-mode)
@@ -32,6 +33,7 @@
 
 
 (use-package lsp-ui
+  :commands (lsp-ui-mode)
   :after (lsp-mode)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references)
@@ -47,6 +49,7 @@
 
 (use-package lsp-ivy
   :after (ivy lsp-mode)
+  :commands (lsp-ivy-workspace-symbol)
   :bind (:map lsp-mode-map
               ("M-x" . lsp-ivy-workspace-symbol)))
 
