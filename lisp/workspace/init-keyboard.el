@@ -13,13 +13,14 @@
   (god-exempt-predicates nil)
   :bind (("C-@" . god-mode-all)
          ("<escape>" . god-mode-all))
-  :hook ((god-mode-enabled
-          . (lambda ()
-            (setq-default header-line-format
-              (make-list 100 " >uwu< "))))
-         (god-mode-disabled
-          . (lambda ()
-            (setq-default header-line-format nil)))))
+  :hook
+  (god-mode-enabled
+    . (lambda ()
+      (setq-default header-line-format
+        (make-list 100 " >uwu< "))))
+  (god-mode-disabled
+    . (lambda ()
+      (setq-default header-line-format nil))))
 
 
 ;;#################### ########## ####################

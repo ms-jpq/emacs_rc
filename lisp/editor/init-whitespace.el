@@ -14,5 +14,17 @@
   (global-whitespace-cleanup-mode))
 
 
+;;#################### ################## ####################
+;;#################### Indentation Region ####################
+;;#################### ################## ####################
+
+;; ident <-> unindent
+(use-package clean-aindent-mode
+  :bind (("C-;" . clean-aindent--bsunindent)
+         ("C-'" . clean-aindent--bsunindent))
+  :config
+  (electric-indent-mode nil))
+
+
 ;;#################### END ####################
 (provide 'init-whitespace)

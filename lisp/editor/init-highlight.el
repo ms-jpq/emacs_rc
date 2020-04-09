@@ -10,6 +10,12 @@
   (add-hook 'conf-mode-hook 'display-line-numbers-mode)))
 
 
+;; turn line feed into page breaks
+(use-package page-break-lines
+  :config
+  (turn-on-page-break-lines-mode))
+
+
 ;; highlight todos
 (use-package hl-todo
   :config
@@ -22,7 +28,8 @@
 
 
 (use-package rainbow-delimiters
-  :hook ((emacs-lisp-mode . rainbow-delimiters-mode)))
+  :hook
+  (emacs-lisp-mode . rainbow-delimiters-mode))
 
 
 ;; indent guide -- not enabled by default --

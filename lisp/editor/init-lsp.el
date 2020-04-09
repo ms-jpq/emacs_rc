@@ -15,14 +15,16 @@
 
 ;; show flycheck err in eldoc
 (use-package flycheck-pos-tip
-  :hook ((flycheck-mode . flycheck-pos-tip-mode)))
+  :hook
+  (flycheck-mode . flycheck-pos-tip-mode))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
-  :hook ((prog-mode . lsp)
-         (lsp-mode . lsp-diagnostics-modeline-mode)
-         (lsp-mode . lsp-enable-which-key-integration))
+  :hook
+  (prog-mode . lsp)
+  (lsp-mode . lsp-diagnostics-modeline-mode)
+  (lsp-mode . lsp-enable-which-key-integration)
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)
          :map lsp-mode-map
