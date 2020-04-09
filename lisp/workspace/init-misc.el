@@ -20,30 +20,10 @@
 ;;#################### Welcome Region ####################
 ;;#################### ############## ####################
 
-;; kill welcome screen
-(setq inhibit-startup-screen t)
-
-;; empty init buffer
-(setq initial-scratch-message nil)
-
-;; init buffers are plain txt mode
-(setq initial-major-mode 'text-mode)
-
-
-;;#################### ################# ####################
-;;#################### Whitespace Region ####################
-;;#################### ################# ####################
-
-;; default indent by 2
-(setq-default tab-width 2)
-
-;; require final new line
-(setq-default require-final-newline t)
-
-;; trim trailing white spaces
-(use-package whitespace-cleanup-mode
-  :config
-  (global-whitespace-cleanup-mode))
+((lambda ()
+  (setq inhibit-startup-screen t)
+  (setq initial-scratch-message nil)
+  (setq initial-major-mode 'text-mode)))
 
 
 ;;#################### ########### ####################

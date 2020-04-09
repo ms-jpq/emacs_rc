@@ -29,6 +29,7 @@
   (let ((libs-path (expand-file-name "lisp" user-emacs-directory)))
     (add-to-list 'load-path (expand-file-name "lib" libs-path))
     (add-to-list 'load-path (expand-file-name "workspace" libs-path))
+    (add-to-list 'load-path (expand-file-name "versioning" libs-path))
     (add-to-list 'load-path (expand-file-name "editor" libs-path))
     (add-to-list 'load-path (expand-file-name "lang" libs-path)))))
 
@@ -62,8 +63,14 @@
 (require 'init-wm)
 (require 'init-tree)
 (require 'init-proj)
-(require 'init-git)
 (require 'init-themes)
+
+
+;;#################### ################# ####################
+;;#################### Versioning Region ####################
+;;#################### ################# ####################
+
+(require 'init-git)
 
 
 ;;#################### ############## ####################
@@ -72,6 +79,7 @@
 
 (require 'init-cursor)
 (require 'init-search)
+(require 'init-whitespace)
 (require 'init-highlight)
 (require 'init-suggestions)
 (require 'init-lsp)
@@ -83,7 +91,6 @@
 
 (require 'lang-fsharp)
 (require 'lang-json)
-(require 'lang-markdown)
 (require 'lang-python)
 (require 'lang-typescript)
 (require 'lang-yaml)
