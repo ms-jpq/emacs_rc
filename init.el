@@ -2,11 +2,17 @@
 ;;#################### Performance Region ####################
 ;;#################### ################## ####################
 
+;; process comm tweak
+  (setq read-process-output-max (* 1000 1000))
+
+;; gc tweak
 ((lambda ()
-  ;; gc tweak
-  (setq gc-cons-threshold (* 100 1000 1000))
-  ;; process comm tweak
-  (setq read-process-output-max (* 1000 1000))))
+  (setq gc-cons-threshold most-positive-fixnum)
+  (add-hook
+    'emacs-startup-hook
+      (lambda ()
+        (setq gc-cons-threshold 1)
+        (setq gc-cons-percentage 0.1)))))
 
 
 ;;#################### ########### ####################
