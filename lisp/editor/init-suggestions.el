@@ -18,19 +18,20 @@
 
 
 ;; rank suggestions by freq
-;; (use-package company-prescient
-;;   :after (prescient company)
-;;   :config
-;;   (company-prescient-mode))
+(use-package company-prescient
+  :after (prescient company)
+  :config
+  (company-prescient-mode))
 
 
 ;; auto complete on drugs
-(use-package company-tabnine
-  :after (company)
-  :custom
-  (company-tabnine-binaries-folder (expand-file-name "tabnine" user-emacs-directory))
-  :config
-  (add-to-list 'company-backends 'company-tabnine))
+;; (use-package company-tabnine
+;;   :after (company)
+;;   :custom
+;;   (company-tabnine-max-num-results 5)
+;;   (company-tabnine-binaries-folder (expand-file-name "tabnine" user-emacs-directory))
+;;   :config
+;;   (add-to-list 'company-backends 'company-tabnine))
 
 
 ;;#################### END ####################
