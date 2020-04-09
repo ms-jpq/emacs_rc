@@ -3,7 +3,7 @@
 ;;#################### ################## ####################
 
 ;; process comm tweak
-  (setq read-process-output-max (* 1000 1000))
+(setq read-process-output-max (* 1000 1000))
 
 ;; gc tweak
 ((lambda ()
