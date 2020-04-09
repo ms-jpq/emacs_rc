@@ -18,6 +18,20 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
+;; dimm background panes
+(use-package dimmer
+  :custom
+  (dimmer-use-colorspace :rgb)
+  (dimmer-adjustment-mode :both)
+  (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
+  (dimmer-fraction 0.15)
+  :after (which-key hydra)
+  :config
+  (dimmer-mode t)
+  (dimmer-configure-which-key)
+  (dimmer-configure-hydra))
+
+
 ;; main theme
 (use-package spacemacs-theme
   :defer t
