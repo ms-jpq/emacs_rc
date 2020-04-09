@@ -3,9 +3,15 @@
 ;;#################### ################ ####################
 
 ;; show linenum only in certain modes
-;; ((lambda ()
-;;   (add-hook 'prog-mode display-line-numbers-mode)
-;;   (add-hook 'text-mode display-line-numbers-mode)))
+((lambda ()
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'text-mode-hook 'display-line-numbers-mode)))
+
+
+;; highlight todos
+(use-package hl-todo
+  :config
+  (global-hl-todo-mode t))
 
 
 (use-package highlight-parentheses
@@ -13,10 +19,8 @@
   (global-highlight-parentheses-mode t))
 
 
-;; highlight todos
-(use-package hl-todo
-  :config
-  (global-hl-todo-mode t))
+(use-package rainbow-delimiters
+  :hook ((emacs-lisp-mode . rainbow-delimiters-mode)))
 
 
 ;; indent guide -- not enabled by default --

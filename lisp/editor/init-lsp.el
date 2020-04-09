@@ -4,8 +4,11 @@
 
 ;; required for lsp, shows errors
 (use-package flycheck
+  :demand t
   :custom
   (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  :bind (:map search-command-map
+              ("C-e" . counsel-flycheck))
   :config
   (global-flycheck-mode))
 
@@ -13,6 +16,7 @@
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :hook ((prog-mode . lsp)
+         (lsp-mode . lsp-diagnostics-modeline-mode)
          (lsp-mode . lsp-enable-which-key-integration))
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)

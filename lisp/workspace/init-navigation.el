@@ -27,7 +27,10 @@
 ;; replace default searches
 (use-package counsel
   :demand t
-  :after (ivy)
+  :after (ivy helpful)
+  :custom
+  (counsel-descbinds-function . 'helpful-key)
+  (counsel-describe-function-function . 'helpful-function)
   :init
   (bind-keys
     :prefix-map counsel-command-map
@@ -37,6 +40,7 @@
            ("C-c" . counsel-recentf)
            ("C-f" . counsel-fzf)
            ("C-r" . counsel-rg)
+           ("C-g" . counsel-git)
          :map counsel-command-map
            ("C-d" . counsel-find-file)
            ("C-o" . counsel-minor)
