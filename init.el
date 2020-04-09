@@ -55,15 +55,16 @@
 ;;#################### Workspace Region ####################
 ;;#################### ################ ####################
 
+(require 'init-help)
+(require 'init-keyboard)
 (require 'init-misc)
 (require 'init-mouse)
-(require 'init-keyboard)
-(require 'init-help)
 (require 'init-navigation)
-(require 'init-wm)
-(require 'init-tree)
 (require 'init-proj)
+(require 'init-tasks)
 (require 'init-themes)
+(require 'init-tree)
+(require 'init-wm)
 
 
 ;;#################### ################# ####################
@@ -78,11 +79,11 @@
 ;;#################### ############# ####################
 
 (require 'init-cursor)
-(require 'init-search)
-(require 'init-whitespace)
 (require 'init-highlight)
-(require 'init-suggestions)
 (require 'init-lsp)
+(require 'init-search)
+(require 'init-suggestions)
+(require 'init-whitespace)
 
 
 ;;#################### ########### ####################
