@@ -19,11 +19,6 @@
 ;;#################### ################## ####################
 
 ;; ident <-> unindent
-(use-package clean-aindent-mode
-  :bind (("C-;" . clean-aindent--bsunindent)
-         ("C-'" . clean-aindent--bsunindent))
-  :config
-  (electric-indent-mode nil))
 
 
 ;;#################### END ####################
