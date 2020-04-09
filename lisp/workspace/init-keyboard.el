@@ -45,11 +45,13 @@
   ("M-<up>" .
     (lambda ()
       (interactive)
-      (re-search-backward "\n*[^\n]*")))
+      (beginning-of-visual-line)
+      (left-word)))
   ("M-<down>" .
     (lambda ()
       (interactive)
-      (re-search-forward "[^\n]*\n*"))))
+      (end-of-visual-line)
+      (right-word))))
 
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
@@ -79,8 +81,11 @@
 ;;#################### ########### ####################
 
 ;; control - x too hard to hit
-(define-key key-translation-map (kbd "C-]") (kbd "C-x"))
-
+((lambda ()
+  (define-key global-map (kbd "C-]") (kbd "C-x"))
+  (bind-keys
+    :map ctl-x-map
+    ("C-]" . save-buffers-kill-terminal))))
 
 ;; unbind IME
 (bind-keys
