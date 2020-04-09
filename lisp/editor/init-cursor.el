@@ -16,7 +16,8 @@
 
 
 ;; goto last edited place
-(use-package goto-chg)
+(use-package goto-chg
+  :defer t)
 
 
 ;; move selected text around
@@ -28,11 +29,13 @@
 
 
 ;; algo
-(use-package smartparens)
+(use-package smartparens
+  :defer t)
 
 
 ;; lisps
-(use-package paredit)
+(use-package paredit
+  :defer t)
 
 
 ;;#################### END ####################
