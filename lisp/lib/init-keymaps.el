@@ -7,10 +7,12 @@
   :prefix-map search-command-map
   :prefix "C-f")
 
+
 ;; replace keymap
 (bind-keys
   :prefix-map replace-command-map
   :prefix "C-r")
+
 
 ;; dir keymap
 (bind-keys

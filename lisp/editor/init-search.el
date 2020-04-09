@@ -13,7 +13,7 @@
   :bind (([remap query-replace] . anzu-query-replace)
          ([remap query-replace-regexp] . anzu-query-replace-regexp)
          :map replace-command-map
-         ("C-s" . anzu-query-replace)
+         ("C-a" . anzu-query-replace)
          ("C-r" . anzu-query-replace-regexp)
          :map isearch-mode-map
          ([remap isearch-query-replace] . anzu-isearch-query-replace)
