@@ -25,12 +25,13 @@
 ;;#################### ############ ####################
 
 ;; save recently accessed files
-((lambda ()
-  (require 'recentf)
-  (setq recentf-max-saved-items 100)
-  (setq recentf-max-menu-items recentf-max-saved-items)
-  (schedule-background-task 'recentf-save-list (* 1 60))
-  (recentf-mode t)))
+(use-package recentf
+  :custom
+  (recentf-max-saved-items 100)
+  (recentf-max-menu-items 100)
+  :config
+  (recentf-mode t)
+  (schedule-background-task 'recentf-save-list (* 1 60)))
 
 
 ;; better auto save
@@ -53,14 +54,14 @@
 
 ;; buffers are a leaky abstraction
 ;; simply clear out stale ones automatically
-((lambda ()
-  (require 'midnight)
-  ;; special buffers have life time of <x> seconds
-  (setq clean-buffer-list-delay-special (* 10 60))
-  ;; normal buffers have life time of <x> seconds (originally days)
-  (setq clean-buffer-list-delay-general (* 60 60 (/ 1 24 60 60)))
-  ;; repetitively remove stale buffers every <x> seconds
-  (schedule-background-task 'clean-buffer-list (* 1 60))))
+(use-package midnight
+  :custom
+  (clean-buffer-list-delay-special (* 10 60)
+    "special buffers have life time of <x> seconds")
+  (clean-buffer-list-delay-general 0.05
+    "normal buffers have life time of <x> days")
+  :config
+  (schedule-background-task 'clean-buffer-list (* 1 60)))
 
 
 ;;#################### END ####################

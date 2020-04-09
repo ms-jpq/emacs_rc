@@ -9,9 +9,9 @@
 (global-visual-line-mode t)
 
 ;; idle animation
-((lambda ()
-  (require 'zone)
-  (zone-when-idle (* 10 60))))
+(use-package zone
+  :config
+  (zone-when-idle (* 10 60)))
 
 
 ;;#################### ############## ####################
