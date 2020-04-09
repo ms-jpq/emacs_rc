@@ -12,12 +12,18 @@
 (use-package anzu
   :bind (([remap query-replace] . anzu-query-replace)
          ([remap query-replace-regexp] . anzu-query-replace-regexp)
-         :map replace-command-map
-         ("C-a" . anzu-query-replace)
-         ("C-r" . anzu-query-replace-regexp)
          :map isearch-mode-map
-         ([remap isearch-query-replace] . anzu-isearch-query-replace)
-         ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp))
+              ([remap isearch-query-replace] . anzu-isearch-query-replace)
+              ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp)
+          :map replace-command-map
+               ("C-a" . anzu-query-replace)
+               ("C-r" . anzu-query-replace-regexp)
+          :map query-replace-map
+               ("RET" . act)
+               ("M-RET" . automatic)
+          :map multi-query-replace-map
+               ("RET" . act)
+               ("M-RET" . automatic))
   :config
   (global-anzu-mode t))
 
