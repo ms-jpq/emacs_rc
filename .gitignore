@@ -10,7 +10,7 @@ var/
 tabnine/
 history
 places
-recentf
+recentf*
 .lsp-session-*
 .last-package-update-*
 company-statistics-*
