@@ -13,6 +13,11 @@
   (global-flycheck-mode))
 
 
+;; show flycheck err in eldoc
+(use-package flycheck-pos-tip
+  :hook ((flycheck-mode . flycheck-pos-tip-mode)))
+
+
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
   :hook ((prog-mode . lsp)

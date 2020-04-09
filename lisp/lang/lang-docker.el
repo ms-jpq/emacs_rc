@@ -1,11 +1,10 @@
 ;;#################### ############# ####################
-;;#################### Python Region ####################
+;;#################### Docker Region ####################
 ;;#################### ############# ####################
 
-;; better python server
-(use-package lsp-python-ms
+(use-package dockerfile-mode
   :defer t)
 
 
 ;;#################### END ####################
-(provide 'lang-python)
+(provide 'lang-docker)

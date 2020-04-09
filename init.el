@@ -90,7 +90,9 @@
 ;;#################### Lang Region ####################
 ;;#################### ########### ####################
 
+(require 'lang-docker)
 (require 'lang-fsharp)
+(require 'lang-git)
 (require 'lang-json)
 (require 'lang-python)
 (require 'lang-typescript)
