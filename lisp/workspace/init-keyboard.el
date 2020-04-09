@@ -40,10 +40,16 @@
 ;;#################### CUA Region ####################
 ;;#################### ########## ####################
 
-;; consistent prev next line behaviour
+;; consistent prev next word behaviour
 (bind-keys
-  ("M-<up>" . previous-line)
-  ("M-<down>" . next-line))
+  ("M-<up>" .
+    (lambda ()
+      (interactive)
+      (re-search-backward "\n*[^\n]*")))
+  ("M-<down>" .
+    (lambda ()
+      (interactive)
+      (re-search-forward "[^\n]*\n*"))))
 
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
