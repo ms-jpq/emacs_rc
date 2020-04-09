@@ -4,15 +4,6 @@
 
 (use-package better-defaults)
 
-;; normalize emac's undo - redo
-(use-package undo-tree
-  :demand t
-  :bind (("C-z" . undo-tree-undo)
-         ("C-y" . undo-tree-redo))
-  :config
-  (global-undo-tree-mode))
-
-
 ;; share clipboard
 (use-package xclip
   :config
@@ -39,15 +30,6 @@
 (setq initial-major-mode 'text-mode)
 
 
-;;#################### ########### ######################
-;;#################### Hist Region ######################
-;;#################### ########### ######################
-
-
-;; save minibuffer history
-(savehist-mode 1)
-
-
 ;;#################### ################# ####################
 ;;#################### Whitespace Region ####################
 ;;#################### ################# ####################
@@ -70,8 +52,6 @@
 
 ;; yes/no -> y/n
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-
 
 
 ;;#################### END ####################

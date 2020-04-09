@@ -3,9 +3,9 @@
 ;;#################### ################ ####################
 
 ;; show linenum only in certain modes
-((lambda ()
-  (add-hook 'prog-mode display-line-numbers-mode)
-  (add-hook 'text-mode display-line-numbers-mode)))
+;; ((lambda ()
+;;   (add-hook 'prog-mode display-line-numbers-mode)
+;;   (add-hook 'text-mode display-line-numbers-mode)))
 
 
 (use-package highlight-parentheses

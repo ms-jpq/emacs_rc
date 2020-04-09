@@ -2,6 +2,12 @@
 ;;#################### Search / Replace Region ####################
 ;;#################### ####################### ####################
 
+;; edit current select symbol selection
+(use-package iedit
+  :bind (:map replace-command-map
+              ("C-e" . iedit-mode)))
+
+
 ;; improve search / replace
 (use-package anzu
   :bind (([remap query-replace] . anzu-query-replace)
@@ -21,6 +27,25 @@
   :after (ivy)
   :bind (:map search-command-map
               ("C-s" . swiper)))
+
+
+;; writable ivy occur buffer
+(use-package wgrep
+  :after (ivy)
+  :custom
+  (wgrep-auto-save-buffer t)
+  :bind (:map ivy-occur-grep-mode-map
+         ("w" . nil)
+         ("C-o" . ivy-wgrep-change-to-wgrep-mode)
+         :map wgrep-mode-map
+         ("C-s" . wgrep-finish-edit)
+         ("C-k" . wgrep-abort-changes)))
+
+
+;; goto last edited place
+(use-package goto-chg
+  :bind (("M-," . goto-last-change)
+         ("M-." . goto-last-change-reverse)))
 
 
 ;;#################### END ####################

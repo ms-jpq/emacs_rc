@@ -45,6 +45,15 @@
   (setq cua-keep-region-after-copy t)))
 
 
+;; normalize emac's undo - redo
+(use-package undo-tree
+  :demand t
+  :bind (("C-z" . undo-tree-undo)
+         ("C-y" . undo-tree-redo))
+  :config
+  (global-undo-tree-mode))
+
+
 ;; additional cua keys
 (bind-keys
   ("C-s" . save-buffer)
