@@ -107,6 +107,7 @@
 (require 'lang-git)
 (require 'lang-json)
 (require 'lang-python)
+(require 'lang-toml)
 (require 'lang-typescript)
 (require 'lang-yaml)
 
