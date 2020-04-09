@@ -31,12 +31,20 @@
 
 ;; easier quit
 (bind-keys
-  ("C-q" . keyboard-escape-quit))
+  ("C-q" . keyboard-escape-quit)
+  :map ctl-x-map
+  ("C-q" . nil))
 
 
 ;;#################### ########## ####################
 ;;#################### CUA Region ####################
 ;;#################### ########## ####################
+
+;; consistent prev next line behaviour
+(bind-keys
+  ("M-<up>" . previous-line)
+  ("M-<down>" . next-line))
+
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 ((lambda ()
@@ -58,6 +66,14 @@
 (bind-keys
   ("C-s" . save-buffer)
   ("M-/" . comment-line))
+
+
+;;#################### ########### ####################
+;;#################### Misc Region ####################
+;;#################### ########### ####################
+
+;; control - x too hard to hit
+(define-key key-translation-map (kbd "C-]") (kbd "C-x"))
 
 
 ;; unbind IME

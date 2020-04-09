@@ -6,17 +6,13 @@
 (windmove-default-keybindings 'control)
 
 
-;; restore pane layouts
-((lambda ()
-  (winner-mode t)
-  (bind-keys
+;; pane layouts
+(bind-keys
     ("C-w" . delete-window)
     ("M-=" . split-window-right)
     ("M--" . split-window-below)
     ("M-p" . delete-window)
-    ("M-o" . delete-other-windows)
-    ("M-j" . winner-undo)
-    ("M-k" . winner-redo))))
+    ("M-o" . delete-other-windows))
 
 
 ;; move buffers around
@@ -25,6 +21,11 @@
          ("C-c <right>" . buf-move-right)
          ("C-c <up>" . buf-move-up)
          ("C-c <down>" . buf-move-down)))
+
+
+;; create scratch buffer
+(use-package scratch
+  :bind (("C-n" . scratch)))
 
 
 ;;#################### ###################### ####################
@@ -72,15 +73,6 @@
   (dimmer-mode t)
   (dimmer-configure-which-key)
   (dimmer-configure-hydra))
-
-
-;;#################### ########### ####################
-;;#################### Misc Region ####################
-;;#################### ########### ####################
-
-;; create scratch buffer
-(use-package scratch
-  :bind (("C-c C-n" . scratch)))
 
 
 ;;#################### END ####################

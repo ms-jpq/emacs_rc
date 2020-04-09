@@ -42,11 +42,5 @@
          ("C-k" . wgrep-abort-changes)))
 
 
-;; goto last edited place
-(use-package goto-chg
-  :bind (("M-," . goto-last-change)
-         ("M-." . goto-last-change-reverse)))
-
-
 ;;#################### END ####################
 (provide 'init-search)

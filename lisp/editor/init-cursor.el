@@ -3,11 +3,20 @@
 ;;#################### ############## ####################
 
 ;; multiple cursors
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :bind (("M-c" . mc/edit-lines)
+          :map mc/keymap
+          ("C-q" . mc/keyboard-quit)))
 
 
 ;; hotkeys for text selection
-(use-package expand-region)
+(use-package expand-region
+  :bind (("M-." . er/expand-region)
+         ("M-," . er/contract-region)))
+
+
+;; goto last edited place
+(use-package goto-chg)
 
 
 ;; move selected text around

@@ -15,4 +15,5 @@ recentf
 .last-package-update-*
 company-statistics-*
 projectile*
+.mc-lists*
 _customize.el
