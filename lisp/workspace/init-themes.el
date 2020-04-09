@@ -30,6 +30,14 @@
       (load-theme 'spacemacs-light t))))
 
 
+;; nyan scrollbars
+(use-package nyan-mode
+  :custom
+  (nyan-minimum-window-width 40)
+  :config
+  (nyan-mode))
+
+
 ;; powerline
 (use-package doom-modeline
   :config

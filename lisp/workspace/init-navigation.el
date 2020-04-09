@@ -27,10 +27,7 @@
 ;; replace default searches
 (use-package counsel
   :demand t
-  :after (ivy helpful)
-  :custom
-  (counsel-descbinds-function . 'helpful-key)
-  (counsel-describe-function-function . 'helpful-function)
+  :after (ivy)
   :init
   (bind-keys
     :prefix-map counsel-command-map
