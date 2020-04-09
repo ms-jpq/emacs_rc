@@ -14,6 +14,12 @@
   'use-package)
 
 
+;; help to benchmark load times
+(use-package benchmark-init
+  :config
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+
+
 ;; prevent keybinding overwrite
 (use-package better-defaults)
 

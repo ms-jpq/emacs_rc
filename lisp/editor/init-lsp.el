@@ -52,7 +52,8 @@
 
 
 ;; debugger
-(use-package dap-mode)
+(use-package dap-mode
+  :defer t)
 
 
 (use-package company-lsp
