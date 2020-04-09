@@ -23,7 +23,7 @@
 (use-package git-gutter
   :demand t
   :config
-  (defhydra hy-git-gutter (global-map "C-i")
+  (defhydra hy-git-gutter (global-map "C-j")
     ("[" git-gutter:previous-hunk)
     ("]" git-gutter:next-hunk)
     ("s" git-gutter:stage-hunk)
