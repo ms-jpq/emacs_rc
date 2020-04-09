@@ -13,4 +13,4 @@
 
 
 ;;#################### END ####################
-(provide 'git-docker)
+(provide 'lang-git)
