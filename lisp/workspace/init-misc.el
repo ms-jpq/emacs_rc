@@ -2,8 +2,6 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
-(use-package better-defaults)
-
 ;; share clipboard
 (use-package xclip
   :config

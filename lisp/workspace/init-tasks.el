@@ -38,6 +38,10 @@
 ;;#################### Buffers Region ####################
 ;;#################### ############## ####################
 
+;; buffers will poll inotify
+(global-auto-revert-mode t)
+
+
 ;; buffers are a leaky abstraction
 ;; simply clear out stale ones automatically
 ((lambda ()

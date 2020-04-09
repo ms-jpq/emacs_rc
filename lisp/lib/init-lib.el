@@ -14,6 +14,14 @@
   'use-package)
 
 
+;; prevent keybinding overwrite
+(use-package better-defaults)
+
+
+;;#################### ############## ####################
+;;#################### Exports Region ####################
+;;#################### ############## ####################
+
 (defun schedule-background-task
   (func repeat)
   (add-hook 'emacs-startup-hook
