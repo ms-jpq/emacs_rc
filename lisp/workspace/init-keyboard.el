@@ -82,7 +82,7 @@
 
 ;; control - x too hard to hit
 ((lambda ()
-  (define-key global-map (kbd "C-]") (kbd "C-x"))
+  (global-set-key (kbd "C-]") ctl-x-map)
   (bind-keys
     :map ctl-x-map
     ("C-]" . save-buffers-kill-terminal))))
