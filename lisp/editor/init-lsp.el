@@ -21,9 +21,9 @@
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
 (use-package lsp-mode
-  :commands (lsp)
+  :commands (lsp lsp-deferred)
   :hook
-  (prog-mode . lsp)
+  (prog-mode . lsp-deferred)
   (lsp-mode . lsp-diagnostics-modeline-mode)
   (lsp-mode . lsp-enable-which-key-integration)
   :bind (:map replace-command-map
