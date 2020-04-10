@@ -2,10 +2,15 @@
 ;;#################### Search / Replace Region ####################
 ;;#################### ####################### ####################
 
+
+(bind-keys
+  ("M-d" . xref-find-definitions)
+  ("M-e" . xref-find-references))
+
+
 ;; edit current select symbol selection
 (use-package iedit
-  :bind (:map replace-command-map
-              ("C-r" . iedit-mode)))
+  :bind (("M-r" . iedit-mode)))
 
 
 ;; improve search / replace

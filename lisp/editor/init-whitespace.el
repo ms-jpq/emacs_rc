@@ -14,6 +14,12 @@
   (global-whitespace-cleanup-mode))
 
 
+;; delete consecutive white spaces
+(use-package hungry-delete
+  :config
+  (global-hungry-delete-mode))
+
+
 ;;#################### ################## ####################
 ;;#################### Indentation Region ####################
 ;;#################### ################## ####################
