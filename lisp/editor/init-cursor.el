@@ -11,7 +11,12 @@
 
 ;; hotkeys for text selection
 (use-package expand-region
-  :bind (("M-." . er/expand-region)
+  :bind (("M-."
+          . (lambda ()
+              (interactive)
+              (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
+                    (call-interactively 'er/expand-region)
+                    (setq transient-mark-mode (cons 'only oldval)))))
          ("M-," . er/contract-region)))
 
 
