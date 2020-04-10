@@ -14,8 +14,6 @@
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
-  :bind (:map dir-command-map
-              ("C-p" . projectile-switch-project))
   :config
   (projectile-mode t)
   (setq projectile-mode-map (make-sparse-keymap)))
@@ -28,7 +26,9 @@
 (use-package counsel-projectile
   :after (counsel projectile)
   :bind (:map search-command-map
-              ("C-p" . counsel-projectile-find-file))
+              ("C-p" . counsel-projectile-find-file)
+         :map ops-command-mapa
+              ("C-r" . counsel-projectile-switch-project))
   :hook
   (projectile-mode . counsel-projectile-mode))
 

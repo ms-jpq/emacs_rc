@@ -2,6 +2,12 @@
 ;;#################### Keymaps Region ####################
 ;;#################### ############## ####################
 
+;; operations keymap
+(bind-keys
+  :prefix-map ops-command-map
+  :prefix "C-l")
+
+
 ;; search keymap
 (bind-keys
   :prefix-map search-command-map

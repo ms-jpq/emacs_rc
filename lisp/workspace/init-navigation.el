@@ -29,19 +29,16 @@
   :demand t
   :after (ivy)
   :init
-  (bind-keys
-    :prefix-map counsel-command-map
-    :prefix "C-l")
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
-           ("C-c" . counsel-recentf)
-           ("C-f" . counsel-fzf)
-           ("C-r" . counsel-rg)
-           ("C-g" . counsel-git)
-         :map counsel-command-map
-           ("C-d" . counsel-find-file)
-           ("C-o" . counsel-minor)
-           ("C-p" . counsel-major))
+              ("C-c" . counsel-recentf)
+              ("C-r" . counsel-rg)
+              ("C-g" . counsel-git)
+              ("C-f" . counsel-fzf)
+         :map ops-command-map
+              ("C-o" . counsel-minor)
+              ("C-p" . counsel-major)
+              ("C-d" . counsel-find-file))
   :config
   (counsel-mode))
 
