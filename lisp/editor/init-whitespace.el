@@ -10,6 +10,8 @@
 
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
+  :custom
+  (whitespace-cleanup-mode-preserve-point t)
   :config
   (global-whitespace-cleanup-mode))
 

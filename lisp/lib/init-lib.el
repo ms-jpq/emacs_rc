@@ -59,7 +59,7 @@
                                        (when msg (message msg))))))))
 
 
-;; TODO: fix this
+;; TODO: rewrite this as a macro
 (defun with-shift-region
     (func)
   "use shift mode for region marking funcs"
