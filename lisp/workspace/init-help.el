@@ -6,7 +6,7 @@
 (use-package which-key
   :demand t
   :custom
-  (which-key-idle-delay 1)
+  (which-key-idle-delay 0.5)
   :bind (("C-h K" . which-key-show-full-keymap)
         ;;  :map which-key-C-h-map
         ;;       ("<left>" . which-key-show-previous-page-cycle)
