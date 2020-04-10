@@ -29,7 +29,8 @@
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)
               :map lsp-mode-map
-              ("M-f" . lsp-describe-thing-at-point)))
+              ("M-f" . lsp-describe-thing-at-point)
+              ("C-f" . lsp-format-buffer)))
 
 
 (use-package lsp-ui

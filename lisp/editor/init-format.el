@@ -3,8 +3,7 @@
 ;;#################### ############# ####################
 
 (use-package format-all
-  :config
-  (format-all-mode))
+  :bind (("C-c C-f" . format-all-buffer)))
 
 
 ;;#################### END ####################
