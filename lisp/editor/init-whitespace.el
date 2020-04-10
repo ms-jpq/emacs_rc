@@ -34,5 +34,11 @@
          ("M-'" . stupid-indent)))
 
 
+;; indent not just current line, but the context
+(use-package aggressive-indent
+  :config
+  (global-aggressive-indent-mode 1))
+
+
 ;;#################### END ####################
 (provide 'init-whitespace)

@@ -64,12 +64,12 @@
 
 
 ;; buffers are a leaky abstraction
-;; simply clear out stale ones automatically
+;; garbage collect them
 (use-package midnight
   :custom
-  (clean-buffer-list-delay-special (* 10 60)
+  (clean-buffer-list-delay-special (* 5 60)
                                    "special buffers have life time of <x> seconds")
-  (clean-buffer-list-delay-general 0.05
+  (clean-buffer-list-delay-general 0.01
                                    "normal buffers have life time of <x> days")
   :config
   (schedule-background-task 'clean-buffer-list (* 1 60)))

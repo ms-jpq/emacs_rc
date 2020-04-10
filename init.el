@@ -113,6 +113,7 @@
   (require 'lang-json)
   (require 'lang-markdown)
   (require 'lang-python)
+  (require 'lang-racket)
   (require 'lang-toml)
   (require 'lang-typescript)
   (require 'lang-yaml)
