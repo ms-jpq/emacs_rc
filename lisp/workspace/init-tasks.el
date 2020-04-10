@@ -3,7 +3,7 @@
 ;;#################### ######### ####################
 
 ;; GC when emacs is not being used
-(schedule-idle-background-task 'garbage-collect t 2)
+(schedule-idle-background-task t 2 'garbage-collect)
 
 
 ;;#################### ############# ####################
@@ -42,7 +42,7 @@
   (recentf-max-menu-items 100)
   :config
   (recentf-mode t)
-  (schedule-background-task 'recentf-save-list (* 1 60)))
+  (schedule-background-task (* 1 60) 'recentf-save-list))
 
 
 ;; better auto save
@@ -72,7 +72,7 @@
   (clean-buffer-list-delay-general 0.01
                                    "normal buffers have life time of <x> days")
   :config
-  (schedule-background-task 'clean-buffer-list (* 1 60)))
+  (schedule-background-task (* 1 60) 'clean-buffer-list))
 
 
 ;;#################### END ####################

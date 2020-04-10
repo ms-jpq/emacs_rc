@@ -30,7 +30,7 @@
 ;;#################### ############## ####################
 
 (defun schedule-background-task
-    (func frequency)
+    (frequency func)
   "run background task with frequency"
   (add-hook 'emacs-startup-hook
             (lambda ()
@@ -45,7 +45,7 @@
 
 
 (defun schedule-idle-background-task
-    (func repeat seconds)
+    (repeat seconds func)
   "run idle background task with frequency"
   (add-hook 'emacs-startup-hook
             (lambda ()
