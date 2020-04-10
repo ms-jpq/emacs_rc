@@ -14,9 +14,7 @@
   :bind (("M-."
           . (lambda ()
               (interactive)
-              (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
-                    (call-interactively 'er/expand-region)
-                    (setq transient-mark-mode (cons 'only oldval)))))
+              (with-shift-region 'er/expand-region)))
          ("M-," . er/contract-region)))
 
 

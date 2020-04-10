@@ -63,11 +63,10 @@
 (defun with-shift-region
     (func)
   "use shift mode for region marking funcs"
-  (lambda ()
-    (interactive)
-    (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
-      (call-interactively func)
-      (setq transient-mark-mode (cons 'only oldval)))))
+  ;; (interactive)
+  (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
+    (call-interactively func)
+    (setq transient-mark-mode (cons 'only oldval))))
 
 
 ;;#################### END ####################

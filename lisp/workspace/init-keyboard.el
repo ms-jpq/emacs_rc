@@ -49,9 +49,7 @@
          ("M-a"
           . (lambda ()
               (interactive)
-              (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
-                (call-interactively 'mark-whole-buffer)
-                (setq transient-mark-mode (cons 'only oldval)))))
+              (with-shift-region 'mark-whole-buffer)))
          ("M-/"
           . (lambda ()
               (interactive)
