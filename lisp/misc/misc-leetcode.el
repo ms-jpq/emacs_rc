@@ -2,11 +2,19 @@
 ;;#################### Leetcode Region ####################
 ;;#################### ############### ####################
 
+(use-package names
+  :defer t)
+
+
+(use-package ctable
+  :defer t)
+
+
 (use-package leetcode
-  :defer t
-  :custom
-  (leetcode-prefer-language "python3")
-  (leetcode-prefer-sql "mysql"))
+    :load-path "packages/leetcode-emacs"
+    :custom
+    (leetcode-path "~/leetcode")
+    (leetcode-language "python3"))
 
 
 ;;#################### END ####################
