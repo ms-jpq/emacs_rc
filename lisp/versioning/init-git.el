@@ -24,11 +24,11 @@
 (use-package git-gutter
   :config
   (defhydra hy-git-gutter (vc-command-map "C-j")
-    ("[" git-gutter:previous-hunk)
-    ("]" git-gutter:next-hunk)
-    ("d" git-gutter:popup-hunk)
-    ("s" git-gutter:stage-hunk)
-    ("k" git-gutter:revert-hunk))
+    ("[" git-gutter:previous-hunk "previous change")
+    ("]" git-gutter:next-hunk "next change")
+    ("d" git-gutter:popup-hunk "show diff")
+    ("s" git-gutter:stage-hunk "stage")
+    ("k" git-gutter:revert-hunk "revert"))
   (global-git-gutter-mode t))
 
 
