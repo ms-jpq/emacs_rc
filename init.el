@@ -111,6 +111,7 @@
   (require 'lang-java)
   (require 'lang-jinja2)
   (require 'lang-json)
+  (require 'lang-markdown)
   (require 'lang-python)
   (require 'lang-toml)
   (require 'lang-typescript)
