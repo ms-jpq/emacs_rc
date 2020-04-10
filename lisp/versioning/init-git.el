@@ -25,10 +25,9 @@
   (defhydra hy-git-gutter (global-map "C-j")
     ("[" git-gutter:previous-hunk)
     ("]" git-gutter:next-hunk)
+    ("d" git-gutter:popup-hunk)
     ("s" git-gutter:stage-hunk)
-    ("v" git-gutter:revert-hunk)
-    ("m" git-gutter:mark-hunk)
-    ("p" git-gutter:popup-hunk))
+    ("k" git-gutter:revert-hunk))
   (global-git-gutter-mode t))
 
 
