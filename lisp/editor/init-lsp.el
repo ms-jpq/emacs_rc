@@ -36,7 +36,7 @@
   :commands (lsp-ui-mode)
   :after (lsp-mode)
   :bind (("M-d" . xref-find-definitions)
-         ("M-e" . xref-find-references)
+         ("M-r" . xref-find-references)
          :map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references))

@@ -24,7 +24,7 @@
   (dimmer-use-colorspace :rgb)
   (dimmer-adjustment-mode :both)
   (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
-  (dimmer-fraction 0.15)
+  (dimmer-fraction 0.10 "is a quantized value :<")
   :after (which-key hydra)
   :config
   (dimmer-mode t)
