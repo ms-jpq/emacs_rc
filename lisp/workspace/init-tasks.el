@@ -12,9 +12,9 @@
 
 (use-package server
   :hook
-  (emacs-startup .
-                 (lambda ()
-                   (unless (server-running-p) (server-start)))))
+  (emacs-startup
+   . (lambda ()
+       (unless (server-running-p) (server-start)))))
 
 
 ;;#################### ############### ####################

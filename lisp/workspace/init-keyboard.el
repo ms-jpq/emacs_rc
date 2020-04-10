@@ -47,10 +47,10 @@
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
          ("M-a" . mark-whole-buffer)
-         ("M-/" .
-          (lambda (arg)
-            (interactive "p")
-            (save-excursion (comment-line arg)))))
+         ("M-/"
+          . (lambda (arg)
+              (interactive "p")
+              (save-excursion (comment-line arg)))))
   :config
   (cua-mode t))
 

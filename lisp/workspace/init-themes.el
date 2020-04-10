@@ -40,9 +40,9 @@
   :init
   (require 'spacemacs-common)
   :hook
-  (emacs-startup .
-                 (lambda ()
-                   (load-theme 'spacemacs-light t))))
+  (emacs-startup
+   . (lambda ()
+       (load-theme 'spacemacs-light t))))
 
 
 ;; nyan scrollbars
