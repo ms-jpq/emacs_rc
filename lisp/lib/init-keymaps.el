@@ -23,7 +23,7 @@
 ;; vc keymap
 (bind-keys
   :prefix-map vc-command-map
-  :prefix "C-m")
+  :prefix "C-j")
 
 
 ;;#################### END ####################
