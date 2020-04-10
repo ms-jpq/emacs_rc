@@ -105,6 +105,8 @@
 (require 'lang-docker)
 (require 'lang-fsharp)
 (require 'lang-git)
+(require 'lang-haskell)
+(require 'lang-java)
 (require 'lang-json)
 (require 'lang-python)
 (require 'lang-toml)
