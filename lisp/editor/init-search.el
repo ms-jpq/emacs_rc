@@ -18,8 +18,14 @@
          ([remap isearch-query-replace] . anzu-isearch-query-replace)
          ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp)
          :map replace-command-map
-         ("C-a" . anzu-query-replace)
-         ("C-e" . anzu-query-replace-regexp)
+         ("C-a"
+          . (lambda ()
+              (interactive)
+              (with-min-cursor 'anzu-query-replace)))
+         ("C-e"
+          . (lambda ()
+              (interactive)
+              (with-min-cursor 'anzu-query-replace-regexp)))
          :map query-replace-map
          ("RET" . act)
          ("M-RET" . automatic)

@@ -62,10 +62,17 @@
 (defun with-shift-region
     (func)
   "use shift mode for region marking funcs"
-  ;; (interactive)
   (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
     (call-interactively func)
     (setq transient-mark-mode (cons 'only oldval))))
+
+
+(defun with-min-cursor
+    (func)
+  "execute func with cursor at begining of buffer, return"
+  (save-excursion
+    (goto-char (point-min))
+    (call-interactively func)))
 
 
 ;;#################### END ####################
