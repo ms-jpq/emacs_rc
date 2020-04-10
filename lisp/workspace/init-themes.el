@@ -5,8 +5,18 @@
 ;; highlight current line
 (global-hl-line-mode 1)
 
+
 ;; softwrap text
 (global-visual-line-mode t)
+
+
+;; show linenum only in certain modes
+((lambda ()
+   (column-number-mode t)
+   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+   (add-hook 'text-mode-hook 'display-line-numbers-mode)
+   (add-hook 'conf-mode-hook 'display-line-numbers-mode)))
+
 
 ;; idle animation
 (use-package zone
@@ -57,6 +67,12 @@
 (use-package doom-modeline
   :config
   (doom-modeline-mode t))
+
+
+;; turn line feed into page breaks TODO: you need to manually toggle this?
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
 
 
 ;;#################### END ####################

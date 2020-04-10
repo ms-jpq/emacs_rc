@@ -53,7 +53,8 @@
 (use-package ivy-prescient
   :after (prescient ivy counsel)
   :custom
-  (ivy-prescient-sort-commands '(:not counsel-recentf))
+  (ivy-prescient-sort-commands
+   '(:not counsel-recentf))
   :config
   (ivy-prescient-mode))
 
