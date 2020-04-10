@@ -46,11 +46,16 @@
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
-         ("M-a" . mark-whole-buffer)
+         ("M-a"
+          . (lambda ()
+              (interactive)
+              (let ((oldval (or (cdr-safe transient-mark-mode) transient-mark-mode)))
+                (call-interactively 'mark-whole-buffer)
+                (setq transient-mark-mode (cons 'only oldval)))))
          ("M-/"
-          . (lambda (arg)
-              (interactive "p")
-              (save-excursion (comment-line arg)))))
+          . (lambda ()
+              (interactive)
+              (save-excursion (call-interactively 'comment-line)))))
   :config
   (cua-mode t))
 
