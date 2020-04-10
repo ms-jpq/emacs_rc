@@ -5,11 +5,13 @@
 ;; edit current select symbol selection
 (use-package iedit
   :bind (:map replace-command-map
-              ("C-e" . iedit-mode)))
+              ("C-r" . iedit-mode)))
 
 
 ;; improve search / replace
 (use-package anzu
+  :custom
+  (anzu-replace-to-string-separator " -> ")
   :bind (([remap query-replace] . anzu-query-replace)
          ([remap query-replace-regexp] . anzu-query-replace-regexp)
          :map isearch-mode-map
@@ -17,7 +19,7 @@
               ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp)
           :map replace-command-map
                ("C-a" . anzu-query-replace)
-               ("C-r" . anzu-query-replace-regexp)
+               ("C-e" . anzu-query-replace-regexp)
           :map query-replace-map
                ("RET" . act)
                ("M-RET" . automatic)

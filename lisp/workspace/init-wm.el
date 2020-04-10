@@ -9,10 +9,9 @@
 ;; pane layouts
 (bind-keys
     ("C-w" . delete-window)
+    ("M-w" . delete-other-windows)
     ("M-=" . split-window-right)
-    ("M--" . split-window-below)
-    ("M-p" . delete-window)
-    ("M-o" . delete-other-windows))
+    ("M--" . split-window-below))
 
 
 ;; move buffers around
