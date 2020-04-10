@@ -46,6 +46,7 @@
 (use-package prescient
   :custom
   (prescient-history-length 10 "hist items displayed")
+  (ivy-prescient-sort-commands '(:not counsel-recentf))
   :config
   (prescient-persist-mode))
 
