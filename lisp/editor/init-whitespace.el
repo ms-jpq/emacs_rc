@@ -19,6 +19,11 @@
 ;;#################### ################## ####################
 
 ;; ident <-> unindent
+(use-package stupid-indent-mode
+  :custom
+  (stupid-indent-level 2)
+  :bind (("M-;" . stupid-outdent)
+         ("M-'" . stupid-indent)))
 
 
 ;;#################### END ####################
