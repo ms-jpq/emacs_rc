@@ -20,5 +20,11 @@
   :prefix "C-d")
 
 
+;; vc keymap
+(bind-keys
+  :prefix-map vc-command-map
+  :prefix "C-m")
+
+
 ;;#################### END ####################
 (provide 'init-keymaps)

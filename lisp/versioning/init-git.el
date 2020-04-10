@@ -4,7 +4,8 @@
 
 ;; git porcelain
 (use-package magit
-  :bind (("C-c C-m" . magit)
+  :bind (:map vc-command-map
+              ("C-m" . magit)
          :map magit-mode-map
               ("C-q" . magit-mode-bury-buffer))
   :config
@@ -22,7 +23,7 @@
 ;; vscode like git in side line
 (use-package git-gutter
   :config
-  (defhydra hy-git-gutter (global-map "C-j")
+  (defhydra hy-git-gutter (vc-command-map "C-j")
     ("[" git-gutter:previous-hunk)
     ("]" git-gutter:next-hunk)
     ("d" git-gutter:popup-hunk)
@@ -35,7 +36,8 @@
 (use-package git-timemachine
   :custom
   (git-timemachine-abbreviation-length 10)
-  :bind (("C-c C-t" . git-timemachine-toggle)
+  :bind (:map vc-command-map
+              ("C-t" . git-timemachine-toggle)
          :map git-timemachine-mode-map
          ("=" . git-timemachine-show-previous-revision)
          ("-" . git-timemachine-show-next-revision)
