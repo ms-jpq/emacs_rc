@@ -39,5 +39,20 @@
   (indent-guide-char "|"))
 
 
+;;#################### ############ ####################
+;;#################### Focus Region ####################
+;;#################### ############ ####################
+
+;; dim regions of text not under edit
+(use-package focus
+  :defer t)
+
+;; TODO: when will this be on melpa?
+;; (use-package lsp-focus
+;;   :after (lsp-mode focus)
+;;   :hook
+;;   (focus-mode lsp-focus-mode))
+
+
 ;;#################### END ####################
 (provide 'init-highlight)
