@@ -41,24 +41,13 @@
 ;;#################### CUA Region ####################
 ;;#################### ########## ####################
 
-;; consistent prev next word behaviour
-(bind-keys
-  ("M-<up>" .
-    (lambda ()
-      (interactive)
-      (beginning-of-visual-line)
-      (left-word)))
-  ("M-<down>" .
-    (lambda ()
-      (interactive)
-      (end-of-visual-line)
-      (right-word))))
-
-
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
   :custom
   (cua-keep-region-after-copy t)
+  :bind (("C-s" . save-buffer)
+         ("M-a" . mark-whole-buffer)
+         ("M-/" . comment-line))
   :config
   (cua-mode t))
 
@@ -70,12 +59,6 @@
          ("C-y" . undo-tree-redo))
   :config
   (global-undo-tree-mode))
-
-
-;; additional cua keys
-(bind-keys
-  ("C-s" . save-buffer)
-  ("M-/" . comment-line))
 
 
 ;;#################### ########### ####################
