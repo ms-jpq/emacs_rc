@@ -109,6 +109,7 @@
   (require 'lang-git)
   (require 'lang-haskell)
   (require 'lang-java)
+  (require 'lang-jinja2)
   (require 'lang-json)
   (require 'lang-python)
   (require 'lang-toml)
