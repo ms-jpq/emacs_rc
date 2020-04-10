@@ -6,7 +6,6 @@
 (use-package ivy
   :demand t
   :custom
-  (ivy-use-virtual-buffers t)
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
   (ivy-height 20)
@@ -16,9 +15,9 @@
               ("RET" . ivy-alt-done)
               ("M-RET" . ivy-done)
               ("C-o" . ivy-occur)
-         :map ivy-occur-mode-map
+              :map ivy-occur-mode-map
               ("SPC" . ivy-occur-press)
-         :map ivy-occur-grep-mode-map
+              :map ivy-occur-grep-mode-map
               ("SPC" . ivy-occur-press))
   :config
   (ivy-mode t))
@@ -31,14 +30,14 @@
   :init
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
-              ("C-c" . counsel-recentf)
-              ("C-r" . counsel-rg)
-              ("C-g" . counsel-git)
-              ("C-f" . counsel-fzf)
+         ("C-c" . counsel-recentf)
+         ("C-r" . counsel-rg)
+         ("C-g" . counsel-git)
+         ("C-f" . counsel-fzf)
          :map ops-command-map
-              ("C-o" . counsel-minor)
-              ("C-p" . counsel-major)
-              ("C-d" . counsel-find-file))
+         ("C-o" . counsel-minor)
+         ("C-p" . counsel-major)
+         ("C-d" . counsel-find-file))
   :config
   (counsel-mode))
 
