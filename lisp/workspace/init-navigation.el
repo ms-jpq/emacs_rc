@@ -67,7 +67,10 @@
 
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
+  :demand t
   :after (ivy)
+  :bind (("M-d" . xref-find-definitions)
+         ("M-e" . xref-find-references))
   :init
   (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
   ;; xref initialization is different in Emacs 27 - there are two different

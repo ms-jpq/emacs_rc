@@ -6,12 +6,12 @@
 
 ;; require 'use-package
 ((lambda
-  (pkg)
-  (unless (package-installed-p pkg)
-    (package-install pkg))
-  (require pkg)
-  (setq use-package-always-ensure t))
-  'use-package)
+   (pkg)
+   (unless (package-installed-p pkg)
+     (package-install pkg))
+   (require pkg)
+   (setq use-package-always-ensure t))
+ 'use-package)
 
 
 ;; help to benchmark load times
@@ -30,33 +30,33 @@
 ;;#################### ############## ####################
 
 (defun schedule-background-task
-  (func frequency)
+    (func frequency)
   "run background task with frequency"
   (add-hook 'emacs-startup-hook
-    (lambda ()
-      (run-at-time nil frequency
-        (lambda ()
-          (let ((msg (current-message))
-                (prev inhibit-message))
-            (setq inhibit-message t)
-            (funcall func)
-            (setq inhibit-message prev)
-            (when msg (message msg))))))))
+            (lambda ()
+              (run-at-time nil frequency
+                           (lambda ()
+                             (let ((msg (current-message))
+                                   (prev inhibit-message))
+                               (setq inhibit-message t)
+                               (funcall func)
+                               (setq inhibit-message prev)
+                               (when msg (message msg))))))))
 
 
 (defun schedule-idle-background-task
-  (func repeat seconds)
+    (func repeat seconds)
   "run idle background task with frequency"
   (add-hook 'emacs-startup-hook
-    (lambda ()
-      (run-with-idle-timer seconds repeat
-        (lambda ()
-          (let ((msg (current-message))
-                (prev inhibit-message))
-            (setq inhibit-message t)
-            (funcall func)
-            (setq inhibit-message prev)
-            (when msg (message msg))))))))
+            (lambda ()
+              (run-with-idle-timer seconds repeat
+                                   (lambda ()
+                                     (let ((msg (current-message))
+                                           (prev inhibit-message))
+                                       (setq inhibit-message t)
+                                       (funcall func)
+                                       (setq inhibit-message prev)
+                                       (when msg (message msg))))))))
 
 
 ;;#################### END ####################

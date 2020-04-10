@@ -27,7 +27,7 @@
   :after (counsel projectile)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)
-         :map ops-command-map
+              :map ops-command-map
               ("C-r" . counsel-projectile-switch-project))
   :hook
   (projectile-mode . counsel-projectile-mode))

@@ -8,10 +8,10 @@
 
 ;; pane layouts
 (bind-keys
-    ("C-w" . delete-window)
-    ("M-w" . delete-other-windows)
-    ("M-=" . split-window-right)
-    ("M--" . split-window-below))
+ ("C-w" . delete-window)
+ ("M-w" . delete-other-windows)
+ ("M-=" . split-window-right)
+ ("M--" . split-window-below))
 
 
 ;; move buffers around
@@ -44,7 +44,7 @@
   (imenu-list-auto-resize nil))
 ;; restore tab key
 (bind-keys
-  ("TAB" . indent-for-tab-command))
+ ("TAB" . indent-for-tab-command))
 
 
 ;;#################### ################### ####################
@@ -55,7 +55,7 @@
 (use-package zoom
   :custom
   (zoom-size (lambda ()
-    '(0.618 . 0.618)))
+               '(0.618 . 0.618)))
   :config
   (zoom-mode t))
 

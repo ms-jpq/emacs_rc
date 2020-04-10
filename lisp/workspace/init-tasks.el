@@ -13,8 +13,8 @@
 (use-package server
   :hook
   (emacs-startup .
-    (lambda ()
-      (unless (server-running-p) (server-start)))))
+                 (lambda ()
+                   (unless (server-running-p) (server-start)))))
 
 
 ;;#################### ############### ####################
@@ -68,9 +68,9 @@
 (use-package midnight
   :custom
   (clean-buffer-list-delay-special (* 10 60)
-    "special buffers have life time of <x> seconds")
+                                   "special buffers have life time of <x> seconds")
   (clean-buffer-list-delay-general 0.05
-    "normal buffers have life time of <x> days")
+                                   "normal buffers have life time of <x> days")
   :config
   (schedule-background-task 'clean-buffer-list (* 1 60)))
 

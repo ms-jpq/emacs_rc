@@ -28,7 +28,7 @@
   (lsp-mode . lsp-enable-which-key-integration)
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)
-         :map lsp-mode-map
+              :map lsp-mode-map
               ("M-f" . lsp-describe-thing-at-point)))
 
 

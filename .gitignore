@@ -9,6 +9,7 @@ var/
 packages/
 .cache/
 tabnine/
+eshell/
 history
 places
 recentf*

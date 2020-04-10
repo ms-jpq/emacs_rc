@@ -14,12 +14,12 @@
   :bind (("<escape>" . god-mode-all))
   :hook
   (god-mode-enabled
-    . (lambda ()
-      (setq-default header-line-format
-        (make-list 100 " >uwu< "))))
+   . (lambda ()
+       (setq-default header-line-format
+                     (make-list 100 " >uwu< "))))
   (god-mode-disabled
-    . (lambda ()
-      (setq-default header-line-format nil))))
+   . (lambda ()
+       (setq-default header-line-format nil))))
 
 
 ;;#################### ########## ####################
@@ -31,9 +31,9 @@
 
 ;; easier quit
 (bind-keys
-  ("C-q" . keyboard-escape-quit)
-  :map ctl-x-map
-  ("C-q" . nil))
+ ("C-q" . keyboard-escape-quit)
+ :map ctl-x-map
+ ("C-q" . nil))
 
 
 ;;#################### ########## ####################
@@ -70,15 +70,15 @@
 
 ;; control - x too hard to hit
 ((lambda ()
-  (global-set-key (kbd "C-]") ctl-x-map)
-  (bind-keys
+   (global-set-key (kbd "C-]") ctl-x-map)
+   (bind-keys
     :map ctl-x-map
     ("C-]" . save-buffers-kill-terminal))))
 
 
 ;; unbind IME
 (bind-keys
-  ("C-\\" . nil))
+ ("C-\\" . nil))
 
 
 ;;#################### END ####################

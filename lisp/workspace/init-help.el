@@ -8,10 +8,10 @@
   :custom
   (which-key-idle-delay 0.5)
   :bind (("C-h K" . which-key-show-full-keymap)
-        ;;  :map which-key-C-h-map
-        ;;       ("<left>" . which-key-show-previous-page-cycle)
-        ;;       ("<right>" . which-key-show-next-page-cycle)
-              )
+         ;;  :map which-key-C-h-map
+         ;;       ("<left>" . which-key-show-previous-page-cycle)
+         ;;       ("<right>" . which-key-show-next-page-cycle)
+         )
   :config
   (which-key-mode))
 
