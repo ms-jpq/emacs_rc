@@ -44,7 +44,7 @@
 ;; set customizations path
 (let
     ((cf (expand-file-name "_customize.el" user-emacs-directory)))
-  (when (not (file-exists-p cf))
+  (unless (file-exists-p cf)
     (write-region "" nil cf))
   (setq custom-file cf)
   (load custom-file))

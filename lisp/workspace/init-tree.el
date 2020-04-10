@@ -3,6 +3,8 @@
 ;;#################### ########### ####################
 
 (use-package treemacs
+  :demand t
+  :after (projectile)
   :custom
   (treemacs-follow-after-init t)
   (treemacs-project-follow-cleanup t)
@@ -17,9 +19,15 @@
               ("C-k" . treemacs-remove-project-from-workspace)
               ("C-r" . treemacs-rename-workspace))
   :config
+  (when (file-exists-p treemacs-persist-file)
+    (delete-file treemacs-persist-file))
+  (when (file-exists-p treemacs-last-error-persist-file)
+    (delete-file treemacs-last-error-persist-file))
   (treemacs-git-mode 'deferred)
   (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode t))
+  (treemacs-fringe-indicator-mode t)
+  (when (projectile-project-p)
+    (treemacs-add-and-display-current-project)))
 
 
 (use-package treemacs-magit
