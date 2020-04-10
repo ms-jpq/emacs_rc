@@ -29,8 +29,7 @@
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)
               :map lsp-mode-map
-              ("M-f" . lsp-describe-thing-at-point)
-              ("C-f" . lsp-format-buffer)))
+              ("M-f" . lsp-describe-thing-at-point)))
 
 
 (use-package lsp-ui
@@ -46,25 +45,31 @@
   (lsp-ui-doc-enable nil "only works under GUI"))
 
 
-(use-package lsp-ivy
-  :after (ivy lsp-mode)
-  :commands (lsp-ivy-workspace-symbol)
-  :bind (:map lsp-mode-map
-              ("M-x" . lsp-ivy-workspace-symbol)))
-
-
-;; debugger
-(use-package dap-mode
-  :defer t)
-
-
 (use-package company-lsp
-  :after (company lsp-mode)
+  :after (lsp-mode company)
   :commands (company-lsp)
   :custom
   (company-lsp-async t)
   :config
   (push 'company-lsp company-backends))
+
+
+(use-package lsp-ivy
+  :after (lsp-mode ivy)
+  :commands (lsp-ivy-workspace-symbol)
+  :bind (:map lsp-mode-map
+              ("M-x" . lsp-ivy-workspace-symbol)))
+
+
+;; TODO: this thing segfaults!
+(use-package lsp-treemacs
+  :after (lsp-mode treemacs)
+  :commands (lsp-treemacs-errors-list))
+
+
+;; debugger
+(use-package dap-mode
+  :defer t)
 
 
 ;;#################### END ####################

@@ -22,11 +22,6 @@
   (treemacs-fringe-indicator-mode t))
 
 
-(use-package lsp-treemacs
-  :after (lsp-mode treemacs)
-  :commands (lsp-treemacs-errors-list))
-
-
 (use-package treemacs-magit
   :after (treemacs magit))
 
