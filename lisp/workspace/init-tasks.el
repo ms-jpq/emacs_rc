@@ -40,6 +40,8 @@
   :custom
   (recentf-max-saved-items 100)
   (recentf-max-menu-items 100)
+  (recentf-exclude
+   (list (expand-file-name  user-emacs-directory)))
   :config
   (recentf-mode t)
   (schedule-background-task (* 1 60) 'recentf-save-list))
