@@ -9,9 +9,11 @@
   (treemacs-missing-project-action 'remove)
   :bind (:map dir-command-map
               ("C-d" . treemacs)
-              ("C-s" . treemacs-switch-workspace)
               ("C-n" . treemacs-create-workspace)
+              ("C-s" . treemacs-switch-workspace)
+              ("C-i" . treemacs-remove-workspace)
               ("C-a" . treemacs-add-project-to-workspace)
+              ("C-k" . treemacs-remove-project-from-workspace)
               ("C-r" . treemacs-rename-workspace)))
 
 
