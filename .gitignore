@@ -6,6 +6,7 @@ backups/
 transient/
 server/
 var/
+packages/
 .cache/
 tabnine/
 history

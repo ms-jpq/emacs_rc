@@ -11,8 +11,7 @@
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
-  :bind (("C-@" . god-mode-all)
-         ("<escape>" . god-mode-all))
+  :bind (("<escape>" . god-mode-all))
   :hook
   (god-mode-enabled
     . (lambda ()
@@ -48,7 +47,10 @@
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
          ("M-a" . mark-whole-buffer)
-         ("M-/" . comment-line))
+         ("M-/" .
+          (lambda (arg)
+            (interactive "p")
+            (save-excursion (comment-line arg)))))
   :config
   (cua-mode t))
 
