@@ -4,9 +4,8 @@
 
 ;; multiple cursors
 (use-package multiple-cursors
-  :bind (("M-c" . mc/edit-lines)
-         :map mc/keymap
-         ("C-q" . mc/keyboard-quit)))
+  :bind (:map mc/keymap
+              ("C-q" . mc/keyboard-quit)))
 
 
 ;; hotkeys for text selection

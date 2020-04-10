@@ -33,6 +33,9 @@
 
 ;; make popup panes easier to dismiss
 (use-package popwin
+  :demand t
+  :bind (:map ops-command-map
+              ("C-m" . popwin:messages))
   :config
   (popwin-mode t))
 
