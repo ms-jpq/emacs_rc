@@ -37,7 +37,8 @@
     (add-to-list 'load-path (expand-file-name "workspace" libs-path))
     (add-to-list 'load-path (expand-file-name "versioning" libs-path))
     (add-to-list 'load-path (expand-file-name "editor" libs-path))
-    (add-to-list 'load-path (expand-file-name "lang" libs-path)))))
+    (add-to-list 'load-path (expand-file-name "lang" libs-path))
+    (add-to-list 'load-path (expand-file-name "misc" libs-path)))))
 
 
 ;; set customizations path
@@ -86,7 +87,7 @@
 (require 'init-git)
 
 
-;;#################### ############## ####################
+;;#################### ############# ####################
 ;;#################### Editor Region ####################
 ;;#################### ############# ####################
 
@@ -112,6 +113,13 @@
 (require 'lang-toml)
 (require 'lang-typescript)
 (require 'lang-yaml)
+
+
+;;#################### ########### ####################
+;;#################### Misc Region ####################
+;;#################### ########### ####################
+
+(require 'misc-leetcode)
 
 
 ;;#################### END ####################
