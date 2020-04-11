@@ -14,8 +14,6 @@
   :config
   (when (file-exists-p treemacs-persist-file)
     (delete-file treemacs-persist-file))
-  (when (file-exists-p treemacs-last-error-persist-file)
-    (delete-file treemacs-last-error-persist-file))
   (treemacs-git-mode 'deferred)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t)
