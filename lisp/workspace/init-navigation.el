@@ -4,7 +4,7 @@
 
 ;; search agent
 (use-package ivy
-  :demand t
+  :demand
   :custom
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
@@ -25,7 +25,7 @@
 
 ;; replace default searches
 (use-package counsel
-  :demand t
+  :demand
   :after (ivy)
   :init
   :bind (("C-p" . counsel-M-x)
@@ -69,7 +69,7 @@
 
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
-  :demand t
+  :demand
   :after (ivy)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references))

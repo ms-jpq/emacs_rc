@@ -42,7 +42,7 @@
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
-  :demand t
+  :demand
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
@@ -65,7 +65,7 @@
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
-  :demand t
+  :demand
   :bind (("C-z" . undo-tree-undo)
          ("C-y" . undo-tree-redo))
   :config

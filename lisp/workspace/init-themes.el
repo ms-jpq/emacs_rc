@@ -20,6 +20,7 @@
 
 ;; idle animation
 (use-package zone
+  :demand
   :config
   (zone-when-idle (* 10 60)))
 
@@ -30,14 +31,16 @@
 
 ;; dimm background panes
 (use-package dimmer
+  :defer
+  :after (which-key hydra)
   :custom
   (dimmer-use-colorspace :rgb)
   (dimmer-adjustment-mode :both)
   (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
   (dimmer-fraction 0.10 "is a quantized value :<")
-  :after (which-key hydra)
+  :hook
+  (emacs-startup . dimmer-mode)
   :config
-  (dimmer-mode t)
   (dimmer-configure-which-key)
   (dimmer-configure-hydra))
 
@@ -57,22 +60,24 @@
 
 ;; nyan scrollbars
 (use-package nyan-mode
+  :defer
   :custom
   (nyan-minimum-window-width 40)
-  :config
-  (nyan-mode))
+  :hook
+  (emacs-startup . nyan-mode))
 
 
 ;; powerline
 (use-package doom-modeline
-  :config
-  (doom-modeline-mode t))
+  :defer
+  :hook
+  (emacs-startup . doom-modeline-mode))
 
 
 ;; turn line feed into page breaks TODO: you need to manually toggle this?
 (use-package page-break-lines
-  :config
-  (global-page-break-lines-mode))
+  :hook
+  (emacs-startup . global-page-break-lines-mode))
 
 
 ;;#################### END ####################

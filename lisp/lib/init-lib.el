@@ -16,9 +16,9 @@
 
 ;; help to benchmark load times
 (use-package benchmark-init
-  :demand t
+  :demand
   :hook
-  (after-init . benchmark-init/deactivate))
+  (emacs-startup . benchmark-init/deactivate))
 
 
 ;; prevent keybinding overwrite

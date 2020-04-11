@@ -4,7 +4,7 @@
 
 ;; auto suggestions
 (use-package company
-  :demand t
+  :demand
   :custom
   (company-selection-wrap-around t)
   (company-minimum-prefix-length 1)

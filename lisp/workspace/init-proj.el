@@ -4,12 +4,13 @@
 
 ;; enforce project style
 (use-package editorconfig
-  :config
-  (editorconfig-mode t))
+  :defer
+  :hook
+  (emacs-startup . editorconfig-mode))
 
 
 (use-package projectile
-  :demand t
+  :demand
   :custom
   (projectile-completion-system 'ivy)
   :bind-keymap

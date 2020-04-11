@@ -16,6 +16,7 @@
 
 ;; move buffers around
 (use-package buffer-move
+  :defer
   :bind (("C-c <left>" . buf-move-left)
          ("C-c <right>" . buf-move-right)
          ("C-c <up>" . buf-move-up)
@@ -24,6 +25,7 @@
 
 ;; create scratch buffer
 (use-package scratch
+  :defer
   :bind (("C-n" . scratch)))
 
 
@@ -33,15 +35,16 @@
 
 ;; make popup panes easier to dismiss
 (use-package popwin
-  :demand t
+  :defer
   :bind (:map ops-command-map
               ("C-m" . popwin:messages))
-  :config
-  (popwin-mode t))
+  :hook
+  (emacs-startup . popwin-mode))
 
 
 ;; make imenu a side pane
 (use-package imenu-list
+  :defer
   :bind (("C-u" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))
@@ -56,11 +59,12 @@
 
 ;; tiling pane manager
 (use-package zoom
+  :defer
   :custom
   (zoom-size (lambda ()
                '(0.618 . 0.618)))
-  :config
-  (zoom-mode t))
+  :hook
+  (emacs-startup . zoom-mode))
 
 
 ;;#################### END ####################

@@ -4,7 +4,7 @@
 
 ;; required for lsp, shows errors
 (use-package flycheck
-  :demand t
+  :demand
   :custom
   (flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   :bind (:map search-command-map

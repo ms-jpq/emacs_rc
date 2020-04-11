@@ -4,8 +4,9 @@
 
 ;; share clipboard
 (use-package xclip
-  :config
-  (xclip-mode t))
+  :defer
+  :hook
+  (emacs-startup . xclip-mode))
 
 
 ;; normalize emacs' regexp

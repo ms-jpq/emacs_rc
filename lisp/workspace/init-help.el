@@ -4,20 +4,17 @@
 
 ;; popup, shows hotkeys
 (use-package which-key
-  :demand t
+  :demand
   :custom
   (which-key-idle-delay 0.5)
-  :bind (("C-h K" . which-key-show-full-keymap)
-         ;;  :map which-key-C-h-map
-         ;;       ("<left>" . which-key-show-previous-page-cycle)
-         ;;       ("<right>" . which-key-show-next-page-cycle)
-         )
+  :bind (("C-h K" . which-key-show-full-keymap))
   :config
   (which-key-mode))
 
 
 ;; better help panes
 (use-package helpful
+  :defer
   :bind (([remap describe-key] . helpful-key)
          ([remap describe-function] . helpful-callable)
          ([remap describe-variable] . helpful-variable)

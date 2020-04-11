@@ -3,6 +3,7 @@
 ;;#################### ########### ####################
 
 (use-package treemacs
+  :defer
   :after (projectile)
   :custom
   (treemacs-follow-after-init t)

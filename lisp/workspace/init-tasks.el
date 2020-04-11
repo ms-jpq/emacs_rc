@@ -11,6 +11,7 @@
 ;;#################### ############# ####################
 
 ;; (use-package server
+;;   :defer
 ;;   :hook
 ;;   (emacs-startup
 ;;    . (lambda ()
@@ -23,6 +24,7 @@
 
 ;; auto update
 (use-package auto-package-update
+  :defer
   :custom
   (auto-package-update-interval 14)
   (auto-package-update-prompt-before-update t)
@@ -37,24 +39,28 @@
 
 ;; save recently accessed files
 (use-package recentf
+  :defer
   :custom
   (recentf-max-saved-items 100)
   (recentf-max-menu-items 100)
   (recentf-exclude
    (list (expand-file-name  user-emacs-directory)))
+  :hook
+  (emacs-startup . recentf-mode)
   :config
-  (recentf-mode t)
   (schedule-background-task (* 1 60) 'recentf-save-list))
 
 
 ;; better auto save
 (use-package super-save
+  :defer
   :custom
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
+  :hook
+  (emacs-startup . super-save-mode)
   :config
-  (setq auto-save-default nil)
-  (super-save-mode t))
+  (setq auto-save-default nil))
 
 
 ;;#################### ############## ####################
