@@ -11,6 +11,8 @@
   (ivy-height 20)
   (ivy-count-format "(%d/%d) ")
   :bind (:map ivy-minibuffer-map
+              ("<mouse-4>" . ivy-previous-line)
+              ("<mouse-5>" . ivy-next-line)
               ("TAB" . ivy-partial)
               ("RET" . ivy-alt-done)
               ("M-RET" . ivy-done)
