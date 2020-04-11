@@ -57,15 +57,6 @@
        (load-theme 'spacemacs-light t))))
 
 
-;; nyan scrollbars
-(use-package nyan-mode
-  :defer
-  :custom
-  (nyan-minimum-window-width 40)
-  :hook
-  (emacs-startup . nyan-mode))
-
-
 ;; powerline
 (use-package doom-modeline
   :defer
