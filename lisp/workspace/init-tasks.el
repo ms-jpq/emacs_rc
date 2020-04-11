@@ -10,11 +10,11 @@
 ;;#################### Server Region ####################
 ;;#################### ############# ####################
 
-(use-package server
-  :hook
-  (emacs-startup
-   . (lambda ()
-       (unless (server-running-p) (server-start)))))
+;; (use-package server
+;;   :hook
+;;   (emacs-startup
+;;    . (lambda ()
+;;        (unless (server-running-p) (server-start)))))
 
 
 ;;#################### ############### ####################

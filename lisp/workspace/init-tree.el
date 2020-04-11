@@ -3,25 +3,27 @@
 ;;#################### ########### ####################
 
 (use-package treemacs
-  :demand t
   :after (projectile)
   :custom
   (treemacs-follow-after-init t)
   (treemacs-project-follow-cleanup t)
   (treemacs-missing-project-action 'remove)
   (treemacs-file-event-delay 1000)
+  (treemacs-persist-file
+   (make-temp-file "emacs-treemacs")
+   "do not persist state for treemacs")
   :bind (("C-b" . treemacs)
          :map treemacs-mode-map
          ("SPC" . treemacs-peek))
+  :hook
+  (emacs-startup
+   . (lambda () (when (projectile-project-p)
+                  (treemacs-add-and-display-current-project)
+                  (treemacs-toggle-node))))
   :config
-  (when (file-exists-p treemacs-persist-file)
-    (delete-file treemacs-persist-file))
   (treemacs-git-mode 'deferred)
   (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode t)
-  (when (projectile-project-p)
-    (treemacs-add-and-display-current-project)
-    (treemacs-toggle-node)))
+  (treemacs-fringe-indicator-mode t))
 
 
 (use-package treemacs-magit
