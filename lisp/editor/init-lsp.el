@@ -17,7 +17,7 @@
 (use-package flycheck-pos-tip
   :defer
   :hook
-  (flycheck-mode . flycheck-pos-tip-mode))
+  (global-flycheck-mode . flycheck-pos-tip-mode))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates

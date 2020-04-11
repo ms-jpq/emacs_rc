@@ -5,10 +5,10 @@
 (use-package yaml-mode
   :defer
   :after (lsp-mode)
-  :hook
-  (yaml-mode . lsp)
   :mode (("\\.yml\\'" . yaml-mode)
-         ("\\.yml\\'" . yaml-mode)))
+         ("\\.yml\\'" . yaml-mode))
+  :hook
+  (yaml-mode . lsp-deferred))
 
 
 ;;#################### END ####################

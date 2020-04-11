@@ -34,8 +34,8 @@
          :map multi-query-replace-map
          ("RET" . act)
          ("M-RET" . automatic))
-  :config
-  (global-anzu-mode t))
+  :hook
+  (emacs-startup . global-anzu-mode))
 
 
 ;; move around in buffer using search

@@ -29,8 +29,8 @@
   :defer
   :bind (("M-<up>" . drag-stuff-up)
          ("M-<down>" . drag-stuff-down))
-  :config
-  (drag-stuff-global-mode t))
+  :hook
+  (emacs-startup . drag-stuff-global-mode))
 
 
 ;; algo
