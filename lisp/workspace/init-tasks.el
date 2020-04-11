@@ -36,20 +36,6 @@
 ;;#################### Files Region ####################
 ;;#################### ############ ####################
 
-;; save recently accessed files
-(use-package recentf
-  :custom
-  (recentf-max-saved-items 100)
-  (recentf-max-menu-items 100)
-  (recentf-exclude
-   (list (expand-file-name  user-emacs-directory)
-         "/tmp/"
-         "/var/"))
-  :config
-  (recentf-mode t)
-  (schedule-background-task (* 1 60) 'recentf-save-list))
-
-
 ;; better auto save
 (use-package super-save
   :defer

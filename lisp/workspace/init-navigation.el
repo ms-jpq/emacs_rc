@@ -29,7 +29,6 @@
   :after (ivy)
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
-         ("C-c" . counsel-recentf)
          ("C-r" . counsel-rg)
          ("C-g" . counsel-git)
          ("C-f" . counsel-fzf)
