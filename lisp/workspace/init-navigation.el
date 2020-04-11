@@ -4,7 +4,7 @@
 
 ;; search agent
 (use-package ivy
-  :demand
+  :defer
   :custom
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
@@ -19,15 +19,14 @@
               ("SPC" . ivy-occur-press)
               :map ivy-occur-grep-mode-map
               ("SPC" . ivy-occur-press))
-  :config
-  (ivy-mode t))
+  :hook
+  (emacs-startup . ivy-mode))
 
 
 ;; replace default searches
 (use-package counsel
-  :demand
+  :defer
   :after (ivy)
-  :init
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
          ("C-c" . counsel-recentf)
@@ -38,8 +37,8 @@
          ("C-o" . counsel-minor)
          ("C-p" . counsel-major)
          ("C-d" . counsel-find-file))
-  :config
-  (counsel-mode))
+  :hook
+  (ivy-mode . counsel-mode))
 
 
 ;; sorting backend for company, ivy. etc
@@ -61,10 +60,12 @@
 
 ;; prettier ivy
 (use-package ivy-rich
+  :defer
   :after (ivy counsel)
+  :hook
+  (counsel-mode . ivy-rich-mode)
   :config
-  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
-  (ivy-rich-mode t))
+  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
 
 
 ;; use ivy in xref TODO: remove emacs <27
