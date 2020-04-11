@@ -11,8 +11,9 @@
 
 ;; normalize emacs' regexp
 (use-package pcre2el
-  :config
-  (rxt-global-mode))
+  :defer
+  :hook
+  (emacs-startup . rxt-global-mode))
 
 
 ;;#################### ############## ####################

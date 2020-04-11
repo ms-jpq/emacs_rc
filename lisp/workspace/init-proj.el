@@ -11,6 +11,7 @@
 
 (use-package projectile
   :demand
+  :after (ivy)
   :custom
   (projectile-completion-system 'ivy)
   :bind-keymap

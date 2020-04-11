@@ -20,7 +20,6 @@
 
 ;; idle animation
 (use-package zone
-  :demand
   :config
   (zone-when-idle (* 10 60)))
 
@@ -76,6 +75,7 @@
 
 ;; turn line feed into page breaks TODO: you need to manually toggle this?
 (use-package page-break-lines
+  :defer
   :hook
   (emacs-startup . global-page-break-lines-mode))
 
