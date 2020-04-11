@@ -4,12 +4,12 @@
 
 ;; popup, shows hotkeys
 (use-package which-key
-  :demand
+  :defer
   :custom
   (which-key-idle-delay 0.5)
   :bind (("C-h K" . which-key-show-full-keymap))
-  :config
-  (which-key-mode))
+  :hook
+  (emacs-startup . which-key-mode))
 
 
 ;; better help panes

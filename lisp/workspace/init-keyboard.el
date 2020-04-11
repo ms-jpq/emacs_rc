@@ -3,11 +3,13 @@
 ;;#################### ############### ####################
 
 ;; bind cont key strokes
-(use-package hydra)
+(use-package hydra
+  :defer)
 
 
 ;; basically turns on capslock, except it's CTL
 (use-package god-mode
+  :defer
   :custom
   (god-exempt-major-modes nil)
   (god-exempt-predicates nil)
@@ -42,7 +44,6 @@
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
-  :demand
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
@@ -65,11 +66,11 @@
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
-  :demand
+  :defer
   :bind (("C-z" . undo-tree-undo)
          ("C-y" . undo-tree-redo))
-  :config
-  (global-undo-tree-mode))
+  :hook
+  (emacs-startup . global-undo-tree-mode))
 
 
 ;;#################### ########### ####################

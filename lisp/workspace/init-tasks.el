@@ -11,7 +11,6 @@
 ;;#################### ############# ####################
 
 ;; (use-package server
-;;   :defer
 ;;   :hook
 ;;   (emacs-startup
 ;;    . (lambda ()
@@ -39,15 +38,13 @@
 
 ;; save recently accessed files
 (use-package recentf
-  :defer
   :custom
   (recentf-max-saved-items 100)
   (recentf-max-menu-items 100)
   (recentf-exclude
    (list (expand-file-name  user-emacs-directory)))
-  :hook
-  (emacs-startup . recentf-mode)
   :config
+  (recentf-mode t)
   (schedule-background-task (* 1 60) 'recentf-save-list))
 
 
