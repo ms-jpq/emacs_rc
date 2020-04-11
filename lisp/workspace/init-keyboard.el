@@ -44,6 +44,7 @@
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
+  :demand
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
