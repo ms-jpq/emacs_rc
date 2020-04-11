@@ -10,14 +10,7 @@
   (treemacs-project-follow-cleanup t)
   (treemacs-missing-project-action 'remove)
   (treemacs-file-event-delay 1000)
-  :bind (:map dir-command-map
-              ("C-d" . treemacs)
-              ("C-n" . treemacs-create-workspace)
-              ("C-s" . treemacs-switch-workspace)
-              ("C-i" . treemacs-remove-workspace)
-              ("C-a" . treemacs-add-project-to-workspace)
-              ("C-k" . treemacs-remove-project-from-workspace)
-              ("C-r" . treemacs-rename-workspace))
+  :bind (("C-b" . treemacs))
   :config
   (when (file-exists-p treemacs-persist-file)
     (delete-file treemacs-persist-file))

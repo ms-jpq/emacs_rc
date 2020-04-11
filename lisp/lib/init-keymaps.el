@@ -20,12 +20,6 @@
  :prefix "C-r")
 
 
-;; dir keymap
-(bind-keys
- :prefix-map dir-command-map
- :prefix "C-d")
-
-
 ;; vc keymap
 (bind-keys
  :prefix-map vc-command-map
