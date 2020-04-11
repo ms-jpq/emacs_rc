@@ -50,12 +50,13 @@
 
 
 (use-package ivy-prescient
+  :defer
   :after (prescient ivy counsel)
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
-  :config
-  (ivy-prescient-mode))
+  :hook
+  (counsel-mode . ivy-prescient-mode))
 
 
 ;; prettier ivy
