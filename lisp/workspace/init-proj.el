@@ -25,6 +25,7 @@
 
 
 (use-package counsel-projectile
+  :defer
   :after (counsel projectile)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)

@@ -69,7 +69,7 @@
 
 ;; use ivy in xref TODO: remove emacs <27
 (use-package ivy-xref
-  :demand
+  :defer
   :after (ivy)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references))
