@@ -10,7 +10,9 @@
   (treemacs-project-follow-cleanup t)
   (treemacs-missing-project-action 'remove)
   (treemacs-file-event-delay 1000)
-  :bind (("C-b" . treemacs))
+  :bind (("C-b" . treemacs)
+         :map treemacs-mode-map
+         ("SPC" . treemacs-peek))
   :config
   (when (file-exists-p treemacs-persist-file)
     (delete-file treemacs-persist-file))
