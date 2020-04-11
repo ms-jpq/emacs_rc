@@ -4,9 +4,7 @@
 
 ;; multiple cursors
 (use-package multiple-cursors
-  :defer
-  :bind (:map mc/keymap
-              ("C-q" . mc/keyboard-quit)))
+  :defer)
 
 
 ;; hotkeys for text selection

@@ -6,9 +6,7 @@
 (use-package magit
   :defer
   :bind (:map vc-command-map
-              ("C-m" . magit)
-              :map magit-mode-map
-              ("C-q" . magit-mode-bury-buffer))
+              ("C-m" . magit))
   :config
   (global-auto-revert-mode t))
 

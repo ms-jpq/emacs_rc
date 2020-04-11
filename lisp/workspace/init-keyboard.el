@@ -25,26 +25,14 @@
 
 
 ;;#################### ########## ####################
-;;#################### ESC Region ####################
-;;#################### ########## ####################
-
-;; can't bind esc straight up :<
-(global-set-key (kbd "M-ESC") 'keyboard-escape-quit)
-
-;; easier quit
-(bind-keys
- ("C-q" . keyboard-escape-quit)
- :map ctl-x-map
- ("C-q" . nil))
-
-
-;;#################### ########## ####################
 ;;#################### CUA Region ####################
 ;;#################### ########## ####################
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
   :defer
+  :init
+  (define-key key-translation-map (kbd "C-q") (kbd "C-g"))
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
