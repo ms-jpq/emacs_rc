@@ -27,7 +27,8 @@
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t)
   (when (projectile-project-p)
-    (treemacs-add-and-display-current-project)))
+    (treemacs-add-and-display-current-project)
+    (treemacs-toggle-node)))
 
 
 (use-package treemacs-magit
