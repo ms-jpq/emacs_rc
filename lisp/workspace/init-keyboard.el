@@ -44,7 +44,7 @@
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
-  :demand
+  :defer
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
@@ -61,8 +61,8 @@
           . (lambda ()
               (interactive)
               (save-excursion (call-interactively 'comment-line)))))
-  :config
-  (cua-mode t))
+  :hook
+  (emacs-startup . cua-mode))
 
 
 ;; normalize emac's undo - redo
