@@ -3,13 +3,13 @@
 ;;#################### ########## ####################
 
 (use-package gitconfig-mode
-  :defer t)
+  :defer)
 
 (use-package gitignore-mode
-  :defer t)
+  :defer)
 
 (use-package gitattributes-mode
-  :defer t)
+  :defer)
 
 
 ;;#################### END ####################

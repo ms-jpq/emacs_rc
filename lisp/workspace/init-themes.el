@@ -14,8 +14,8 @@
 ((lambda ()
    (column-number-mode t)
    (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-   (add-hook 'text-mode-hook 'display-line-numbers-mode)
-   (add-hook 'conf-mode-hook 'display-line-numbers-mode)))
+   (add-hook 'conf-mode-hook 'display-line-numbers-mode)
+   (add-hook 'text-mode-hook 'display-line-numbers-mode)))
 
 
 ;; idle animation
@@ -44,7 +44,7 @@
 
 ;; main theme
 (use-package spacemacs-theme
-  :defer t
+  :defer
   :custom
   (spacemacs-theme-comment-bg nil)
   :init

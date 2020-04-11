@@ -4,22 +4,26 @@
 
 ;; highlight todos
 (use-package hl-todo
-  :config
-  (global-hl-todo-mode t))
+  :defer
+  :hook
+  (emacs-startup . global-hl-todo-mode))
 
 
 (use-package highlight-parentheses
-  :config
-  (global-highlight-parentheses-mode t))
+  :defer
+  :hook
+  (emacs-startup . global-highlight-parentheses-mode))
 
 
 (use-package rainbow-delimiters
+  :defer
   :hook
   (emacs-lisp-mode . rainbow-delimiters-mode))
 
 
 ;; indent guide -- not enabled by default --
 (use-package indent-guide
+  :defer
   :custom
   (indent-guide-delay 0.1)
   (indent-guide-char "|"))
@@ -31,10 +35,11 @@
 
 ;; dim regions of text not under edit
 (use-package focus
-  :defer t)
+  :defer)
 
 ;; TODO: when will this be on melpa?
 ;; (use-package lsp-focus
+;;   :defer
 ;;   :after (lsp-mode focus)
 ;;   :hook
 ;;   (focus-mode lsp-focus-mode))

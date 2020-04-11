@@ -3,7 +3,7 @@
 ;;#################### ############# ####################
 
 (use-package jinja2-mode
-  :defer t
+  :defer
   :mode ("\\.j2\\'" . jinja2-mode))
 
 

@@ -3,6 +3,7 @@
 ;;#################### ############# ####################
 
 (use-package format-all
+  :defer
   :bind (("C-c C-f" . format-all-buffer)))
 
 

@@ -5,11 +5,13 @@
 
 ;; edit current select symbol selection
 (use-package iedit
+  :defer
   :bind (("M-r" . iedit-mode)))
 
 
 ;; improve search / replace
 (use-package anzu
+  :defer
   :custom
   (anzu-replace-to-string-separator " -> ")
   :bind (([remap query-replace] . anzu-query-replace)
@@ -38,6 +40,7 @@
 
 ;; move around in buffer using search
 (use-package swiper
+  :defer
   :after (ivy)
   :bind (:map search-command-map
               ("C-s" . swiper)))
@@ -45,6 +48,7 @@
 
 ;; writable ivy occur buffer
 (use-package wgrep
+  :defer
   :after (ivy)
   :custom
   (wgrep-auto-save-buffer t)

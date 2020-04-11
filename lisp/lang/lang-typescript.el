@@ -3,7 +3,7 @@
 ;;#################### ################# ####################
 
 (use-package web-mode
-  :defer t
+  :defer
   :mode (("\\.ts\\'" . web-mode)
          ("\\.tsx\\'" . web-mode)))
 

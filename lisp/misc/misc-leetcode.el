@@ -3,7 +3,7 @@
 ;;#################### ############### ####################
 
 (use-package leetcode
-  :defer t
+  :defer
   :custom
   (url-debug t)
   (leetcode-prefer-language "python3")

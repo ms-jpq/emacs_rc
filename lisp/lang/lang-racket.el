@@ -4,7 +4,7 @@
 
 
 (use-package racket-mode
-  :defer t)
+  :defer)
 
 
 ;;#################### END ####################

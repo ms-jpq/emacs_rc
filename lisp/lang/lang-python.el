@@ -4,7 +4,7 @@
 
 ;; better python server
 (use-package lsp-python-ms
-  :defer t)
+  :defer)
 
 
 ;;#################### END ####################

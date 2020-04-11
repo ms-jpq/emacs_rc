@@ -4,12 +4,14 @@
 
 ;; multiple cursors
 (use-package multiple-cursors
+  :defer
   :bind (:map mc/keymap
               ("C-q" . mc/keyboard-quit)))
 
 
 ;; hotkeys for text selection
 (use-package expand-region
+  :defer
   :bind (("M-."
           . (lambda ()
               (interactive)
@@ -19,11 +21,12 @@
 
 ;; goto last edited place
 (use-package goto-chg
-  :defer t)
+  :defer)
 
 
 ;; move selected text around
 (use-package drag-stuff
+  :defer
   :bind (("M-<up>" . drag-stuff-up)
          ("M-<down>" . drag-stuff-down))
   :config
@@ -32,12 +35,12 @@
 
 ;; algo
 (use-package smartparens
-  :defer t)
+  :defer)
 
 
 ;; lisps
 (use-package paredit
-  :defer t)
+  :defer)
 
 
 ;;#################### END ####################

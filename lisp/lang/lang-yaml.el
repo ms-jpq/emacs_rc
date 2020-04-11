@@ -3,7 +3,7 @@
 ;;#################### ########### ####################
 
 (use-package yaml-mode
-  :defer t
+  :defer
   :after (lsp-mode)
   :hook
   (yaml-mode . lsp)
