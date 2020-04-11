@@ -10,14 +10,14 @@
 
 
 (use-package projectile
-  :demand
-  :after (ivy)
+  :defer
   :custom
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
+  :hook
+  (emacs-startup . projectile-mode)
   :config
-  (projectile-mode t)
   (setq projectile-mode-map (make-sparse-keymap)))
 
 
