@@ -12,11 +12,11 @@
 ;; hotkeys for text selection
 (use-package expand-region
   :defer
-  :bind (("M-."
+  :bind (("C-."
           . (lambda ()
               (interactive)
               (with-shift-region 'er/expand-region)))
-         ("M-," . er/contract-region)))
+         ("C-," . er/contract-region)))
 
 
 ;; goto last edited place

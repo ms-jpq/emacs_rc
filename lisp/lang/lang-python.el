@@ -4,7 +4,9 @@
 
 ;; better python server
 (use-package lsp-python-ms
-  :defer)
+  :defer
+  :init
+  (setq python-mode-map (make-sparse-keymap)))
 
 
 ;;#################### END ####################
