@@ -36,11 +36,6 @@
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
-         ("C-k"
-          . (lambda ()
-              (interactive)
-              (call-interactively 'beginning-of-line)
-              (call-interactively 'kill-line)))
          ("M-a"
           . (lambda ()
               (interactive)
