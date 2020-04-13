@@ -6,9 +6,8 @@
 
 (use-package yaml-mode
   :defer
-  :after (lsp-mode)
   :mode (("\\.yml\\'" . yaml-mode)
-         ("\\.yml\\'" . yaml-mode))
+         ("\\.yaml\\'" . yaml-mode))
   :hook
   (yaml-mode . lsp-deferred))
 
