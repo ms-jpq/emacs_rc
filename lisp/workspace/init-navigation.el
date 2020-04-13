@@ -72,7 +72,7 @@
   (ivy-rich-mode t))
 
 
-;; use ivy in xref TODO: remove emacs <27
+;; use ivy in xref
 (use-package ivy-xref
   :defer
   :after (ivy)
