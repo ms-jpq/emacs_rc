@@ -30,8 +30,6 @@
   (spacemacs-theme-comment-bg nil)
   (spacemacs-theme-custom-colors
    '((bg1 . "#f4f4f4")))
-  :init
-  (require 'spacemacs-common)
   :config
   (load-theme 'spacemacs-light t))
 

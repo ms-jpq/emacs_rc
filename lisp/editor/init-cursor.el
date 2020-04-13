@@ -28,18 +28,14 @@
 (use-package drag-stuff
   :defer
   :bind (("M-<up>" . drag-stuff-up)
-         ("M-<down>" . drag-stuff-down))
-  :hook
-  (emacs-startup . drag-stuff-global-mode))
+         ("M-<down>" . drag-stuff-down)))
 
 
 ;; algo
 (use-package smartparens
-  :defer
-  :hook
-  (emacs-startup
-   . (lambda ()
-       (require 'smartparens-config))))
+  :demand
+  :config
+  (require 'smartparens-config))
 
 
 ;; lisps

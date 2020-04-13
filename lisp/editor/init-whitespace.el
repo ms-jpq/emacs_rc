@@ -12,6 +12,7 @@
 
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
+  :demand
   :custom
   (whitespace-cleanup-mode-preserve-point t)
   :config
@@ -20,6 +21,7 @@
 
 ;; delete consecutive white spaces
 (use-package hungry-delete
+  :demand
   :config
   (global-hungry-delete-mode t))
 
@@ -39,6 +41,7 @@
 
 ;; indent not just current line, but the context
 (use-package aggressive-indent
+  :demand
   :config
   (global-aggressive-indent-mode t))
 

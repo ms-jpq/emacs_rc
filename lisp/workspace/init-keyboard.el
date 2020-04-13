@@ -52,6 +52,7 @@
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
+  :demand
   :bind (("C-z" . undo-tree-undo)
          ("C-y" . undo-tree-redo))
   :config
