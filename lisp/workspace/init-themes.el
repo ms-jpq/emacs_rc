@@ -63,7 +63,7 @@
 (use-package spaceline
   :defer
   :custom
-  (spaceline-spaceline-NAME-p nil)
+  (spaceline-minor-modes-p nil)
   :hook
   (emacs-startup . spaceline-spacemacs-theme))
 
