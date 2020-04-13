@@ -56,22 +56,15 @@
 
 (use-package evil
   :demand
+  :init
+  (setq evil-toggle-key "C-@")
   :custom
   (evil-default-state 'emacs)
-  ;; (evil-toggle-key "C-@") TODO: why doesnt this work?
   (evil-shift-width 2)
-  :bind (:map evil-emacs-state-map
-              ("C-@" . evil-exit-emacs-state)
-              :map evil-normal-state-map
-              ("C-@" . evil-emacs-state))
-  :hook
-  (evil-emacs-state
-   . (lambda ()
-       (if (evil-emacs-state-p)
-           (setq-default header-line-format nil)
-         (setq-default header-line-format
-                       (make-list 100 " >uwu< ")))))
   :config
+  (setq-default header-line-format
+                '(:eval (unless (evil-emacs-state-p)
+                          (make-list 100 " >uwu< "))))
   (evil-mode t))
 
 

@@ -28,7 +28,8 @@
 ;; create scratch buffer
 (use-package scratch
   :defer
-  :bind (("C-n" . scratch)))
+  :bind (:map ops-command-map
+              ("C-n" . scratch)))
 
 
 ;;#################### ###################### ####################
