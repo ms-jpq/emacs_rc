@@ -24,21 +24,21 @@
 
 ;; main theme
 (use-package spacemacs-theme
-  :defer
+  :demand
+  :no-require
   :custom
   (spacemacs-theme-comment-bg nil)
   (spacemacs-theme-custom-colors
    '((bg1 . "#f4f4f4")))
   :init
   (require 'spacemacs-common)
-  :hook
-  (after-init
-   . (lambda ()
-       (load-theme 'spacemacs-light t))))
+  :config
+  (load-theme 'spacemacs-light t))
 
 
 ;; powerline
 (use-package spaceline
+  :demand
   :custom
   (spaceline-minor-modes-p nil)
   :config
