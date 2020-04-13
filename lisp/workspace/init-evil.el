@@ -13,9 +13,14 @@
   (evil-default-state 'emacs)
   (evil-shift-width 2)
   :config
-  (setq-default header-line-format
-                '(:eval (unless (evil-emacs-state-p)
-                          (make-list 100 " >uwu< "))))
+  (setq-default
+   header-line-format
+   '(:eval
+     (unless (evil-emacs-state-p)
+       (let ((state-name (symbol-name evil-state)))
+         (make-list
+          100
+          (concat " >>" state-name "<< "))))))
   (evil-mode t))
 
 
