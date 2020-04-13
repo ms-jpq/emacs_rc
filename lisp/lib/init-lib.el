@@ -5,13 +5,12 @@
 ;;#################### ########### ####################
 
 ;; require 'use-package
-((lambda
-   (pkg)
-   (unless (package-installed-p pkg)
-     (package-install pkg))
-   (require pkg)
-   (setq use-package-always-ensure t))
- 'use-package)
+(let ((pkg 'use-package))
+  (unless (package-installed-p pkg)
+    (package-install pkg))
+  (require pkg)
+  (setq use-package-always-ensure t))
+
 
 
 ;; help to benchmark load times

@@ -19,17 +19,17 @@
 (setq read-process-output-max (* 1000 1000))
 
 ;; gc tweak
-((lambda ()
-   (add-hook
-    'post-gc-hook
-    (lambda ()
-      (setq gc/last-gc-time (float-time))))
-   (setq gc-cons-threshold most-positive-fixnum)
-   (add-hook
-    'emacs-startup-hook
-    (lambda ()
-      (setq gc-cons-threshold 1)
-      (setq gc-cons-percentage 0.1)))))
+(progn
+  (add-hook
+   'post-gc-hook
+   (lambda ()
+     (setq gc/last-gc-time (float-time))))
+  (setq gc-cons-threshold most-positive-fixnum)
+  (add-hook
+   'emacs-startup-hook
+   (lambda ()
+     (setq gc-cons-threshold 1)
+     (setq gc-cons-percentage 0.1))))
 
 
 ;;#################### ########### ####################
@@ -37,25 +37,25 @@
 ;;#################### ########### ####################
 
 ;; archives
-((lambda ()
-   (require 'package)
-   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-   (package-initialize)
-   (let ((dir (expand-file-name "elpa" user-emacs-directory)))
-     (unless (file-directory-p dir)
-       (package-refresh-contents)))))
+(progn
+  (require 'package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+  (package-initialize)
+  (let ((dir (expand-file-name "elpa" user-emacs-directory)))
+    (unless (file-directory-p dir)
+      (package-refresh-contents))))
 
 
 ;; libs path
-((lambda ()
-   (let ((libs-path (expand-file-name "lisp" user-emacs-directory)))
-     (add-to-list 'load-path (expand-file-name "lib" libs-path))
-     (add-to-list 'load-path (expand-file-name "workspace" libs-path))
-     (add-to-list 'load-path (expand-file-name "versioning" libs-path))
-     (add-to-list 'load-path (expand-file-name "editor" libs-path))
-     (add-to-list 'load-path (expand-file-name "lang" libs-path))
-     (add-to-list 'load-path (expand-file-name "misc" libs-path)))))
+(progn
+  (let ((libs-path (expand-file-name "lisp" user-emacs-directory)))
+    (add-to-list 'load-path (expand-file-name "lib" libs-path))
+    (add-to-list 'load-path (expand-file-name "workspace" libs-path))
+    (add-to-list 'load-path (expand-file-name "versioning" libs-path))
+    (add-to-list 'load-path (expand-file-name "editor" libs-path))
+    (add-to-list 'load-path (expand-file-name "lang" libs-path))
+    (add-to-list 'load-path (expand-file-name "misc" libs-path))))
 
 
 ;; set customizations path

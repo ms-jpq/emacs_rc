@@ -13,11 +13,11 @@
 
 
 ;; show linenum only in certain modes
-((lambda ()
-   (column-number-mode t)
-   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-   (add-hook 'conf-mode-hook 'display-line-numbers-mode)
-   (add-hook 'text-mode-hook 'display-line-numbers-mode)))
+(progn
+  (column-number-mode t)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'conf-mode-hook 'display-line-numbers-mode)
+  (add-hook 'text-mode-hook 'display-line-numbers-mode))
 
 
 ;; idle animation

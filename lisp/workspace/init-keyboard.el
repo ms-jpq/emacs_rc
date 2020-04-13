@@ -64,11 +64,11 @@
 ;;#################### ########### ####################
 
 ;; control - x too hard to hit
-((lambda ()
-   (global-set-key (kbd "C-]") ctl-x-map)
-   (bind-keys
-    :map ctl-x-map
-    ("C-]" . save-buffers-kill-terminal))))
+(progn
+  (global-set-key (kbd "C-]") ctl-x-map)
+  (bind-keys
+   :map ctl-x-map
+   ("C-]" . save-buffers-kill-terminal)))
 
 
 ;; unbind IME
