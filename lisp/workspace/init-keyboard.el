@@ -50,23 +50,5 @@
  ("C-\\" . nil))
 
 
-;;#################### ########### ####################
-;;#################### Evil Region ####################
-;;#################### ########### ####################
-
-(use-package evil
-  :demand
-  :init
-  (setq evil-toggle-key "C-@")
-  :custom
-  (evil-default-state 'emacs)
-  (evil-shift-width 2)
-  :config
-  (setq-default header-line-format
-                '(:eval (unless (evil-emacs-state-p)
-                          (make-list 100 " >uwu< "))))
-  (evil-mode t))
-
-
 ;;#################### END ####################
 (provide 'init-keyboard)
