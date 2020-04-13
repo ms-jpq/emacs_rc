@@ -29,19 +29,19 @@
 ;;#################### ############## ####################
 
 ;; dimm background panes
-(use-package dimmer
-  :defer
-  :after (which-key hydra)
-  :custom
-  (dimmer-use-colorspace :rgb)
-  (dimmer-adjustment-mode :both)
-  (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
-  (dimmer-fraction 0.10 "is a quantized value :<")
-  :hook
-  (emacs-startup . dimmer-mode)
-  :config
-  (dimmer-configure-which-key)
-  (dimmer-configure-hydra))
+;; (use-package dimmer
+;;   :defer
+;;   :after (which-key hydra)
+;;   :custom
+;;   (dimmer-use-colorspace :rgb)
+;;   (dimmer-adjustment-mode :both)
+;;   (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
+;;   (dimmer-fraction 0.10 "is a quantized value :<")
+;;   :hook
+;;   (emacs-startup . dimmer-mode)
+;;   :config
+;;   (dimmer-configure-which-key)
+;;   (dimmer-configure-hydra))
 
 
 ;; main theme
@@ -49,6 +49,8 @@
   :defer
   :custom
   (spacemacs-theme-comment-bg nil)
+  (spacemacs-theme-custom-colors
+   '((bg1 . "#f4f4f4")))
   :init
   (require 'spacemacs-common)
   :hook
@@ -58,13 +60,16 @@
 
 
 ;; powerline
-(use-package doom-modeline
+(use-package spaceline
   :defer
+  :custom
+  (spaceline-spaceline-NAME-p nil)
   :hook
-  (emacs-startup . doom-modeline-mode))
+  (emacs-startup . spaceline-spacemacs-theme))
 
 
-;; turn line feed into page breaks TODO: you need to manually toggle this?
+;; turn line feed into page breaks
+;; TODO: you need to manually toggle this?
 (use-package page-break-lines
   :defer
   :hook
