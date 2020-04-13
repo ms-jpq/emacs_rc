@@ -33,7 +33,11 @@
 
 ;; algo
 (use-package smartparens
-  :defer)
+  :defer
+  :hook
+  (emacs-startup
+   . (lambda ()
+       (require 'smartparens-config))))
 
 
 ;; lisps
