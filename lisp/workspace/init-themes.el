@@ -47,7 +47,7 @@
 ;; TODO: you need to manually toggle this?
 (use-package page-break-lines
   :demand
-  :hook
+  :config
   (global-page-break-lines-mode t))
 
 

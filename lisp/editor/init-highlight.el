@@ -14,6 +14,7 @@
 
 ;; highlight todos
 (use-package hl-todo
+  :defer
   :hook
   (display-line-numbers-mode . global-hl-todo-mode))
 

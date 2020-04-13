@@ -50,7 +50,7 @@
   :custom
   (prescient-history-length 10 "hist items displayed")
   :config
-  (prescient-persist-mode))
+  (prescient-persist-mode t))
 
 
 (use-package ivy-prescient
@@ -69,7 +69,7 @@
   :after (ivy counsel)
   :config
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
-  (ivy-rich-mode))
+  (ivy-rich-mode t))
 
 
 ;; use ivy in xref TODO: remove emacs <27

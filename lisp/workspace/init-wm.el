@@ -46,6 +46,7 @@
 
 ;; make imenu a side pane
 (use-package imenu-list
+  :defer
   :bind (("TAB" . indent-for-tab-command)
          ("C-u" . imenu-list-smart-toggle))
   :custom
