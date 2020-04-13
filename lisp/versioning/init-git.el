@@ -18,8 +18,8 @@
   :defer
   :after (magit)
   :commands (magit-todos-list ivy-magit-todos)
-  :config
-  (magit-todos-mode))
+  :hook
+  (magit-mode . magit-todos-mode))
 
 
 ;; vscode like git in side line

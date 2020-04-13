@@ -29,14 +29,14 @@
 
 ;; better auto save
 (use-package super-save
-  :demand
+  :defer
   :custom
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
   :init
   (setq auto-save-default nil)
-  :config
-  (super-save-mode t))
+  :hook
+  (emacs-startup . super-save-mode))
 
 
 ;;#################### ############## ####################
@@ -50,7 +50,6 @@
 ;; buffers are a leaky abstraction
 ;; garbage collect them
 (use-package midnight
-  :demand
   :custom
   (clean-buffer-list-delay-special (* 5 60)
                                    "special buffers have life time of <x> seconds")

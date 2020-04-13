@@ -22,22 +22,6 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
-;; dimm background panes
-;; (use-package dimmer
-;;   :defer
-;;   :after (which-key hydra)
-;;   :custom
-;;   (dimmer-use-colorspace :rgb)
-;;   (dimmer-adjustment-mode :both)
-;;   (dimmer-watch-frame-focus-events nil "dont dim on leaving emacs")
-;;   (dimmer-fraction 0.10 "is a quantized value :<")
-;;   :hook
-;;   (emacs-startup . dimmer-mode)
-;;   :config
-;;   (dimmer-configure-which-key)
-;;   (dimmer-configure-hydra))
-
-
 ;; main theme
 (use-package spacemacs-theme
   :defer
@@ -48,7 +32,7 @@
   :init
   (require 'spacemacs-common)
   :hook
-  (emacs-startup
+  (after-init
    . (lambda ()
        (load-theme 'spacemacs-light t))))
 

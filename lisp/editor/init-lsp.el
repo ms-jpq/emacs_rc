@@ -12,7 +12,7 @@
   :bind (:map search-command-map
               ("C-e" . counsel-flycheck))
   :hook
-  (emacs-startup . global-flycheck-mode))
+  (prog-mode . flycheck-mode))
 
 
 ;; show flycheck err in eldoc

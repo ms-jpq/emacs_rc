@@ -15,15 +15,15 @@
   :bind (:map company-active-map
               ("TAB" . company-select-next-if-tooltip-visible-or-complete-selection))
   :config
-  (global-company-mode))
+  (global-company-mode t))
 
 
 ;; rank suggestions by freq
 (use-package company-prescient
-  :defer
+  :demand
   :after (prescient company)
-  :hook
-  (global-company-mode . company-prescient-mode))
+  :config
+  (company-prescient-mode t))
 
 
 ;;#################### END ####################

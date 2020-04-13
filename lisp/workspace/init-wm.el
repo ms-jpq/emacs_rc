@@ -46,7 +46,6 @@
 
 ;; make imenu a side pane
 (use-package imenu-list
-  :demand
   :bind (("TAB" . indent-for-tab-command)
          ("C-u" . imenu-list-smart-toggle))
   :custom
@@ -60,7 +59,6 @@
 
 ;; tiling pane manager
 (use-package zoom
-  :demand
   :custom
   (zoom-size (lambda ()
                '(0.618 . 0.618)))
