@@ -20,11 +20,7 @@
 
 ;; gc tweak
 (progn
-  (add-hook
-   'post-gc-hook
-   (lambda ()
-     (setq gc/last-gc-time (float-time))))
-  (setq gc-cons-threshold most-positive-fixnum)
+  (setq gc-cons-threshold (* 200 1000 1000))
   (add-hook
    'emacs-startup-hook
    (lambda ()
