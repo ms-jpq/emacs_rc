@@ -1,34 +1,5 @@
 ;; -*- lexical-binding: t -*-
 
-;;#################### ############### ####################
-;;#################### Bindings Region ####################
-;;#################### ############### ####################
-
-;; bind cont key strokes
-(use-package hydra
-  :defer)
-
-
-(use-package evil
-  :demand
-  :custom
-  (evil-default-state 'emacs)
-  (evil-toggle-key "C-@")
-  (evil-shift-width 2)
-  :bind (("C-@" . evil-exit-emacs-state)
-         :map evil-normal-state-map
-         ("C-@" . evil-emacs-state))
-  :hook
-  (evil-emacs-state
-   . (lambda ()
-       (if (evil-emacs-state-p)
-           (setq-default header-line-format nil)
-         (setq-default header-line-format
-                       (make-list 100 " >uwu< ")))))
-  :config
-  (evil-mode t))
-
-
 ;;#################### ########## ####################
 ;;#################### CUA Region ####################
 ;;#################### ########## ####################
@@ -77,6 +48,31 @@
 ;; unbind IME
 (bind-keys
  ("C-\\" . nil))
+
+
+;;#################### ########### ####################
+;;#################### Evil Region ####################
+;;#################### ########### ####################
+
+(use-package evil
+  :demand
+  :custom
+  (evil-default-state 'emacs)
+  ;; (evil-toggle-key "C-@") TODO: why doesnt this work?
+  (evil-shift-width 2)
+  :bind (:map evil-emacs-state-map
+              ("C-@" . evil-exit-emacs-state)
+              :map evil-normal-state-map
+              ("C-@" . evil-emacs-state))
+  :hook
+  (evil-emacs-state
+   . (lambda ()
+       (if (evil-emacs-state-p)
+           (setq-default header-line-format nil)
+         (setq-default header-line-format
+                       (make-list 100 " >uwu< ")))))
+  :config
+  (evil-mode t))
 
 
 ;;#################### END ####################
