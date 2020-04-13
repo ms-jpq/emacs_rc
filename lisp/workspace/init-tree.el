@@ -22,7 +22,8 @@
   (projectile-mode
    . (lambda () (when (projectile-project-p)
                   (treemacs-add-and-display-current-project)
-                  (treemacs-toggle-node))))
+                  (treemacs-toggle-node)
+                  (call-interactively 'other-window))))
   :config
   (treemacs-git-mode 'deferred)
   (treemacs-filewatch-mode t)
