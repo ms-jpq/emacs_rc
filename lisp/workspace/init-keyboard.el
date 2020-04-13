@@ -15,15 +15,16 @@
   (evil-default-state 'emacs)
   (evil-toggle-key "C-@")
   (evil-shift-width 2)
-  ;; :bind (("C-@" . ))
-  ;; :hook
-  ;; (god-mode-enabled
-  ;;  . (lambda ()
-  ;;      (setq-default header-line-format
-  ;;                    (make-list 100 " >uwu< "))))
-  ;; (god-mode-disabled
-  ;;  . (lambda ()
-  ;;      (setq-default header-line-format nil)))
+  :bind (("C-@" . evil-exit-emacs-state)
+         :map evil-normal-state-map
+         ("C-@" . evil-emacs-state))
+  :hook
+  (evil-emacs-state
+   . (lambda ()
+       (if (evil-emacs-state-p)
+           (setq-default header-line-format nil)
+         (setq-default header-line-format
+                       (make-list 100 " >uwu< ")))))
   :config
   (evil-mode t))
 
