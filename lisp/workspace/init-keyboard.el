@@ -9,21 +9,23 @@
   :defer)
 
 
-;; basically turns on capslock, except it's CTL
-(use-package god-mode
-  :defer
+(use-package evil
+  :demand
   :custom
-  (god-exempt-major-modes nil)
-  (god-exempt-predicates nil)
-  :bind (("<escape>" . god-mode-all))
-  :hook
-  (god-mode-enabled
-   . (lambda ()
-       (setq-default header-line-format
-                     (make-list 100 " >uwu< "))))
-  (god-mode-disabled
-   . (lambda ()
-       (setq-default header-line-format nil))))
+  (evil-default-state 'emacs)
+  (evil-toggle-key "C-@")
+  (evil-shift-width 2)
+  ;; :bind (("C-@" . ))
+  ;; :hook
+  ;; (god-mode-enabled
+  ;;  . (lambda ()
+  ;;      (setq-default header-line-format
+  ;;                    (make-list 100 " >uwu< "))))
+  ;; (god-mode-disabled
+  ;;  . (lambda ()
+  ;;      (setq-default header-line-format nil)))
+  :config
+  (evil-mode t))
 
 
 ;;#################### ########## ####################
@@ -53,8 +55,8 @@
 ;; normalize emac's undo - redo
 (use-package undo-tree
   :demand
-  :bind (("C-z" . undo-tree-undo)
-         ("C-y" . undo-tree-redo))
+  :bind (("C-z" . undo)
+         ("C-y" . redo))
   :config
   (global-undo-tree-mode t))
 

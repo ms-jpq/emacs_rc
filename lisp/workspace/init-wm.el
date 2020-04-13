@@ -48,6 +48,7 @@
 (use-package imenu-list
   :defer
   :bind (("TAB" . indent-for-tab-command)
+         :map ops-command-map
          ("C-u" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))

@@ -43,13 +43,5 @@
   (spaceline-spacemacs-theme))
 
 
-;; turn line feed into page breaks
-;; TODO: you need to manually toggle this?
-(use-package page-break-lines
-  :demand
-  :config
-  (global-page-break-lines-mode t))
-
-
 ;;#################### END ####################
 (provide 'init-themes)
