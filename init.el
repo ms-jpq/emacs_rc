@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t -*-
+
 ;;#################### ################ ####################
 ;;#################### Benchmark Region ####################
 ;;#################### ################ ####################
@@ -18,6 +20,10 @@
 
 ;; gc tweak
 ((lambda ()
+   (add-hook
+    'post-gc-hook
+    (lambda ()
+      (setq gc/last-gc-time (float-time))))
    (setq gc-cons-threshold most-positive-fixnum)
    (add-hook
     'emacs-startup-hook
@@ -55,9 +61,9 @@
 ;; set customizations path
 (let
     ((cf (expand-file-name "_customize.el" user-emacs-directory)))
+  (setq custom-file cf)
   (unless (file-exists-p cf)
     (write-region "" nil cf))
-  (setq custom-file cf)
   (load custom-file))
 
 
