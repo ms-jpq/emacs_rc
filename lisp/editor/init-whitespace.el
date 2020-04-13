@@ -12,18 +12,16 @@
 
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
-  :defer
   :custom
   (whitespace-cleanup-mode-preserve-point t)
-  :hook
-  (emacs-startup . global-whitespace-cleanup-mode))
+  :config
+  (global-whitespace-cleanup-mode t))
 
 
 ;; delete consecutive white spaces
 (use-package hungry-delete
-  :defer
-  :hook
-  (emaccs-startup . global-hungry-delete-mode))
+  :config
+  (global-hungry-delete-mode t))
 
 
 ;;#################### ################## ####################
@@ -41,9 +39,8 @@
 
 ;; indent not just current line, but the context
 (use-package aggressive-indent
-  :defer
-  :hook
-  (emacs-startup . global-aggressive-indent-mode))
+  :config
+  (global-aggressive-indent-mode t))
 
 
 ;;#################### END ####################

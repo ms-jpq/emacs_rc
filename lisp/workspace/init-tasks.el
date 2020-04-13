@@ -8,17 +8,6 @@
 (schedule-idle-background-task t 2 'garbage-collect)
 
 
-;;#################### ############# ####################
-;;#################### Server Region ####################
-;;#################### ############# ####################
-
-;; (use-package server
-;;   :hook
-;;   (emacs-startup
-;;    . (lambda ()
-;;        (unless (server-running-p) (server-start)))))
-
-
 ;;#################### ############### ####################
 ;;#################### Packages Region ####################
 ;;#################### ############### ####################
@@ -40,14 +29,14 @@
 
 ;; better auto save
 (use-package super-save
-  :defer
+  :demand
   :custom
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
-  :hook
-  (emacs-startup . super-save-mode)
+  :init
+  (setq auto-save-default nil)
   :config
-  (setq auto-save-default nil))
+  (super-save-mode t))
 
 
 ;;#################### ############## ####################
@@ -61,6 +50,7 @@
 ;; buffers are a leaky abstraction
 ;; garbage collect them
 (use-package midnight
+  :demand
   :custom
   (clean-buffer-list-delay-special (* 5 60)
                                    "special buffers have life time of <x> seconds")

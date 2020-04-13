@@ -19,7 +19,7 @@
 (use-package flycheck-pos-tip
   :defer
   :hook
-  (global-flycheck-mode . flycheck-pos-tip-mode))
+  (flycheck-mode . flycheck-pos-tip-mode))
 
 
 ;; TODO: check https://github.com/emacs-lsp/lsp-mode for updates
@@ -38,8 +38,8 @@
 
 (use-package lsp-ui
   :defer
-  :commands (lsp-ui-mode)
   :after (lsp-mode)
+  :commands (lsp-ui-mode)
   :bind (:map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references))

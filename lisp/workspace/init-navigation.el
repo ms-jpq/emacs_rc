@@ -6,7 +6,7 @@
 
 ;; search agent
 (use-package ivy
-  :defer
+  :demand
   :custom
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
@@ -23,13 +23,13 @@
               ("SPC" . ivy-occur-press)
               :map ivy-occur-grep-mode-map
               ("SPC" . ivy-occur-press))
-  :hook
-  (emacs-startup . ivy-mode))
+  :config
+  (ivy-mode t))
 
 
 ;; replace default searches
 (use-package counsel
-  :defer
+  :demand
   :after (ivy)
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
@@ -40,12 +40,13 @@
          ("C-o" . counsel-minor)
          ("C-p" . counsel-major)
          ("C-d" . counsel-find-file))
-  :hook
-  (ivy-mode . counsel-mode))
+  :config
+  (counsel-mode t))
 
 
 ;; sorting backend for company, ivy. etc
 (use-package prescient
+  :demand
   :custom
   (prescient-history-length 10 "hist items displayed")
   :config
@@ -53,23 +54,22 @@
 
 
 (use-package ivy-prescient
-  :defer
+  :demand
   :after (prescient ivy counsel)
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
-  :hook
-  (counsel-mode . ivy-prescient-mode))
+  :config
+  (ivy-prescient-mode t))
 
 
 ;; prettier ivy
 (use-package ivy-rich
-  :defer
+  :demand
   :after (ivy counsel)
-  :hook
-  (counsel-mode . ivy-rich-mode)
   :config
-  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
+  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
+  (ivy-rich-mode))
 
 
 ;; use ivy in xref TODO: remove emacs <27
@@ -80,10 +80,7 @@
          ("M-e" . xref-find-references))
   :init
   (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
-  ;; xref initialization is different in Emacs 27 - there are two different
-  ;; variables which can be set rather than just one
-  (when (>= emacs-major-version 27)
-    (setq xref-show-definitions-function 'ivy-xref-show-defs)))
+  (setq xref-show-definitions-function 'ivy-xref-show-defs))
 
 
 ;;#################### END ####################

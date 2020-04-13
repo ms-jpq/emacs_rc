@@ -6,16 +6,16 @@
 
 ;; share clipboard
 (use-package xclip
-  :defer
-  :hook
-  (emacs-startup . xclip-mode))
+  :demand
+  :config
+  (xclip-mode t))
 
 
-;; normalize emacs' regexp
-(use-package pcre2el
-  :defer
-  :hook
-  (emacs-startup . rxt-global-mode))
+;; ;; normalize emacs' regexp
+;; (use-package pcre2el
+;;   :demand
+;;   :config
+;;   (rxt-global-mode t))
 
 
 ;;#################### ############## ####################

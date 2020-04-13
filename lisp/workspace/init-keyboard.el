@@ -32,7 +32,7 @@
 
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
-  :defer
+  :demand
   :init
   (define-key key-translation-map (kbd "C-q") (kbd "C-g"))
   :custom
@@ -46,17 +46,16 @@
           . (lambda ()
               (interactive)
               (save-excursion (call-interactively 'comment-line)))))
-  :hook
-  (emacs-startup . cua-mode))
+  :config
+  (cua-mode t))
 
 
 ;; normalize emac's undo - redo
 (use-package undo-tree
-  :defer
   :bind (("C-z" . undo-tree-undo)
          ("C-y" . undo-tree-redo))
-  :hook
-  (emacs-startup . global-undo-tree-mode))
+  :config
+  (global-undo-tree-mode t))
 
 
 ;;#################### ########### ####################

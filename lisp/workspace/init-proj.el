@@ -6,36 +6,36 @@
 
 ;; enforce project style
 (use-package editorconfig
-  :defer
-  :hook
-  (emacs-startup . editorconfig-mode))
+  :demand
+  :config
+  (editorconfig-mode t))
 
 
 (use-package projectile
-  :defer
+  :demand
   :custom
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
-  :hook
-  (emacs-startup . projectile-mode)
   :config
-  (setq projectile-mode-map (make-sparse-keymap)))
+  (setq projectile-mode-map (make-sparse-keymap))
+  (projectile-mode t))
 
 
 (use-package treemacs-projectile
+  :demand
   :after (treemacs projectile))
 
 
 (use-package counsel-projectile
-  :defer
+  :demand
   :after (counsel projectile)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)
               :map ops-command-map
               ("C-r" . counsel-projectile-switch-project))
-  :hook
-  (projectile-mode . counsel-projectile-mode))
+  :config
+  (counsel-projectile-mode t))
 
 
 ;;#################### END ####################

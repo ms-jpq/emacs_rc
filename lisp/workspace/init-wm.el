@@ -37,22 +37,21 @@
 
 ;; make popup panes easier to dismiss
 (use-package popwin
-  :defer
+  :demand
   :bind (:map ops-command-map
               ("C-m" . popwin:messages))
-  :hook
-  (emacs-startup . popwin-mode))
+  :config
+  (popwin-mode t))
 
 
 ;; make imenu a side pane
 (use-package imenu-list
-  :defer
-  :bind (("C-u" . imenu-list-smart-toggle))
+  :demand
+  :bind (("TAB" . indent-for-tab-command)
+         ("C-u" . imenu-list-smart-toggle))
   :custom
   (imenu-list-auto-resize nil))
-;; restore tab key
-(bind-keys
- ("TAB" . indent-for-tab-command))
+
 
 
 ;;#################### ################### ####################
@@ -61,12 +60,12 @@
 
 ;; tiling pane manager
 (use-package zoom
-  :defer
+  :demand
   :custom
   (zoom-size (lambda ()
                '(0.618 . 0.618)))
-  :hook
-  (emacs-startup . zoom-mode))
+  :config
+  (zoom-mode t))
 
 
 ;;#################### END ####################

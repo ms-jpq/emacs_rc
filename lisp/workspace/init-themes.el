@@ -12,14 +12,6 @@
 (global-visual-line-mode t)
 
 
-;; show linenum only in certain modes
-(progn
-  (column-number-mode t)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  (add-hook 'conf-mode-hook 'display-line-numbers-mode)
-  (add-hook 'text-mode-hook 'display-line-numbers-mode))
-
-
 ;; idle animation
 (use-package zone
   :config
@@ -63,19 +55,18 @@
 
 ;; powerline
 (use-package spaceline
-  :defer
   :custom
   (spaceline-minor-modes-p nil)
-  :hook
-  (emacs-startup . spaceline-spacemacs-theme))
+  :config
+  (spaceline-spacemacs-theme))
 
 
 ;; turn line feed into page breaks
 ;; TODO: you need to manually toggle this?
 (use-package page-break-lines
-  :defer
+  :demand
   :hook
-  (emacs-startup . global-page-break-lines-mode))
+  (global-page-break-lines-mode t))
 
 
 ;;#################### END ####################

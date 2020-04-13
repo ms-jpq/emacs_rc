@@ -19,7 +19,7 @@
          :map treemacs-mode-map
          ("SPC" . treemacs-peek))
   :hook
-  (projectile-mode
+  (after-init
    . (lambda () (when (projectile-project-p)
                   (treemacs-add-and-display-current-project)
                   (treemacs-toggle-node)

@@ -24,7 +24,7 @@
 
 ;; vscode like git in side line
 (use-package git-gutter
-  :defer
+  :demand
   :init
   (defhydra hy-git-gutter (vc-command-map "C-j")
     ("[" git-gutter:previous-hunk "previous change")
@@ -32,8 +32,8 @@
     ("d" git-gutter:popup-hunk "show diff")
     ("s" git-gutter:stage-hunk "stage")
     ("k" git-gutter:revert-hunk "revert"))
-  :hook
-  (emacs-startup . global-git-gutter-mode))
+  :config
+  (global-git-gutter-mode t))
 
 
 ;; shows file history

@@ -6,7 +6,7 @@
 
 ;; auto suggestions
 (use-package company
-  :defer
+  :demand
   :custom
   (company-selection-wrap-around t)
   (company-minimum-prefix-length 1)
@@ -14,8 +14,8 @@
   (company-tooltip-idle-delay 0.5 "tooltip shows (frontend)")
   :bind (:map company-active-map
               ("TAB" . company-select-next-if-tooltip-visible-or-complete-selection))
-  :hook
-  (emacs-startup . global-company-mode))
+  :config
+  (global-company-mode))
 
 
 ;; rank suggestions by freq

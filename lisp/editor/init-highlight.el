@@ -4,17 +4,24 @@
 ;;#################### Highlight Region ####################
 ;;#################### ################ ####################
 
+;; show linenum only in certain modes
+(progn
+  (column-number-mode t)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'conf-mode-hook 'display-line-numbers-mode)
+  (add-hook 'text-mode-hook 'display-line-numbers-mode))
+
+
 ;; highlight todos
 (use-package hl-todo
-  :defer
   :hook
-  (emacs-startup . global-hl-todo-mode))
+  (display-line-numbers-mode . global-hl-todo-mode))
 
 
 (use-package highlight-parentheses
   :defer
   :hook
-  (emacs-startup . global-highlight-parentheses-mode))
+  (display-line-numbers-mode . global-highlight-parentheses-mode))
 
 
 (use-package rainbow-delimiters
