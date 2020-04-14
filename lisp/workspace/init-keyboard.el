@@ -41,7 +41,11 @@
   (global-set-key (kbd "C-]") ctl-x-map)
   (bind-keys
    :map ctl-x-map
-   ("C-]" . save-buffers-kill-terminal)))
+   ("C-]"
+    . (lambda ()
+        (interactive)
+        (do-auto-save)
+        (save-buffers-kill-terminal)))))
 
 
 ;; unbind IME
