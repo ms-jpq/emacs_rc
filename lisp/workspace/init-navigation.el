@@ -78,8 +78,9 @@
 ;; use ivy in xref
 (use-package ivy-xref
   :defer
-  :bind (("M-d" . xref-find-definitions)
-         ("M-e" . xref-find-references))
+  :bind (:map ops-command-map
+              ("C-d" . xref-find-definitions)
+              ("C-r" . xref-find-references))
   :init
   (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
   (setq xref-show-definitions-function 'ivy-xref-show-defs))
