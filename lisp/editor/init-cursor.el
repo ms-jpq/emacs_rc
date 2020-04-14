@@ -33,8 +33,8 @@
 
 ;; algo
 (use-package smartparens
-  :demand
-  :config
+  :defer
+  :init
   (require 'smartparens-config))
 
 

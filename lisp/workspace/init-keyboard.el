@@ -7,8 +7,6 @@
 ;; ctl-x, ctl-c, ctl-v, ctl-z, etc
 (use-package cua-base
   :demand
-  :init
-  (define-key key-translation-map (kbd "C-q") (kbd "C-g"))
   :custom
   (cua-keep-region-after-copy t)
   :bind (("C-s" . save-buffer)
@@ -21,6 +19,7 @@
               (interactive)
               (save-excursion (call-interactively 'comment-line)))))
   :config
+  (define-key key-translation-map (kbd "C-q") (kbd "C-g"))
   (cua-mode t))
 
 

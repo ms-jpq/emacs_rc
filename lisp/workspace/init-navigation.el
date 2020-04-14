@@ -48,7 +48,7 @@
 (use-package prescient
   :demand
   :custom
-  (prescient-history-length 10 "hist items displayed")
+  (prescient-history-length 3 "hist items displayed")
   :config
   (prescient-persist-mode t))
 
