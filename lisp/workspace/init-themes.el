@@ -22,6 +22,15 @@
 ;;#################### Externs Region ####################
 ;;#################### ############## ####################
 
+;; powerline
+(use-package spaceline
+  :demand
+  :custom
+  (spaceline-minor-modes-p nil)
+  :config
+  (spaceline-spacemacs-theme))
+
+
 ;; main theme
 (use-package spacemacs-theme
   :demand
@@ -32,15 +41,6 @@
    '((bg1 . "#f4f4f4")))
   :config
   (load-theme 'spacemacs-light t))
-
-
-;; powerline
-(use-package spaceline
-  :demand
-  :custom
-  (spaceline-minor-modes-p nil)
-  :config
-  (spaceline-spacemacs-theme))
 
 
 ;;#################### END ####################

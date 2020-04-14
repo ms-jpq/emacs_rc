@@ -4,24 +4,6 @@
 ;;#################### Git Region ####################
 ;;#################### ########## ####################
 
-;; git porcelain
-(use-package magit
-  :defer
-  :bind (:map vc-command-map
-              ("C-m" . magit))
-  :config
-  (global-auto-revert-mode t))
-
-
-;; highlight todos in magit
-(use-package magit-todos
-  :defer
-  :after (magit)
-  :commands (magit-todos-list ivy-magit-todos)
-  :hook
-  (magit-mode . magit-todos-mode))
-
-
 ;; vscode like git in side line
 (use-package git-gutter
   :demand
@@ -48,6 +30,24 @@
               ("-" . git-timemachine-show-next-revision)
               ("]" . git-timemachine-show-previous-commit)
               ("[" . git-timemachine-show-next-commit)))
+
+
+;; git porcelain
+(use-package magit
+  :defer
+  :bind (:map vc-command-map
+              ("C-m" . magit))
+  :config
+  (global-auto-revert-mode t))
+
+
+;; highlight todos in magit
+(use-package magit-todos
+  :defer
+  :after (magit)
+  :commands (magit-todos-list ivy-magit-todos)
+  :hook
+  (magit-mode . magit-todos-mode))
 
 
 ;;#################### END ####################
