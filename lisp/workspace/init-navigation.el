@@ -80,7 +80,7 @@
   :defer
   :bind (:map ops-command-map
               ("C-d" . xref-find-definitions)
-              ("C-r" . xref-find-references))
+              ("C-f" . xref-find-references))
   :init
   (setq xref-show-xrefs-function 'ivy-xref-show-xrefs)
   (setq xref-show-definitions-function 'ivy-xref-show-defs))
