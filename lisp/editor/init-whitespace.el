@@ -12,11 +12,11 @@
 
 ;; trim trailing white spaces
 (use-package whitespace-cleanup-mode
-  :demand
+  :defer
   :custom
   (whitespace-cleanup-mode-preserve-point t)
-  :config
-  (global-whitespace-cleanup-mode t))
+  :init
+  (schedule-idle-background-task nil 0 'global-whitespace-cleanup-mode))
 
 
 ;; delete consecutive white spaces

@@ -38,6 +38,9 @@
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+  ;; prevent double loading
+  (setq package-enable-at-startup nil)
+  (setq package--init-file-ensured t)
   (package-initialize)
   (let ((dir (expand-file-name "elpa" user-emacs-directory)))
     (unless (file-directory-p dir)
