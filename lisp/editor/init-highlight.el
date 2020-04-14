@@ -16,13 +16,13 @@
 (use-package hl-todo
   :defer
   :hook
-  (display-line-numbers-mode . global-hl-todo-mode))
+  (display-line-numbers-mode . hl-todo-mode))
 
 
 (use-package highlight-parentheses
   :defer
   :hook
-  (display-line-numbers-mode . global-highlight-parentheses-mode))
+  (display-line-numbers-mode . highlight-parentheses-mode))
 
 
 (use-package rainbow-delimiters
