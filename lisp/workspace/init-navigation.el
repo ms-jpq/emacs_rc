@@ -29,7 +29,7 @@
 
 ;; replace default searches
 (use-package counsel
-  :demand
+  :defer
   :after (ivy)
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
@@ -65,11 +65,14 @@
 
 ;; prettier ivy
 (use-package ivy-rich
-  :demand
-  :after (ivy counsel)
+  :defer
+  :after (ivy)
+  :hook
+  (counsel-mode
+   . (lambda ()
+       (ivy-rich-mode t)))
   :config
-  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line)
-  (ivy-rich-mode t))
+  (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
 
 
 ;; use ivy in xref
