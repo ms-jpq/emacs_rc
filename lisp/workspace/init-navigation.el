@@ -30,10 +30,13 @@
 ;; replace default searches
 (use-package counsel
   :defer
+  :custom
+  (counsel-rg-base-command
+   "rg -M 120 --with-filename --no-heading --line-number --color never --hidden %s"
+   "TODO: this string might need to be updated")
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
          ("C-r" . counsel-rg)
-         ("C-g" . counsel-git)
          ("C-f" . counsel-fzf)
          :map ops-command-map
          ("C-o" . counsel-minor)
