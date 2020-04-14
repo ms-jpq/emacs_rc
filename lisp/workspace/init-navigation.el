@@ -45,20 +45,20 @@
 
 ;; sorting backend for company, ivy. etc
 (use-package prescient
-  :demand
+  :defer
   :custom
-  (prescient-history-length 3 "hist items displayed")
+  (prescient-history-length 5 "hist items displayed")
   :config
   (prescient-persist-mode t))
 
 
 (use-package ivy-prescient
-  :demand
+  :defer
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
-  :config
-  (ivy-prescient-mode t))
+  :hook
+  (counsel-mode . ivy-prescient-mode))
 
 
 ;; prettier ivy
