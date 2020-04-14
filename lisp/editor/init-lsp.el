@@ -68,13 +68,6 @@
               ("M-x" . lsp-ivy-workspace-symbol)))
 
 
-;; TODO: this thing segfaults!
-(use-package lsp-treemacs
-  :defer
-  :after (lsp-mode treemacs)
-  :commands (lsp-treemacs-errors-list))
-
-
 ;; debugger
 (use-package dap-mode
   :defer)

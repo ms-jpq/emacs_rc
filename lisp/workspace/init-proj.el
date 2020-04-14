@@ -12,24 +12,18 @@
 
 
 (use-package projectile
-  :demand
+  :defer
   :custom
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
   :config
-  (setq projectile-mode-map (make-sparse-keymap))
-  (projectile-mode t))
-
-
-(use-package treemacs-projectile
-  :demand
-  :after (treemacs projectile))
+  (setq projectile-mode-map (make-sparse-keymap)))
 
 
 (use-package counsel-projectile
   :defer
-  :after (counsel projectile)
+  :after (counsel)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)
               :map ops-command-map
