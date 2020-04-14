@@ -23,7 +23,6 @@
 
 (use-package counsel-projectile
   :defer
-  :after (ivy)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)
               :map ops-command-map

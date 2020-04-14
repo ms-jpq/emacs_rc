@@ -6,7 +6,7 @@
 
 ;; search agent
 (use-package ivy
-  :demand
+  :defer
   :custom
   (ivy-wrap t)
   (ivy-on-del-error-function nil)
@@ -30,7 +30,6 @@
 ;; replace default searches
 (use-package counsel
   :defer
-  :after (ivy)
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
          ("C-r" . counsel-rg)
@@ -55,7 +54,6 @@
 
 (use-package ivy-prescient
   :demand
-  :after (prescient ivy counsel)
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
@@ -66,7 +64,6 @@
 ;; prettier ivy
 (use-package ivy-rich
   :defer
-  :after (ivy)
   :hook
   (counsel-mode
    . (lambda ()
@@ -78,7 +75,6 @@
 ;; use ivy in xref
 (use-package ivy-xref
   :defer
-  :after (ivy)
   :bind (("M-d" . xref-find-definitions)
          ("M-e" . xref-find-references))
   :init

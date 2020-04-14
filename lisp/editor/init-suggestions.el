@@ -21,7 +21,6 @@
 ;; rank suggestions by freq
 (use-package company-prescient
   :demand
-  :after (prescient company)
   :config
   (company-prescient-mode t))
 

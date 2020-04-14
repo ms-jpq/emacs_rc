@@ -38,7 +38,6 @@
 
 (use-package lsp-ui
   :defer
-  :after (lsp-mode)
   :commands (lsp-ui-mode)
   :bind (:map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
@@ -52,7 +51,6 @@
 
 (use-package company-lsp
   :defer
-  :after (lsp-mode company)
   :commands (company-lsp)
   :custom
   (company-lsp-async t)
@@ -62,7 +60,6 @@
 
 (use-package lsp-ivy
   :defer
-  :after (lsp-mode ivy)
   :commands (lsp-ivy-workspace-symbol)
   :bind (:map lsp-mode-map
               ("M-x" . lsp-ivy-workspace-symbol)))

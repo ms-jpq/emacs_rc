@@ -50,7 +50,6 @@
 ;; TODO: when will this be on melpa?
 ;; (use-package lsp-focus
 ;;   :defer
-;;   :after (lsp-mode focus)
 ;;   :hook
 ;;   (focus-mode lsp-focus-mode))
 

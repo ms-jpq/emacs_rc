@@ -44,7 +44,6 @@
 ;; highlight todos in magit
 (use-package magit-todos
   :defer
-  :after (magit)
   :commands (magit-todos-list ivy-magit-todos)
   :hook
   (magit-mode . magit-todos-mode))
