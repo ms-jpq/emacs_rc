@@ -23,12 +23,9 @@
 ;;#################### ############## ####################
 
 ;; powerline
-(use-package spaceline
-  :demand
-  :custom
-  (spaceline-minor-modes-p nil)
+(use-package doom-modeline
   :config
-  (spaceline-spacemacs-theme))
+  (doom-modeline-mode t))
 
 
 ;; main theme
@@ -41,6 +38,7 @@
    '((bg1 . "#f4f4f4")))
   :config
   (load-theme 'spacemacs-light t))
+
 
 
 ;;#################### END ####################
