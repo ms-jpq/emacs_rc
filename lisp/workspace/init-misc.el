@@ -25,7 +25,7 @@
 (progn
   (setq inhibit-startup-screen t)
   (setq initial-scratch-message nil)
-  (setq initial-major-mode 'text-mode))
+  (setq initial-major-mode 'fundamental-mode))
 
 
 ;;#################### ########### ####################
