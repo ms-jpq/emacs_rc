@@ -5,11 +5,14 @@
 ;;#################### ################ ####################
 
 ;; show linenum only in certain modes
-(progn
-  (column-number-mode t)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  (add-hook 'conf-mode-hook 'display-line-numbers-mode)
-  (add-hook 'text-mode-hook 'display-line-numbers-mode))
+(use-package display-line-numbers
+  :defer
+  :custom
+  (display-line-numbers-grow-only t)
+  :hook
+  (prog-mode . display-line-numbers-mode)
+  (conf-mode . display-line-numbers-mode)
+  (text-mode . display-line-numbers-mode))
 
 
 ;; highlight todos
