@@ -35,8 +35,7 @@
   (super-save-idle-duration 1)
   :init
   (setq auto-save-default nil)
-  :hook
-  (emacs-startup . super-save-mode))
+  (schedule-idle-background-task nil 0 'super-save-mode))
 
 
 ;;#################### ############## ####################
@@ -50,6 +49,7 @@
 ;; buffers are a leaky abstraction
 ;; garbage collect them
 (use-package midnight
+  :demand
   :custom
   (clean-buffer-list-delay-special (* 5 60)
                                    "special buffers have life time of <x> seconds")
