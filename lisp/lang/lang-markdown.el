@@ -10,7 +10,7 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :custom
-  (markdown-command "multimarkdown"))
+  (markdown-command "pandoc"))
 
 
 ;;#################### END ####################
