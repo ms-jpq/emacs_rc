@@ -21,6 +21,7 @@
 ;; gc tweak
 (progn
   (setq gc-cons-threshold (* 200 1000 1000))
+  (setq gc-cons-percentage 0.7)
   (add-hook
    'emacs-startup-hook
    (lambda ()
