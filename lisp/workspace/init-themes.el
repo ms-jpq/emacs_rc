@@ -40,6 +40,5 @@
   (load-theme 'spacemacs-light t))
 
 
-
 ;;#################### END ####################
 (provide 'init-themes)
