@@ -62,6 +62,7 @@
 
 ;; tiling pane manager
 (use-package zoom
+  :demand
   :custom
   (zoom-size (lambda ()
                '(0.618 . 0.618)))
