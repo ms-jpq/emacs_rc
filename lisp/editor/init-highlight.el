@@ -9,6 +9,7 @@
   :defer
   :custom
   (display-line-numbers-grow-only t)
+  (display-line-numbers-width 3 "minimum 3 cols used for line num")
   :hook
   (prog-mode . display-line-numbers-mode)
   (conf-mode . display-line-numbers-mode)
