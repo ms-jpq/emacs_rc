@@ -82,7 +82,6 @@
   ;;#################### Workspace Region ####################
   ;;#################### ################ ####################
 
-  (require 'init-evil)
   (require 'init-help)
   (require 'init-keyboard)
   (require 'init-misc)
