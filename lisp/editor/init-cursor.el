@@ -6,7 +6,8 @@
 
 ;; multiple cursors
 (use-package multiple-cursors
-  :defer)
+  :defer
+  :bind (("M-m" . set-rectangular-region-anchor)))
 
 
 ;; hotkeys for text selection

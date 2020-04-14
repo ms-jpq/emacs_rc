@@ -14,6 +14,7 @@
 
 ;; idle animation
 (use-package zone
+  :demand
   :config
   (zone-when-idle (* 10 60)))
 
