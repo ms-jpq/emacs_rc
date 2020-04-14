@@ -130,8 +130,9 @@
   (require 'lang-racket)
   (require 'lang-toml)
   (require 'lang-typescript)
+  (require 'lang-vimrc)
   (require 'lang-yaml)
-
+  
 
   ;;#################### ########### ####################
   ;;#################### Misc Region ####################
