@@ -13,13 +13,20 @@
 
 
 ;; install package3s from git
-;; (use-package quelpa
-;;   :defer)
+(use-package quelpa
+  :defer
+  :custom
+  (quelpa-checkout-melpa-p nil)
+  (quelpa-self-upgrade-p nil)
+  (quelpa-upgrade-interval 14)
+  (quelpa-build-dir user-packages-path)
+  :hook
+  (emacs-startup . quelpa-upgrade-all-maybe))
 
 
 ;; use package integration
-;; (use-package quelpa-use-package
-;;   :defer)
+(use-package quelpa-use-package
+  :demand)
 
 
 ;; help to benchmark load times
