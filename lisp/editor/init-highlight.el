@@ -49,7 +49,9 @@
 
 ;; dim regions of text not under edit
 (use-package focus
-  :defer)
+  :defer
+  :bind (:map ops-command-map
+              ("C-j" . focus-mode)))
 
 
 (use-package lsp-focus
