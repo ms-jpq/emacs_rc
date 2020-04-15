@@ -12,6 +12,13 @@
   (setq use-package-always-ensure t))
 
 
+;; help to benchmark load times
+(use-package benchmark-init
+  :demand
+  :hook
+  (emacs-startup . benchmark-init/deactivate))
+
+
 ;; install package3s from git
 (use-package quelpa
   :defer
@@ -27,13 +34,6 @@
 ;; use package integration
 (use-package quelpa-use-package
   :demand)
-
-
-;; help to benchmark load times
-(use-package benchmark-init
-  :demand
-  :hook
-  (emacs-startup . benchmark-init/deactivate))
 
 
 ;; prevent keybinding overwrite
