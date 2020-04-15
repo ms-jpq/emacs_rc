@@ -58,6 +58,11 @@
     (add-to-list 'load-path (expand-file-name "misc" libs-path))))
 
 
+;; misc libs path
+(setq user-packages-path
+      (expand-file-name "packages" user-emacs-directory))
+
+
 ;; set customizations path
 (let
     ((cf (expand-file-name "_customize.el" user-emacs-directory)))
@@ -128,6 +133,7 @@
   (require 'lang-java)
   (require 'lang-jinja2)
   (require 'lang-json)
+  (require 'lang-lua)
   (require 'lang-markdown)
   (require 'lang-python)
   (require 'lang-racket)
