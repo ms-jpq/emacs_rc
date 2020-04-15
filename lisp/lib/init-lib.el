@@ -13,13 +13,13 @@
 
 
 ;; install package3s from git
-;; (use-package quelpa
-;;   :defer)
+(use-package quelpa
+  :defer)
 
 
 ;; use package integration
-;; (use-package quelpa-use-package
-;;   :defer)
+(use-package quelpa-use-package
+  :demand)
 
 
 ;; help to benchmark load times
