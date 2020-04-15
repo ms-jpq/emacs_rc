@@ -11,9 +11,9 @@
 (use-package lsp-lua-emmy
   :quelpa
   (lsp-lua-emmy
-  :fetcher github
-  :repo "phenix3443/lsp-lua-emmy")
-  :load-path "quelpa/build/phenix3443/lsp-lua-emmy"
+   :fetcher github
+   :repo "phenix3443/lsp-lua-emmy")
+  :load-path "packages/phenix3443/lsp-lua-emmy"
   :defer
   :init
   (setq lsp-lua-emmy-jar-path
