@@ -12,6 +12,15 @@
   (setq use-package-always-ensure t))
 
 
+;; install package3s from git
+;; (use-package quelpa
+;;   :defer)
+
+
+;; use package integration
+;; (use-package quelpa-use-package
+;;   :defer)
+
 
 ;; help to benchmark load times
 (use-package benchmark-init

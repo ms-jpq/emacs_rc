@@ -1,6 +1,7 @@
 .DS_Store
 auto-save-list/
 elpa/
+quelpa/
 export/
 backups/
 transient/
