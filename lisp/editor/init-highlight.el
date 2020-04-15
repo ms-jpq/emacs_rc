@@ -51,11 +51,16 @@
 (use-package focus
   :defer)
 
-;; TODO: when will this be on melpa?
-;; (use-package lsp-focus
-;;   :defer
-;;   :hook
-;;   (focus-mode lsp-focus-mode))
+
+(use-package lsp-focus
+  :quelpa
+  (lsp-focus
+   :fetcher github
+   :repo "emacs-lsp/lsp-focus")
+  :load-path "packages/emacs-lsp/lsp-focus"
+  :defer
+  :hook
+  (focus-mode . lsp-focus-mode))
 
 
 ;;#################### END ####################
