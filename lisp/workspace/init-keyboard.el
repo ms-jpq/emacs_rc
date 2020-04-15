@@ -26,6 +26,10 @@
 ;; normalize emac's undo - redo
 (use-package undo-tree
   :demand
+  :custom
+  (undo-tree-auto-save-history t)
+  (undo-tree-history-directory-alist
+   (list `("." . ,(expand-file-name "undo" user-emacs-directory))))
   :bind (("C-z" . undo)
          ("C-y" . redo))
   :config
