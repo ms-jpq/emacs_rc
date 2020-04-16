@@ -24,7 +24,8 @@
 
 (progn
   (setq inhibit-startup-screen t)
-  (setq initial-scratch-message nil)
+  (setq initial-scratch-message
+        "早死早超生\n")
   (setq initial-major-mode 'fundamental-mode))
 
 
