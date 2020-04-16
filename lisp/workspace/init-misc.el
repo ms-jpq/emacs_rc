@@ -25,7 +25,7 @@
 (progn
   (setq inhibit-startup-screen t)
   (setq initial-scratch-message
-        "早死早超生\n")
+        "落后就要挨打\n早死早超生\n")
   (setq initial-major-mode 'fundamental-mode))
 
 
