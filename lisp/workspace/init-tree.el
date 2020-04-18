@@ -16,7 +16,11 @@
    "do not persist state for treemacs")
   :bind (("C-b" . treemacs)
          :map treemacs-mode-map
-         ("SPC" . treemacs-peek))
+         ("SPC"
+          . (lambda ()
+              (interactive)
+              (call-interactively 'treemacs-RET-action)
+              (treemacs-select-window))))
   :config
   (treemacs-git-mode 'deferred)
   (treemacs-filewatch-mode t)
