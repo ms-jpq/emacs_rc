@@ -26,6 +26,9 @@
 (use-package lsp-mode
   :defer
   :commands (lsp lsp-deferred)
+  :custom
+  (lsp-session-file
+   (expand-file-name "lsp-session" user-var-path))
   :bind (:map replace-command-map
               ("C-l" . lsp-rename)
               :map lsp-mode-map
