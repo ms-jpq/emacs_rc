@@ -28,7 +28,6 @@
   (require 'projectile)
   (when (projectile-project-p)
     (treemacs-add-and-display-current-project)
-    (treemacs-toggle-node)
     (treemacs)))
 
 
