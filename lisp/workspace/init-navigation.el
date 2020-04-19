@@ -43,8 +43,6 @@
          :map ops-command-map
          ("C-o" . counsel-minor)
          ("C-p" . counsel-major))
-  :hook
-  (ivy-mode . counsel-mode)
   :config
   (counsel-mode t))
 
@@ -59,20 +57,19 @@
 
 
 (use-package ivy-prescient
-  :defer
+  :demand
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
-  :hook
-  (counsel-mode . ivy-prescient-mode))
+  :config
+  (ivy-prescient-mode t))
 
 
 ;; prettier ivy
 (use-package ivy-rich
-  :defer
-  :hook
-  (counsel-mode . ivy-rich-mode)
+  :demand
   :config
+  (ivy-rich-mode t)
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
 
 
