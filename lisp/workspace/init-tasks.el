@@ -29,12 +29,14 @@
 
 ;; back up file
 (setq backup-directory-alist
-  (list `("." . ,(expand-file-name "backup" user-var-path))))
+      (list `("." . ,(expand-file-name "backup" user-var-path))))
 
 
 ;; save cursor places in files
-(setq save-place-file
-  (expand-file-name "places" user-var-path))
+(use-package saveplace
+  :defer
+  :custom
+  (save-place-file (expand-file-name "places" user-var-path)))
 
 
 ;; better auto save
@@ -44,7 +46,7 @@
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
   (auto-package-update-last-update-day-filename
-    (expand-file-name "auto-update" user-var-path))
+   (expand-file-name "auto-update" user-var-path))
   :init
   (setq auto-save-default nil)
   (setq auto-save-list-file-prefix nil)
