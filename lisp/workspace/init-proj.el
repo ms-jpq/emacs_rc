@@ -15,6 +15,8 @@
   :defer
   :custom
   (projectile-completion-system 'ivy)
+  (projectile-known-projects-file
+    (expand-file-name "projectile-bookmarks.eld" user-var-path))
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
   :bind (:map replace-command-map

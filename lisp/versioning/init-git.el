@@ -32,6 +32,18 @@
               ("[" . git-timemachine-show-next-commit)))
 
 
+;; requirement for magit
+(use-package transient
+  :defer
+  :custom
+  (transient-levels-file
+    (expand-file-name "levels.el" (expand-file-name "transient" user-var-path)))
+  (transient-values-file
+    (expand-file-name "values.el" (expand-file-name "transient" user-var-path)))
+  (transient-history-file
+    (expand-file-name "history.el" (expand-file-name "transient" user-var-path))))
+
+
 ;; git porcelain
 (use-package magit
   :defer

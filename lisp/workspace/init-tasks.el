@@ -43,6 +43,8 @@
   :custom
   (super-save-auto-save-when-idle t)
   (super-save-idle-duration 1)
+  (auto-package-update-last-update-day-filename
+    (expand-file-name "auto-update" user-var-path))
   :init
   (setq auto-save-default nil)
   (setq auto-save-list-file-prefix nil)
