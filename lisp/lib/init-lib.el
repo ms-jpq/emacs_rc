@@ -90,5 +90,13 @@
     (call-interactively func)))
 
 
+(defun current-selection
+    ()
+  (when (region-active-p)
+    (buffer-substring-no-properties
+     (region-beginning)
+     (region-end))))
+
+
 ;;#################### END ####################
 (provide 'init-lib)

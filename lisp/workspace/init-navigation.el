@@ -36,7 +36,10 @@
    "TODO: this string might need to be updated")
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
-         ("C-r" . counsel-rg)
+         ("C-r"
+          . (lambda ()
+              (interactive)
+              (counsel-rg (current-selection))))
          ("C-f" . counsel-fzf)
          :map ops-command-map
          ("C-o" . counsel-minor)
