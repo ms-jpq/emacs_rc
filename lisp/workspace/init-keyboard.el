@@ -29,7 +29,7 @@
   :custom
   (undo-tree-auto-save-history t)
   (undo-tree-history-directory-alist
-   (list `("." . ,(expand-file-name "undo" user-emacs-directory))))
+   (list `("." . ,(expand-file-name "undo" user-var-path))))
   :bind (("C-z" . undo)
          ("C-y" . redo))
   :config
