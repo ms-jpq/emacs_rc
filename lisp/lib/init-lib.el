@@ -27,6 +27,8 @@
   (quelpa-self-upgrade-p nil)
   (quelpa-upgrade-interval 14)
   (quelpa-build-dir user-packages-path)
+  (quelpa-dir
+    (expand-file-name "quelpa" user-var-path))
   :hook
   (emacs-startup . quelpa-upgrade-all-maybe))
 
