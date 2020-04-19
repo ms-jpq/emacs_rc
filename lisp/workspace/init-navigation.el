@@ -35,7 +35,10 @@
          ("C-r"
           . (lambda ()
               (interactive)
-              (counsel-rg (current-selection) nil "--hidden")))
+              (let ((selection (current-selection)))
+                (when selection
+                  (deactivate-mark))
+                (counsel-rg selection nil "--hidden"))))
          ("C-f" . counsel-fzf)
          :map ops-command-map
          ("C-o" . counsel-minor)
