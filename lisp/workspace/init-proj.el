@@ -17,6 +17,9 @@
   (projectile-completion-system 'ivy)
   :bind-keymap
   ("C-c C-p" . projectile-command-map)
+  :bind (:map replace-command-map
+              ("C-p" . projectile-replace)
+              ("C-o" . projectile-replace-regexp))
   :config
   (setq projectile-mode-map (make-sparse-keymap)))
 
