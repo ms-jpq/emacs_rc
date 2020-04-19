@@ -29,7 +29,7 @@
 
 ;; replace default searches
 (use-package counsel
-  :defer
+  :demand
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
          ("C-r"
