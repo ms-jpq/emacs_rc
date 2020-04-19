@@ -1,6 +1,7 @@
+!*.gitkeep
 .DS_Store
 elpa/
 quelpa/
-packages/
-etc/
-var/
+packages/*
+etc/*
+var/*

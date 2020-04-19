@@ -58,14 +58,18 @@
     (add-to-list 'load-path (expand-file-name "misc" libs-path))))
 
 
-;; misc libs path
+;; misc path
 (setq user-packages-path
-      (expand-file-name "packages" user-emacs-directory))
+      (expand-file-name "packages" user-emacs-directory)
+      user-etc-path
+      (expand-file-name "etc" user-emacs-directory)
+      user-var-path
+      (expand-file-name "var" user-emacs-directory))
 
 
 ;; set customizations path
 (let
-    ((cf (expand-file-name "_customize.el" user-emacs-directory)))
+    ((cf (expand-file-name "customize.el" user-etc-path)))
   (setq custom-file cf)
   (unless (file-exists-p cf)
     (write-region "" nil cf))
@@ -142,7 +146,7 @@
   (require 'lang-vimrc)
   (require 'lang-yaml)
 
-  
+
   ;;#################### END ####################
   )
 ;;#################### END ####################
