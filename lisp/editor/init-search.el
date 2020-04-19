@@ -4,51 +4,19 @@
 ;;#################### Search / Replace Region ####################
 ;;#################### ####################### ####################
 
-
-;; edit current select symbol selection
-(use-package iedit
-  :defer
-  :bind (("M-r" . iedit-mode)))
-
-
-;; improve search / replace
-(use-package anzu
-  :defer
-  :custom
-  (anzu-replace-to-string-separator " -> ")
-  :bind (([remap query-replace] . anzu-query-replace)
-         ([remap query-replace-regexp] . anzu-query-replace-regexp)
-         :map isearch-mode-map
-         ([remap isearch-query-replace] . anzu-isearch-query-replace)
-         ([remap isearch-query-replace-regexp] . anzu-isearch-query-replace-regexp)
-         :map replace-command-map
-         ("C-a"
-          . (lambda ()
-              (interactive)
-              (let ((selected (current-selection)))
-                (when selected
-                  (deactivate-mark))
-                (with-min-cursor 'anzu-query-replace))))
-         ("C-e"
-          . (lambda ()
-              (interactive)
-              (let ((selected (current-selection)))
-                (when selected
-                  (deactivate-mark))
-                (with-min-cursor 'anzu-query-replace-regexp))))
-         :map query-replace-map
-         ("RET" . act)
-         ("M-RET" . automatic)
-         :map multi-query-replace-map
-         ("RET" . act)
-         ("M-RET" . automatic)))
-
-
 ;; move around in buffer using search
 (use-package swiper
   :defer
   :bind (:map search-command-map
-              ("C-s" . swiper)))
+              ("C-s"
+               . (lambda ()
+                   (interactive)
+                   (let ((selection (current-selection)))
+                     (when selection
+                       (deactivate-mark))
+                     (swiper selection))))
+              :map swiper-map
+              ("C-o" . swiper-query-replace)))
 
 
 ;; writable ivy occur buffer
