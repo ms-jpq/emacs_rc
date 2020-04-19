@@ -25,11 +25,17 @@
          ("C-a"
           . (lambda ()
               (interactive)
-              (with-min-cursor 'anzu-query-replace)))
+              (let ((selected (current-selection)))
+                (when selected
+                  (deactivate-mark))
+                (with-min-cursor 'anzu-query-replace))))
          ("C-e"
           . (lambda ()
               (interactive)
-              (with-min-cursor 'anzu-query-replace-regexp)))
+              (let ((selected (current-selection)))
+                (when selected
+                  (deactivate-mark))
+                (with-min-cursor 'anzu-query-replace-regexp))))
          :map query-replace-map
          ("RET" . act)
          ("M-RET" . automatic)
