@@ -43,6 +43,8 @@
          :map ops-command-map
          ("C-o" . counsel-minor)
          ("C-p" . counsel-major))
+  :hook
+  (ivy-mode . counsel-mode)
   :config
   (counsel-mode t))
 
@@ -69,9 +71,7 @@
 (use-package ivy-rich
   :defer
   :hook
-  (counsel-mode
-   . (lambda ()
-       (ivy-rich-mode t)))
+  (counsel-mode . ivy-rich-mode)
   :config
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
 
