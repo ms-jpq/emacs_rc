@@ -29,10 +29,9 @@
   :custom
   (lsp-session-file
    (expand-file-name "lsp-session" user-var-path))
-  :bind (:map replace-command-map
-              ("C-l" . lsp-rename)
-              :map lsp-mode-map
-              ("M-f" . lsp-describe-thing-at-point))
+  :bind (("C-r" . lsp-rename)
+         :map lsp-mode-map
+         ("M-f" . lsp-describe-thing-at-point))
   :hook
   (prog-mode . lsp-deferred)
   (lsp-mode . lsp-diagnostics-modeline-mode)

@@ -25,12 +25,6 @@
  :prefix "C-f")
 
 
-;; replace keymap
-(bind-keys
- :prefix-map replace-command-map
- :prefix "C-r")
-
-
 ;; vc keymap
 (bind-keys
  :prefix-map vc-command-map
