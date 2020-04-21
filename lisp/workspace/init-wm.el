@@ -16,13 +16,19 @@
  ("M--" . split-window-below))
 
 
+;; restore window layouts
+(progn
+  (winner-mode t))
+
+
 ;; move buffers around
 (use-package buffer-move
   :defer
-  :bind (("C-c <left>" . buf-move-left)
-         ("C-c <right>" . buf-move-right)
-         ("C-c <up>" . buf-move-up)
-         ("C-c <down>" . buf-move-down)))
+  :bind (:map ops-command-map
+              ("<left>" . buf-move-left)
+              ("<right>" . buf-move-right)
+              ("<up>" . buf-move-up)
+              ("<down>" . buf-move-down)))
 
 
 ;; create scratch buffer
