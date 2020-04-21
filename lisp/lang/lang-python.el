@@ -9,7 +9,7 @@
   :defer
   :custom
   (lsp-python-ms-dir
-   (expand-file-name "lsp-python-ms" user-var-path))
+   (expand-file-name "lsp-python-ms" user-packages-path))
   :init
   (setq python-mode-map (make-sparse-keymap)))
 
