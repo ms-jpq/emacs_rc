@@ -31,7 +31,7 @@
    (expand-file-name "lsp-session" user-var-path))
   :bind (("C-r" . lsp-rename)
          :map lsp-mode-map
-         ("M-f" . lsp-describe-thing-at-point))
+         ("C-c C-d" . lsp-describe-thing-at-point))
   :hook
   (prog-mode . lsp-deferred)
   (lsp-mode . lsp-diagnostics-modeline-mode)
