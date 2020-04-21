@@ -4,3 +4,4 @@ elpa/
 packages/*
 etc/*
 var/*
+.cache/
