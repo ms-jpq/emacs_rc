@@ -7,9 +7,10 @@
 ;; better python server
 (use-package lsp-python-ms
   :defer
-  :custom
-  (lsp-python-ms-dir
-   (expand-file-name "lsp-python-ms" user-packages-path))
+  ;; TODO: this breaks emacs
+  ;; :custom
+  ;; (lsp-python-ms-dir
+  ;;  (expand-file-name "lsp-python-ms" user-packages-path))
   :init
   (setq python-mode-map (make-sparse-keymap)))
 
