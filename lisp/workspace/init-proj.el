@@ -25,8 +25,6 @@
 
 (use-package counsel-projectile
   :defer
-  :custom
-  (counsel-projectile-mode t)
   :bind (:map search-command-map
               ("C-p" . counsel-projectile-find-file)
               :map ops-command-map

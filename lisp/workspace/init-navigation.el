@@ -29,7 +29,7 @@
 
 ;; replace default searches
 (use-package counsel
-  :demand
+  :defer
   :bind (("C-p" . counsel-M-x)
          :map search-command-map
          ("C-r"
@@ -57,19 +57,20 @@
 
 
 (use-package ivy-prescient
-  :demand
+  :defer
   :custom
   (ivy-prescient-sort-commands
    '(:not counsel-recentf))
-  :config
-  (ivy-prescient-mode t))
+  :hook
+  (counsel-mode . ivy-prescient-mode))
 
 
 ;; prettier ivy
 (use-package ivy-rich
-  :demand
+  :defer
+  :hook
+  (counsel-mode . ivy-rich-mode)
   :config
-  (ivy-rich-mode t)
   (setcdr (assq t ivy-format-functions-alist) 'ivy-format-function-line))
 
 
