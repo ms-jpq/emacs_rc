@@ -31,10 +31,11 @@
     (pkg-name git-uri)
   "install package from git, if not exist"
   (let* ((install-dir (expand-file-name pkg-name user-packages-path))
+         (messages-buffer "*Messages*")
          (git-install-cmd (concat "git clone --depth=1 " git-uri " " install-dir)))
     (unless (file-directory-p install-dir)
       (message git-install-cmd)
-      (shell-command git-install-cmd))))
+      (shell-command git-install-cmd messages-buffer messages-buffer))))
 
 
 (defun schedule-background-task
