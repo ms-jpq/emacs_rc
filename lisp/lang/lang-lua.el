@@ -8,12 +8,11 @@
   :defer)
 
 
+(install-from-git
+ "lsp-lua-emmy"
+ "https://github.com/phenix3443/lsp-lua-emmy")
 (use-package lsp-lua-emmy
-  :quelpa
-  (lsp-lua-emmy
-   :fetcher github
-   :repo "phenix3443/lsp-lua-emmy")
-  :load-path "packages/phenix3443/lsp-lua-emmy"
+  :load-path "packages/lsp-lua-emmy"
   :defer
   :custom
   (lsp-lua-emmy-jar-path

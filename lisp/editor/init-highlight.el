@@ -53,13 +53,11 @@
   :bind (:map ops-command-map
               ("C-j" . focus-mode)))
 
-
+(install-from-git
+ "lsp-focus"
+ "https://github.com/emacs-lsp/lsp-focus.git")
 (use-package lsp-focus
-  :quelpa
-  (lsp-focus
-   :fetcher github
-   :repo "emacs-lsp/lsp-focus")
-  :load-path "packages/emacs-lsp/lsp-focus"
+  :load-path "packages/lsp-focus"
   :defer
   :hook
   (focus-mode . lsp-focus-mode))
