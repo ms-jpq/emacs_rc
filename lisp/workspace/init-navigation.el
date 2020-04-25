@@ -39,7 +39,7 @@
                 (when selection
                   (deactivate-mark))
                 (counsel-rg selection nil "--hidden"))))
-         ("C-f" . counsel-fzf)
+         ("C-d" . counsel-fzf)
          :map ops-command-map
          ("C-o" . counsel-minor)
          ("C-p" . counsel-major))

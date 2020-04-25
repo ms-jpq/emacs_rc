@@ -8,7 +8,7 @@
 (use-package swiper
   :defer
   :bind (:map search-command-map
-              ("C-s"
+              ("C-f"
                . (lambda ()
                    (interactive)
                    (let ((selection (current-selection)))

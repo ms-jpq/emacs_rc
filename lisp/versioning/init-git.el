@@ -14,6 +14,12 @@
     ("d" git-gutter:popup-hunk "show diff")
     ("s" git-gutter:stage-hunk "stage")
     ("k" git-gutter:revert-hunk "revert"))
+  :bind (:map vc-command-map
+              ("C-r"
+               . (lambda ()
+                   (interactive)
+                   (global-git-gutter-mode nil)
+                   (global-git-gutter-mode t))))
   :config
   (global-git-gutter-mode t))
 
