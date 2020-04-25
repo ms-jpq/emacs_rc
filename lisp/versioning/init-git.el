@@ -67,5 +67,9 @@
   (magit-mode . magit-todos-mode))
 
 
+(use-package treemacs-magit
+  :defer)
+
+
 ;;#################### END ####################
 (provide 'init-git)

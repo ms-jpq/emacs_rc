@@ -35,10 +35,6 @@
   :defer)
 
 
-(use-package treemacs-magit
-  :defer)
-
-
 ;; TODO: this thing segfaults!
 (use-package lsp-treemacs
   :defer
