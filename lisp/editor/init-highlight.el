@@ -43,25 +43,5 @@
   (indent-guide-char "|"))
 
 
-;;#################### ############ ####################
-;;#################### Focus Region ####################
-;;#################### ############ ####################
-
-;; dim regions of text not under edit
-(use-package focus
-  :defer
-  :bind (:map ops-command-map
-              ("C-j" . focus-mode)))
-
-(install-from-git
- "lsp-focus"
- "https://github.com/emacs-lsp/lsp-focus.git")
-(use-package lsp-focus
-  :load-path "packages/lsp-focus"
-  :defer
-  :hook
-  (focus-mode . lsp-focus-mode))
-
-
 ;;#################### END ####################
 (provide 'init-highlight)
