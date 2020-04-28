@@ -35,8 +35,8 @@
   :defer
   :custom
   (stupid-indent-level 2)
-  :bind (("M-;" . stupid-outdent)
-         ("M-'" . stupid-indent)))
+  :bind (("M-<" . stupid-outdent)
+         ("M->" . stupid-indent)))
 
 
 ;; indent not just current line, but the context
