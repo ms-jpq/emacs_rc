@@ -19,7 +19,7 @@
   (auto-package-update-interval 14)
   (auto-package-update-prompt-before-update t)
   (auto-package-update-delete-old-versions t)
-  :hook
+  ; :hook
   ;; (emacs-startup . auto-package-update-maybe)
   )
 
