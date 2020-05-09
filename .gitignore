@@ -1,4 +1,5 @@
 !*.gitkeep
+/.git/
 .DS_Store
 elpa/
 packages/*

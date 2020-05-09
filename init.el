@@ -141,6 +141,7 @@
   (require 'lang-markdown)
   (require 'lang-python)
   (require 'lang-racket)
+  (require 'lang-rust)
   (require 'lang-toml)
   (require 'lang-typescript)
   (require 'lang-vimrc)

@@ -20,7 +20,8 @@
   (auto-package-update-prompt-before-update t)
   (auto-package-update-delete-old-versions t)
   :hook
-  (emacs-startup . auto-package-update-maybe))
+  ;; (emacs-startup . auto-package-update-maybe)
+  )
 
 
 ;;#################### ############ ####################
